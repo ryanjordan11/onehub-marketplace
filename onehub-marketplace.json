@@ -1,26 +1,39 @@
 {
-  "name": "onehub/startup-keyframe",
-  "title": "OneHub Startup Keyframe",
-  "version": "1.0.0",
-  "source": "github:ryanjordan11/onehub-marketplace@main/plugins/startup-keyframe",
-  "publisher": {
-    "id": "onehub",
-    "github": "ryanjordan11",
+  "$schema": "https://open-design.ai/schemas/marketplace.v1.json",
+  "specVersion": "1.0.0",
+  "name": "onehub-marketplace",
+  "version": "0.1.0",
+  "owner": {
+    "name": "OneHub",
     "url": "https://github.com/ryanjordan11/onehub-marketplace"
   },
-  "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
-  "license": "MIT",
-  "mode": "image",
-  "taskKind": "new-generation",
-  "capabilitiesSummary": [
-    "prompt:inject"
-  ],
-  "tags": [
-    "image",
-    "onehub",
-    "startup",
-    "keyframe"
-  ],
-  "description": "OneHub startup keyframe template.",
-  "previewImageUrl": "https://raw.githubusercontent.com/ryanjordan11/onehub-marketplace/refs/heads/main/mrfmkw1m-_jbnjk.png"
+  "metadata": {
+    "description": "OneHub Marketplace",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "onehub/startup-keyframe",
+      "title": "OneHub Startup Keyframe",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/startup-keyframe",
+      "publisher": {
+        "id": "onehub",
+        "github": "ryanjordan11",
+        "url": "https://github.com/ryanjordan11/onehub-marketplace"
+      },
+      "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+      "license": "MIT",
+      "capabilitiesSummary": [
+        "prompt:inject"
+      ],
+      "tags": [
+        "image",
+        "onehub",
+        "startup",
+        "keyframe"
+      ],
+      "description": "OneHub startup keyframe template."
+    }
+  ]
 }

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://open-design.ai/schemas/plugin.v1.json",
+  "specVersion": "1.0.0",
+  "name": "onehub-creator-prompts",
+  "title": "10 OneHub Prompts Every Creator Should Save",
+  "version": "1.0.0",
+  "description": "A ready-made OneHub prompt playbook for research, content, conversion, automation, and review.",
+  "license": "MIT",
+  "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+  "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+  "tags": ["slides", "onehub", "prompts", "creator", "content"],
+  "od": {
+    "kind": "scenario", "taskKind": "new-generation", "mode": "slides", "scenario": "slides", "surface": "slides",
+    "preview": { "type": "image", "poster": "./preview.png" },
+    "useCase": { "query": { "en": "Use the 10 OneHub Prompts Every Creator Should Save deck as the starting point. Adapt each prompt to my niche, audience, offer, and voice while retaining the complete research-to-automation playbook." } },
+    "context": { "assets": ["./index.html"] },
+    "capabilities": ["prompt:inject"],
+    "category": "creator-strategy"
+  }
+}

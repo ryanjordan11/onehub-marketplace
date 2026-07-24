@@ -1,0 +1,55 @@
+{
+  "label": "original",
+  "url": "https://fusion2.lovable.app",
+  "capturedAt": "2026-07-22T19:36:50.501Z",
+  "maxPages": 25,
+  "maxDepth": 2,
+  "allowSubdomains": false,
+  "routes": [
+    {
+      "url": "https://fusion2.lovable.app",
+      "from": "",
+      "depth": 0,
+      "status": 200,
+      "title": "AI Image Transformation Studio",
+      "lang": "en",
+      "metaDescription": "Transform your photos with AI-powered aesthetic packs and curated presets. Create stunning visual transformations instantly.",
+      "h1": [
+        "Transform YourPhotos with AI"
+      ],
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Transform YourPhotos with AI"
+        },
+        {
+          "tag": "h2",
+          "text": "See the Transformation"
+        },
+        {
+          "tag": "h3",
+          "text": "Look Packs"
+        },
+        {
+          "tag": "h3",
+          "text": "AI Modifiers"
+        },
+        {
+          "tag": "h3",
+          "text": "Instant Results"
+        }
+      ],
+      "counts": {
+        "links": 0,
+        "images": 6,
+        "canvas": 0,
+        "forms": 0,
+        "buttons": 2
+      },
+      "linkCount": 0,
+      "screenshot": "screenshots/fusion2.lovable.app-0c95dee4.png",
+      "consoleErrors": []
+    }
+  ],
+  "skipped": []
+}

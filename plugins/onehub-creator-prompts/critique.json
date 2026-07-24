@@ -1,0 +1,11 @@
+{
+  "kind": "critique-panel",
+  "score": 4,
+  "axes": {
+    "clarity": { "score": 5, "notes": "One prompt per slide with a consistent reading order." },
+    "hierarchy": { "score": 5, "notes": "Number, category, and prompt form a clear three-level scan path." },
+    "typography": { "score": 4, "notes": "Prompt type is sized to preserve breathing room across the longer slides." },
+    "motion": { "score": 4, "notes": "Existing slide navigation and background motion remain intact." },
+    "brand": { "score": 4, "notes": "Deep indigo base with alternating citrus and pink highlights creates a more vivid OneHub-ready palette." }
+  }
+}

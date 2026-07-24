@@ -13,10 +13,10 @@
   },
   "plugins": [
     {
-      "name": "onehub/startup-keyframe",
-      "title": "OneHub Startup Keyframe",
+      "name": "onehub/if-i-lost-everything",
+      "title": "If I Lost Everything…",
       "version": "1.0.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/startup-keyframe",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/if-i-lost-everything",
       "publisher": {
         "id": "onehub",
         "github": "ryanjordan11",
@@ -28,12 +28,37 @@
         "prompt:inject"
       ],
       "tags": [
-        "image",
+        "slides",
         "onehub",
-        "startup",
-        "keyframe"
+        "creator",
+        "strategy",
+        "content-system"
       ],
-      "description": "OneHub startup keyframe template."
+      "description": "A 10-slide OneHub creator-system deck for rebuilding from zero."
+    },
+    {
+      "name": "onehub/creator-prompts",
+      "title": "10 OneHub Prompts Every Creator Should Save",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/onehub-creator-prompts",
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+      "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+      "license": "MIT",
+      "capabilitiesSummary": ["prompt:inject"],
+      "tags": ["slides", "onehub", "prompts", "creator", "content"],
+      "description": "A ready-made OneHub prompt playbook for research, content, conversion, automation, and review."
+    },
+    {
+      "name": "onehub/fusion-ai-studio-clone",
+      "title": "Fusion AI Studio Clone",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/fusion-ai-studio-clone",
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+      "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+      "license": "MIT",
+      "capabilitiesSummary": ["prompt:inject"],
+      "tags": ["website", "clone", "ai-studio", "prototype", "onehub"],
+      "description": "A working AI-generation studio website clone with upload, presets, simulated generation, and output preview."
     }
   ]
 }

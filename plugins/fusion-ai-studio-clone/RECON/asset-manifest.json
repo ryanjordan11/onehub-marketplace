@@ -1,0 +1,66 @@
+{
+  "url": "https://fusion2.lovable.app/",
+  "capturedVia": "browser-network+recon",
+  "total": 7,
+  "ok": 7,
+  "error": 0,
+  "fontsCss": null,
+  "assets": [
+    {
+      "url": "https://fusion2.lovable.app/assets/index-1ni_mYkF.css",
+      "kind": "stylesheet",
+      "via": "network",
+      "status": "ok",
+      "bytes": 75870,
+      "localPath": "css/fusion2.lovable.app/index-1ni_mYkF-2bc57035ea.css"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 20951,
+      "localPath": "images/images.unsplash.com/photo-1534528741775-53994a69daeb-d4a559d593.bin"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 29228,
+      "localPath": "images/images.unsplash.com/photo-1507003211169-0a1dd7228f2d-375d0835aa.bin"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 29508,
+      "localPath": "images/images.unsplash.com/photo-1539571696357-5a69c17a67c6-279ce60f1c.bin"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 57601,
+      "localPath": "images/images.unsplash.com/photo-1506794778202-cad84cf45f1d-b5670d0509.bin"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 27021,
+      "localPath": "images/images.unsplash.com/photo-1488161628813-04466f872be2-f9e5d399e2.bin"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+      "kind": "image",
+      "via": "network",
+      "status": "ok",
+      "bytes": 22196,
+      "localPath": "images/images.unsplash.com/photo-1524504388940-b1c1722653e1-71f163aedb.bin"
+    }
+  ]
+}

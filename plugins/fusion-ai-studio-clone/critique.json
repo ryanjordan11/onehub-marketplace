@@ -1,0 +1,11 @@
+{
+  "kind": "critique-panel",
+  "score": 4,
+  "axes": {
+    "clarity": {"score": 5, "notes": "宫殿式 studio 分区明确，标题/h1/分区层级清晰。"},
+    "hierarchy": {"score": 4, "notes": "主流程从上传到预览/结果明确；暗色背景下强调色集中。"},
+    "typography": {"score": 4, "notes": "字号层级、标签、大写追踪较统一；整体可读性稳定。"},
+    "motion": {"score": 3, "notes": "仅基础 hover/过渡与生成加载；无滚动叙事体系。"},
+    "brand": {"score": 4, "notes": "视觉语言接近原站：黑底+lime accent+玻璃拟态面板。"}
+  }
+}

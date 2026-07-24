@@ -1,0 +1,17 @@
+{
+  "$schema": "https://open-design.ai/schemas/plugin.v1.json",
+  "specVersion": "1.0.0",
+  "name": "onehub-ten-things-while-you-sleep",
+  "title": "10 Things OneHub Does While You Sleep",
+  "version": "1.0.0",
+  "description": "Interactive OneHub slide deck about the work OneHub can keep moving while you sleep.",
+  "license": "MIT",
+  "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+  "od": {
+    "kind": "skill", "taskKind": "new-generation", "mode": "slides", "surface": "slides",
+    "preview": { "type": "html", "entry": "index.html", "motion": "static" },
+    "useCase": { "query": { "en": "Use this OneHub slide deck as the starting point for a presentation about work OneHub keeps moving while you sleep." }, "exampleOutputs": [{ "path": "index.html", "title": "10 Things OneHub Does While You Sleep" }] },
+    "context": { "assets": ["./index.html"] },
+    "capabilities": ["prompt:inject", "fs:read", "fs:write"]
+  }
+}

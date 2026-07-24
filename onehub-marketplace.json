@@ -152,6 +152,17 @@
       "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
       "tags": ["slides", "onehub", "ai", "prompts", "interactive"],
       "description": "Interactive OneHub slide deck about moving beyond better prompts."
+    },
+    {
+      "name": "onehub/ten-things-while-you-sleep",
+      "title": "10 Things OneHub Does While You Sleep",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ten-things-onehub-does-while-you-sleep",
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+      "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "automation", "interactive"],
+      "description": "Interactive OneHub slide deck about the work OneHub can keep moving while you sleep."
     }
   ]
 }

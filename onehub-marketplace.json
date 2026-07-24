@@ -15,7 +15,7 @@
     {
       "name": "onehub/if-i-lost-everything",
       "title": "If I Lost Everything…",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/if-i-lost-everything",
       "publisher": {
         "id": "onehub",
@@ -39,7 +39,7 @@
     {
       "name": "onehub/creator-prompts",
       "title": "10 OneHub Prompts Every Creator Should Save",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/onehub-creator-prompts",
       "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
@@ -51,7 +51,7 @@
     {
       "name": "onehub/fusion-ai-studio-clone",
       "title": "Fusion AI Studio Clone",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/fusion-ai-studio-clone",
       "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",

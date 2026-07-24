@@ -3,7 +3,7 @@
   "specVersion": "1.0.0",
   "name": "onehub-fusion-ai-studio-clone",
   "title": "Fusion AI Studio Clone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A working AI-generation studio website clone with upload, presets, simulated generation, and output preview.",
   "license": "MIT",
   "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },

@@ -3,7 +3,7 @@
   "specVersion": "1.0.0",
   "name": "onehub-if-i-lost-everything",
   "title": "If I Lost Everything…",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A 10-slide OneHub creator-system deck for rebuilding from zero.",
   "license": "MIT",
   "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },

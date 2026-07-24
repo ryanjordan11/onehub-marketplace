@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "kanban-board.html",
+  "entry": "kanban-board.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-07-24T16:23:09.596Z",
+  "updatedAt": "2026-07-24T16:23:09.596Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

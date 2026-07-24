@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "fileName": "kanban-board.html",
+  "entries": [
+    {
+      "id": "e551b211-4cf5-4cf3-a6c1-630f73dd4d58",
+      "fileName": "kanban-board.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1784910206445,
+      "source": "ai",
+      "prompt": "[form answers — discovery]\n- Target platform: responsive web\n- Who uses this board?: Internal team\n- Board complexity: Extended (5+ columns, 20+ cards)",
+      "size": 18613,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-e551b211-4cf5-4cf3-a6c1-630f73dd4d58.html",
+      "promptSource": "message"
+    }
+  ]
+}

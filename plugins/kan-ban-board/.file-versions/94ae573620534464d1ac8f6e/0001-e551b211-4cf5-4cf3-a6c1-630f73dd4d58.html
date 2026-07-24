@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kan Ban Board</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --surface: #f7f8fa;
+  --fg: #111111;
+  --muted: #6b7280;
+  --border: #d9dee7;
+  --accent: #1677ff;
+  --radius: 8px;
+  --grid: 8px;
+  --font-display: Inter, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--fg);
+  background: var(--bg);
+  letter-spacing: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+h1 { font-size: 32px; font-weight: 600; }
+h2 { font-size: 20px; font-weight: 500; }
+h3 { font-size: 16px; font-weight: 500; }
+
+small, .caption {
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+button {
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  background: var(--surface);
+  color: var(--fg);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover {
+  background: var(--border);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button.primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  font-weight: 500;
+}
+
+button.primary:hover {
+  background: #1264d9;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--grid) * 2) calc(var(--grid) * 3);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--grid) * 2);
+}
+
+.header-left h1 {
+  font-size: 22px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--grid);
+}
+
+.board {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: calc(var(--grid) * 3);
+}
+
+.columns {
+  display: flex;
+  gap: calc(var(--grid) * 2);
+  min-width: min-content;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.column {
+  width: 280px;
+  min-width: 280px;
+  max-width: 320px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 120px);
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--grid) * 2) calc(var(--grid) * 2);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.column-header h2 {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.column-count {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 8px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.column-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--grid);
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid);
+  min-height: 60px;
+}
+
+.column-body.drag-over {
+  background: rgba(22, 119, 255, 0.04);
+  border-radius: var(--radius);
+}
+
+/* Cards */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: calc(var(--grid) * 2);
+  cursor: grab;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  user-select: none;
+}
+
+.card:hover {
+  border-color: var(--muted);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card.dragging {
+  opacity: 0.4;
+  transform: scale(0.97);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--grid);
+  margin-bottom: 6px;
+}
+
+.card-id {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  font-family: var(--font-body);
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.card-description {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-bottom: calc(var(--grid) * 1.5);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--grid);
+}
+
+.card-tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.card-assignee {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--fg);
+  flex-shrink: 0;
+}
+
+/* Add card button */
+.add-card-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: left;
+  border-radius: var(--radius);
+  letter-spacing: 0.02em;
+}
+
+.add-card-btn:hover {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.add-card-btn::before {
+  content: "+ ";
+  font-weight: 500;
+}
+
+/* Add column button */
+.add-column-btn {
+  min-width: 280px;
+  border-style: dashed;
+  color: var(--muted);
+  justify-content: center;
+  padding: calc(var(--grid) * 4);
+}
+
+.add-column-btn:hover {
+  color: var(--fg);
+  border-color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: var(--grid) calc(var(--grid) * 2);
+  }
+
+  .header-left h1 {
+    font-size: 18px;
+  }
+
+  .board {
+    padding: calc(var(--grid) * 2);
+  }
+
+  .columns {
+    gap: var(--grid);
+  }
+
+  .column {
+    width: 260px;
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .column {
+    width: 240px;
+    min-width: 240px;
+  }
+
+  .board {
+    padding: var(--grid);
+  }
+}
+
+/* Scrollbar */
+.column-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.column-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.column-body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* Placeholder for drop target */
+.drop-placeholder {
+  border: 2px dashed var(--accent);
+  border-radius: var(--radius);
+  background: rgba(22, 119, 255, 0.03);
+  min-height: 60px;
+  transition: all 0.15s ease;
+}
+
+/* Focus visible for cards */
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Status indicator on column header */
+.column-header .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.status-dot.backlog { background: var(--muted); }
+.status-dot.todo { background: var(--border); }
+.status-dot.progress { background: var(--muted); }
+.status-dot.review { background: #d97706; }
+.status-dot.done { background: #16a34a; }
+</style>
+</head>
+<body>
+<div class="app" data-od-id="kanban-app">
+  <header class="header" data-od-id="kanban-header">
+    <div class="header-left">
+      <h1>Kan Ban Board</h1>
+      <small class="caption">Internal team — Extended board</small>
+    </div>
+    <div class="header-right">
+      <button data-od-id="btn-add-column">+ Column</button>
+      <button class="primary" data-od-id="btn-add-card">New Card</button>
+    </div>
+  </header>
+  <main class="board" data-od-id="kanban-board">
+    <div class="columns" data-od-id="kanban-columns" id="columns"></div>
+  </main>
+</div>
+
+<script>
+(function() {
+  var COLUMNS = [
+    { id: 'backlog', title: 'Backlog', dotClass: 'backlog' },
+    { id: 'todo', title: 'To Do', dotClass: 'todo' },
+    { id: 'progress', title: 'In Progress', dotClass: 'progress' },
+    { id: 'review', title: 'Review', dotClass: 'review' },
+    { id: 'done', title: 'Done', dotClass: 'done' }
+  ];
+
+  var CARDS = [
+    { id: 'KAN-101', title: 'Define onboarding flow', desc: 'Map the first-run experience for new team members across all entry points.', column: 'backlog', tags: ['design'], assignee: 'A' },
+    { id: 'KAN-102', title: 'Set up CI pipeline', desc: 'Configure automated build, test, and deploy stages for the monorepo.', column: 'backlog', tags: ['infra'], assignee: 'M' },
+    { id: 'KAN-103', title: 'Audit accessibility', desc: 'Run axe-core and manual checks on all public-facing screens.', column: 'backlog', tags: ['a11y'], assignee: 'S' },
+    { id: 'KAN-104', title: 'Design system tokens', desc: 'Publish color, spacing, and typography tokens to the shared repo.', column: 'todo', tags: ['design'], assignee: 'A' },
+    { id: 'KAN-105', title: 'API rate limiting', desc: 'Implement token-bucket throttling on public endpoints with configurable limits.', column: 'todo', tags: ['backend'], assignee: 'M' },
+    { id: 'KAN-106', title: 'Dashboard widgets', desc: 'Build reusable chart and metric widgets for the analytics dashboard.', column: 'todo', tags: ['frontend'], assignee: 'S' },
+    { id: 'KAN-107', title: 'User preferences panel', desc: 'Add settings page for notification, theme, and language preferences.', column: 'progress', tags: ['frontend'], assignee: 'A' },
+    { id: 'KAN-108', title: 'Database migration v2', desc: 'Migrate legacy schema to the new normalized structure without downtime.', column: 'progress', tags: ['backend', 'infra'], assignee: 'M' },
+    { id: 'KAN-109', title: 'Search indexing', desc: 'Integrate full-text search with relevance scoring and typo tolerance.', column: 'progress', tags: ['backend'], assignee: 'S' },
+    { id: 'KAN-110', title: 'Mobile responsive nav', desc: 'Redesign navigation for touch targets and viewport constraints.', column: 'review', tags: ['frontend', 'design'], assignee: 'A' },
+    { id: 'KAN-111', title: 'Error boundary components', desc: 'Add graceful error fallbacks with recovery actions for each route.', column: 'review', tags: ['frontend'], assignee: 'M' },
+    { id: 'KAN-112', title: 'Export to CSV', desc: 'Implement bulk data export with column selection and encoding options.', column: 'review', tags: ['backend'], assignee: 'S' },
+    { id: 'KAN-113', title: 'Onboarding flow v1', desc: 'Ship the first version of the guided onboarding experience.', column: 'done', tags: ['design', 'frontend'], assignee: 'A' },
+    { id: 'KAN-114', title: 'Project scaffolding', desc: 'Set up repo structure, linting, and shared config across teams.', column: 'done', tags: ['infra'], assignee: 'M' },
+    { id: 'KAN-115', title: 'Unit test harness', desc: 'Establish testing utilities, fixtures, and coverage thresholds.', column: 'done', tags: ['backend'], assignee: 'S' },
+    { id: 'KAN-116', title: 'Design token docs', desc: 'Document all tokens with usage guidelines and migration notes.', column: 'done', tags: ['design'], assignee: 'A' },
+    { id: 'KAN-117', title: 'Webhook integrations', desc: 'Add support for outbound webhooks on resource lifecycle events.', column: 'backlog', tags: ['backend'], assignee: 'M' },
+    { id: 'KAN-118', title: 'Dark mode support', desc: 'Implement theme switching with persisted user preference.', column: 'todo', tags: ['frontend', 'design'], assignee: 'S' },
+    { id: 'KAN-119', title: 'Notification preferences', desc: 'Build per-channel notification opt-in with digest scheduling.', column: 'todo', tags: ['frontend', 'backend'], assignee: 'A' },
+    { id: 'KAN-120', title: 'Role-based access', desc: 'Implement workspace-level roles with granular permission checks.', column: 'progress', tags: ['backend', 'security'], assignee: 'M' },
+    { id: 'KAN-121', title: 'Audit logging', desc: 'Capture all state mutations with actor, timestamp, and diff payload.', column: 'review', tags: ['backend', 'infra'], assignee: 'S' },
+    { id: 'KAN-122', title: 'Performance budget', desc: 'Define and enforce Lighthouse budgets for all critical paths.', column: 'done', tags: ['infra'], assignee: 'M' }
+  ];
+
+  var columnsEl = document.getElementById('columns');
+  var draggedCard = null;
+
+  function renderBoard() {
+    columnsEl.innerHTML = '';
+    COLUMNS.forEach(function(col) {
+      var colCards = CARDS.filter(function(c) { return c.column === col.id; });
+      var colEl = document.createElement('div');
+      colEl.className = 'column';
+      colEl.setAttribute('data-od-id', 'column-' + col.id);
+      colEl.setAttribute('data-column', col.id);
+
+      var headerEl = document.createElement('div');
+      headerEl.className = 'column-header';
+      headerEl.innerHTML = '<h2><span class="status-dot ' + col.dotClass + '"></span>' + col.title + '</h2><span class="column-count">' + colCards.length + '</span>';
+      colEl.appendChild(headerEl);
+
+      var bodyEl = document.createElement('div');
+      bodyEl.className = 'column-body';
+      bodyEl.setAttribute('data-od-id', 'column-body-' + col.id);
+
+      colCards.forEach(function(card) {
+        bodyEl.appendChild(createCardElement(card));
+      });
+
+      var addBtn = document.createElement('button');
+      addBtn.className = 'add-card-btn';
+      addBtn.setAttribute('data-od-id', 'btn-add-card-' + col.id);
+      addBtn.setAttribute('data-column', col.id);
+      addBtn.textContent = 'Add card';
+      addBtn.addEventListener('click', function() {
+        addCardToColumn(col.id);
+      });
+      bodyEl.appendChild(addBtn);
+
+      colEl.appendChild(bodyEl);
+      columnsEl.appendChild(colEl);
+    });
+
+    var addColBtn = document.createElement('button');
+    addColBtn.className = 'add-column-btn';
+    addColBtn.setAttribute('data-od-id', 'btn-add-column');
+    addColBtn.textContent = '+ New column';
+    addColBtn.addEventListener('click', addNewColumn);
+    columnsEl.appendChild(addColBtn);
+
+    attachDragListeners();
+  }
+
+  function createCardElement(card) {
+    var el = document.createElement('div');
+    el.className = 'card';
+    el.setAttribute('draggable', 'true');
+    el.setAttribute('data-od-id', 'card-' + card.id);
+    el.setAttribute('data-card-id', card.id);
+    el.setAttribute('tabindex', '0');
+
+    var tagsHtml = card.tags.map(function(t) {
+      return '<span class="tag">' + t + '</span>';
+    }).join('');
+
+    el.innerHTML = '<div class="card-header"><span class="card-id">' + card.id + '</span></div>' +
+      '<div class="card-title">' + card.title + '</div>' +
+      '<div class="card-description">' + card.desc + '</div>' +
+      '<div class="card-footer"><div class="card-tags">' + tagsHtml + '</div>' +
+      '<div class="card-assignee" data-od-id="assignee-' + card.id + '">' + card.assignee + '</div></div>';
+
+    el.addEventListener('dragstart', handleDragStart);
+    el.addEventListener('dragend', handleDragEnd);
+    return el;
+  }
+
+  function handleDragStart(e) {
+    draggedCard = this;
+    this.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/plain', this.getAttribute('data-card-id'));
+  }
+
+  function handleDragEnd() {
+    this.classList.remove('dragging');
+    draggedCard = null;
+    document.querySelectorAll('.column-body').forEach(function(b) {
+      b.classList.remove('drag-over');
+    });
+    document.querySelectorAll('.drop-placeholder').forEach(function(p) {
+      p.remove();
+    });
+  }
+
+  function attachDragListeners() {
+    document.querySelectorAll('.column-body').forEach(function(body) {
+      body.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        this.classList.add('drag-over');
+        var afterElement = getDragAfterElement(this, e.clientY);
+        var placeholder = this.querySelector('.drop-placeholder');
+        if (!placeholder) {
+          placeholder = document.createElement('div');
+          placeholder.className = 'drop-placeholder';
+          placeholder.style.height = '60px';
+        }
+        if (afterElement) {
+          this.insertBefore(placeholder, afterElement);
+        } else {
+          this.appendChild(placeholder);
+        }
+      });
+
+      body.addEventListener('dragleave', function(e) {
+        if (!this.contains(e.relatedTarget)) {
+          this.classList.remove('drag-over');
+          var ph = this.querySelector('.drop-placeholder');
+          if (ph) ph.remove();
+        }
+      });
+
+      body.addEventListener('drop', function(e) {
+        e.preventDefault();
+        this.classList.remove('drag-over');
+        var cardId = e.dataTransfer.getData('text/plain');
+        var card = CARDS.find(function(c) { return c.id === cardId; });
+        if (!card) return;
+
+        var placeholder = this.querySelector('.drop-placeholder');
+        var columnId = this.getAttribute('data-column');
+        card.column = columnId;
+
+        if (placeholder && placeholder.parentNode) {
+          placeholder.parentNode.removeChild(placeholder);
+        }
+
+        renderBoard();
+      });
+    });
+  }
+
+  function getDragAfterElement(container, y) {
+    var elements = Array.from(container.querySelectorAll('.card:not(.dragging)'));
+    return elements.reduce(function(closest, child) {
+      var box = child.getBoundingClientRect();
+      var offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      }
+      return closest;
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+  }
+
+  function addCardToColumn(columnId) {
+    var col = COLUMNS.find(function(c) { return c.id === columnId; });
+    if (!col) return;
+    var maxNum = 0;
+    CARDS.forEach(function(c) {
+      var num = parseInt(c.id.replace('KAN-', ''), 10);
+      if (num > maxNum) maxNum = num;
+    });
+    var newId = 'KAN-' + (maxNum + 1);
+    CARDS.push({
+      id: newId,
+      title: 'New task',
+      desc: '',
+      column: columnId,
+      tags: [],
+      assignee: '?'
+    });
+    renderBoard();
+  }
+
+  function addNewColumn() {
+    var names = ['Blocked', 'Cancelled', 'On Hold', 'Sprint Review', 'Shipped'];
+    var used = COLUMNS.map(function(c) { return c.title; });
+    var available = names.filter(function(n) { return used.indexOf(n) === -1; });
+    if (available.length === 0) return;
+    var name = available[0];
+    COLUMNS.push({
+      id: name.toLowerCase().replace(/\s+/g, '-'),
+      title: name,
+      dotClass: name.toLowerCase().replace(/\s+/g, '-')
+    });
+    renderBoard();
+  }
+
+  renderBoard();
+})();
+</script>
+</body>
+</html>

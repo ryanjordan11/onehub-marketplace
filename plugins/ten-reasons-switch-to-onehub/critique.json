@@ -1,0 +1,11 @@
+{
+  "kind": "critique-panel",
+  "score": 4,
+  "axes": {
+    "clarity": { "score": 5, "notes": "The supplied ten reasons are represented directly across the deck." },
+    "hierarchy": { "score": 4, "notes": "The existing story rhythm is preserved while adapting the headline density." },
+    "typography": { "score": 4, "notes": "The closing copy was set in two lines to preserve legibility at the fixed slide size." },
+    "motion": { "score": 4, "notes": "Existing staged reveal and bar animations remain intact." },
+    "brand": { "score": 5, "notes": "All fluorescent orange accents were replaced with a purple-to-blue electric gradient system." }
+  }
+}

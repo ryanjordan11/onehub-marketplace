@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "fileName": "index.html",
+  "entries": [
+    {
+      "id": "eb2949e3-72c5-4a1e-9803-314d7640df7b",
+      "fileName": "index.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1784813410557,
+      "source": "ai",
+      "prompt": "Change all the copy to add instead of fluorescent orange there use a different fluorescent color. You can pick make it purple gradient to blue gradient.   # 10 Reasons People Switch to OneHub\n\n### 1. One Workspace\n\nStop jumping between dozens of apps.\n\n### 2. One Memory\n\nYour AI remembers your projects, brand, and previous work.\n\n### 3. One Command\n\nDescribe the outcome—not every step.\n\n### 4. One Team of AI\n\nUse specialized AI agents for writing, coding, design, research, marketing, and automation.\n\n### 5. One Content Engine\n\nCreate videos, images, websites, social posts, presentations, emails, and documents from the same project.\n\n### 6. One Automation Hub\n\nConnect your tools and let OneHub handle repetitive tasks automatically.\n\n### 7. One Research Assistant\n\nAnalyze competitors, trends, products, customers, and markets in minutes.\n\n### 8. One Creative Studio\n\nGenerate graphics, thumbnails, mockups, logos, videos, and marketing assets without switching software.\n\n### 9. One Place to Build\n\nFrom a simple idea to a finished business, everything stays in the same workspace.\n\n### 10. One Platform That Grows With You\n\nWhether you're a creator, entrepreneur, freelancer, agency, or business owner, OneHub adapts to how you work—not the other way around.",
+      "size": 30415,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-eb2949e3-72c5-4a1e-9803-314d7640df7b.html",
+      "promptSource": "message"
+    }
+  ]
+}

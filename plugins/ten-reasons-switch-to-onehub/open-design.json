@@ -1,0 +1,17 @@
+{
+  "$schema": "https://open-design.ai/schemas/plugin.v1.json",
+  "specVersion": "1.0.0",
+  "name": "onehub-ten-reasons-switch-to-onehub",
+  "title": "10 Reasons People Switch to OneHub",
+  "version": "1.0.0",
+  "description": "Interactive OneHub slide deck explaining why people switch to OneHub.",
+  "license": "MIT",
+  "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+  "od": {
+    "kind": "skill", "taskKind": "new-generation", "mode": "slides", "surface": "slides",
+    "preview": { "type": "html", "entry": "index.html", "motion": "static" },
+    "useCase": { "query": { "en": "Use this OneHub slide deck as the starting point for a presentation on why people switch to OneHub." }, "exampleOutputs": [{ "path": "index.html", "title": "10 Reasons People Switch to OneHub" }] },
+    "context": { "assets": ["./index.html"] },
+    "capabilities": ["prompt:inject", "fs:read", "fs:write"]
+  }
+}

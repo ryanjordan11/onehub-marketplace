@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "fileName": "index.html",
+  "entries": [
+    {
+      "id": "d511a824-e0b7-47c8-99ad-793c574d7332",
+      "fileName": "index.html",
+      "version": 1,
+      "label": "Version 1",
+      "createdAt": 1784812790709,
+      "source": "ai",
+      "prompt": "change all copy to \n\n\n\nEveryone thinks AI is about writing better prompts.\n\nIt's not.\n\nThe biggest advantage is building systems that replace hours of work with one request.\n\nHere are 10 ways I use OneHub every day:\n\n• Build websites and full-stack apps\n• Create YouTube channels that run themselves\n• Generate images, videos, and 3D content\n• Connect all my AI models in one place\n• Automate repetitive business tasks\n• Manage every project from one workspace\n• Connect Gmail, Google Drive, GitHub, social media, and more\n• Research, plan, and execute with AI agents\n• Store memory so AI never starts from scratch\n• Replace a stack of expensive monthly AI tools\n\nThe goal isn't to use more AI.\n\nIt's to do more while doing less.\n\nWhat's one thing you'd automate first?\n:::",
+      "size": 44874,
+      "mime": "text/html; charset=utf-8",
+      "kind": "html",
+      "contentPath": "0001-d511a824-e0b7-47c8-99ad-793c574d7332.html",
+      "promptSource": "message"
+    }
+  ]
+}

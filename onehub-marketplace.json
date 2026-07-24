@@ -119,6 +119,39 @@
       "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
       "tags": ["social", "content", "calendar", "interactive"],
       "description": "Interactive social-media content calendar."
+    },
+    {
+      "name": "onehub/ten-reasons-switch-to-onehub",
+      "title": "10 Reasons People Switch to OneHub",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ten-reasons-switch-to-onehub",
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+      "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "creator", "interactive"],
+      "description": "Interactive OneHub slide deck explaining why people switch to OneHub."
+    },
+    {
+      "name": "onehub/ten-thousand-youtube-channel",
+      "title": "Build a $10,000/Month YouTube Channel with OneHub",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ten-thousand-youtube-channel",
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+      "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "youtube", "creator", "interactive"],
+      "description": "Interactive OneHub slide deck for building a $10,000/month YouTube channel."
+    },
+    {
+      "name": "onehub/ai-isnt-better-prompts",
+      "title": "Everyone thinks AI is about writing better prompts.",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ai-isnt-better-prompts",
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+      "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "ai", "prompts", "interactive"],
+      "description": "Interactive OneHub slide deck about moving beyond better prompts."
     }
   ]
 }

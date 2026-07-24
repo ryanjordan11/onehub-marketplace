@@ -1,0 +1,11 @@
+{
+  "kind": "critique-panel",
+  "score": 4,
+  "axes": {
+    "clarity": { "score": 5, "notes": "All ten user-supplied steps are represented in sequence." },
+    "hierarchy": { "score": 4, "notes": "Existing editorial slide hierarchy continues to differentiate statements, lists, and final CTA." },
+    "typography": { "score": 4, "notes": "Longer supplied copy is split across existing display, body, and ledger layouts to preserve readable line lengths." },
+    "motion": { "score": 4, "notes": "Existing staggered, reduced-motion-safe entrance treatment is unchanged." },
+    "brand": { "score": 4, "notes": "Existing warm editorial system remains intact while all product copy is now OneHub-focused." }
+  }
+}

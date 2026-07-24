@@ -11,7 +11,7 @@
   "tags": ["slides", "onehub", "creator", "strategy", "content-system"],
   "od": {
     "kind": "scenario", "taskKind": "new-generation", "mode": "slides", "scenario": "slides", "surface": "slides",
-    "preview": { "type": "image", "poster": "./preview.png" },
+    "preview": { "type": "image", "poster": "https://raw.githubusercontent.com/ryanjordan11/onehub-marketplace/main/plugins/if-i-lost-everything/preview.png" },
     "useCase": { "query": { "en": "Use the If I Lost Everything OneHub deck as the starting point. Adapt its ten-slide creator-system narrative to my business, audience, and offer while preserving the high-contrast black, paper, and neon-yellow visual direction." } },
     "context": { "assets": ["./index.html"] },
     "capabilities": ["prompt:inject"],

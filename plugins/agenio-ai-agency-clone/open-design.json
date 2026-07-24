@@ -1,0 +1,17 @@
+{
+  "$schema": "https://open-design.ai/schemas/plugin.v1.json",
+  "specVersion": "1.0.0",
+  "name": "onehub-agenio-ai-agency-clone",
+  "title": "Agenio AI-Agency Clone",
+  "version": "1.0.0",
+  "description": "Interactive AI-agency marketing site with the original local image assets.",
+  "license": "MIT",
+  "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+  "od": {
+    "kind": "skill", "taskKind": "new-generation", "mode": "prototype", "surface": "web",
+    "preview": { "type": "html", "entry": "index.html", "motion": "scroll" },
+    "useCase": { "query": { "en": "Use the Agenio AI-Agency Clone as the starting point for my agency website." }, "exampleOutputs": [{ "path": "index.html", "title": "Agenio AI-Agency Clone" }] },
+    "context": { "assets": ["./index.html", "./assets"] },
+    "capabilities": ["prompt:inject", "fs:read", "fs:write"]
+  }
+}

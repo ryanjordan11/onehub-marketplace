@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook AI Content Calendar — Jul 24–30, 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #ffffff;
+    --surface: #f5f5f5;
+    --fg: #000000;
+    --muted: #8c8c8c;
+    --border: #dbdbdb;
+    --accent: #4479f5;
+    --accent-secondary: #3363db;
+    --font-display: 'Poppins', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --radius: 8px;
+    --border-w: 1px;
+    --grid: 8px;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .app-header {
+    background: var(--bg);
+    border-bottom: var(--border-w) solid var(--border);
+    padding: calc(var(--grid) * 3) calc(var(--grid) * 4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(var(--grid) * 2);
+    flex-wrap: wrap;
+  }
+
+  .header-left { display: flex; align-items: center; gap: calc(var(--grid) * 2); }
+
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: var(--radius);
+    display: grid; place-items: center;
+    color: #fff; font-weight: 700; font-size: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .header-title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .header-subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+  }
+
+  .header-actions { display: flex; gap: calc(var(--grid)); align-items: center; flex-wrap: wrap; }
+
+  .btn {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: calc(var(--grid)) calc(var(--grid) * 2);
+    border-radius: var(--radius);
+    border: var(--border-w) solid var(--border);
+    background: var(--bg);
+    color: var(--fg);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn:hover { border-color: var(--fg); }
+  .btn-primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent-secondary); border-color: var(--accent-secondary); }
+  .btn-sm { padding: 6px 12px; font-size: 12px; }
+
+  .stats-bar {
+    max-width: 1400px;
+    margin: calc(var(--grid) * 3) auto calc(var(--grid) * 2);
+    padding: 0 calc(var(--grid) * 4);
+    display: flex;
+    gap: calc(var(--grid) * 2);
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    background: var(--surface);
+    border: var(--border-w) solid var(--border);
+    border-radius: var(--radius);
+    padding: calc(var(--grid) * 2) calc(var(--grid) * 3);
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+  }
+
+  .stat-value.accent { color: var(--accent); }
+
+  .calendar-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 calc(var(--grid) * 4) calc(var(--grid) * 6);
+    overflow-x: auto;
+  }
+
+  .calendar-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: var(--border-w) solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    min-width: 900px;
+  }
+
+  .calendar-table thead th {
+    background: var(--surface);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    padding: calc(var(--grid) * 2) calc(var(--grid) * 2);
+    text-align: left;
+    border-bottom: var(--border-w) solid var(--border);
+    position: sticky;
+    top: 85px;
+    z-index: 50;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  .calendar-table thead th:hover { color: var(--fg); }
+  .calendar-table thead th.sorted { color: var(--accent); }
+
+  .calendar-table tbody tr { transition: background 0.1s; }
+  .calendar-table tbody tr:hover { background: var(--surface); }
+
+  .calendar-table td {
+    padding: calc(var(--grid) * 1.5) calc(var(--grid) * 2);
+    border-bottom: var(--border-w) solid var(--border);
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .calendar-table td:last-child { border-right: none; }
+  .calendar-table tr:last-child td { border-bottom: none; }
+
+  .day-cell {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--fg);
+    white-space: nowrap;
+  }
+
+  .day-date {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .time-cell {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .content-cell { min-width: 200px; }
+
+  .content-type {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+
+  .type-hook { background: #e8f0fe; color: #1a56db; }
+  .type-carousel { background: #fef3c7; color: #92400e; }
+  .type-reel { background: #fce7f3; color: #9d174d; }
+  .type-poll { background: #d1fae5; color: #065f46; }
+  .type-live { background: #fee2e2; color: #991b1b; }
+  .type-community { background: #e0e7ff; color: #3730a3; }
+  .type-story { background: #f3e8ff; color: #6b21a8; }
+  .type-thread { background: #fff7ed; color: #9a3412; }
+
+  .content-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 4px;
+    cursor: text;
+    min-height: 20px;
+    outline: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+    padding: 2px 4px;
+    margin: -2px -4px;
+  }
+  .content-title:hover { background: var(--surface); }
+  .content-title:focus { background: #e8f0fe; box-shadow: 0 0 0 2px var(--accent); }
+
+  .content-hook {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.3;
+    cursor: text;
+    min-height: 18px;
+    outline: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+    padding: 2px 4px;
+    margin: -2px -4px;
+  }
+  .content-hook:hover { background: var(--surface); }
+  .content-hook:focus { background: #e8f0fe; box-shadow: 0 0 0 2px var(--accent); }
+
+  .status-cell { min-width: 100px; }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: var(--border-w) solid transparent;
+    user-select: none;
+  }
+
+  .status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .status-draft { background: var(--surface); color: var(--muted); border-color: var(--border); }
+  .status-draft .status-dot { background: var(--muted); }
+  .status-scheduled { background: #e8f0fe; color: #1a56db; }
+  .status-scheduled .status-dot { background: #1a56db; }
+  .status-posted { background: #d1fae5; color: #065f46; }
+  .status-posted .status-dot { background: #065f46; }
+  .status-archived { background: var(--surface); color: var(--muted); opacity: 0.6; }
+
+  .status-badge:hover { transform: scale(1.04); }
+
+  .category-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--surface);
+    color: var(--muted);
+    border: var(--border-w) solid var(--border);
+  }
+
+  .notes-cell {
+    font-size: 13px;
+    color: var(--muted);
+    cursor: text;
+    min-height: 20px;
+    outline: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+    padding: 2px 4px;
+    margin: -2px -4px;
+    max-width: 180px;
+    line-height: 1.4;
+  }
+  .notes-cell:hover { background: var(--surface); }
+  .notes-cell:focus { background: #e8f0fe; box-shadow: 0 0 0 2px var(--accent); color: var(--fg); }
+
+  .add-row-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: calc(var(--grid) * 1.5);
+    background: var(--surface);
+    border: var(--border-w) dashed var(--border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    border-top: none;
+  }
+  .add-row-btn:hover { background: #e8f0fe; color: var(--accent); border-color: var(--accent); }
+
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--fg);
+    color: var(--bg);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    z-index: 200;
+    opacity: 0;
+    transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .filter-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 calc(var(--grid) * 4) calc(var(--grid) * 2);
+    display: flex;
+    gap: calc(var(--grid));
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .filter-chip {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: var(--border-w) solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+    letter-spacing: 0.01em;
+  }
+  .filter-chip:hover { border-color: var(--fg); color: var(--fg); }
+  .filter-chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .export-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: var(--bg);
+    border: var(--border-w) solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    padding: 4px;
+    z-index: 150;
+    min-width: 180px;
+    display: none;
+  }
+  .export-menu.open { display: block; }
+
+  .export-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 13px;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    color: var(--fg);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.1s;
+  }
+  .export-option:hover { background: var(--surface); }
+
+  .week-nav {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--grid));
+  }
+
+  .week-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--fg);
+    min-width: 160px;
+    text-align: center;
+  }
+
+  .delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px; height: 20px;
+    border: none;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.15s;
+    line-height: 1;
+  }
+  .calendar-table tbody tr:hover .delete-btn { opacity: 1; }
+  .delete-btn:hover { background: #fee2e2; color: #991b1b; }
+
+  @media (max-width: 768px) {
+    .app-header { padding: calc(var(--grid) * 2); }
+    .header-inner { flex-direction: column; align-items: flex-start; }
+    .stats-bar { padding: 0 calc(var(--grid) * 2); }
+    .calendar-wrap { padding: 0 calc(var(--grid) * 2) calc(var(--grid) * 4); }
+    .filter-bar { padding: 0 calc(var(--grid) * 2) calc(var(--grid) * 2); }
+    .stat-card { min-width: 120px; }
+  }
+
+  @media print {
+    .header-actions, .filter-bar, .add-row-btn, .delete-btn, .toast, .export-menu { display: none !important; }
+    .app-header { position: static; }
+    .calendar-table thead th { position: static; }
+    body { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header" data-od-id="app-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <div class="logo-mark" data-od-id="logo">O</div>
+      <div>
+        <div class="header-title" data-od-id="header-title">Facebook AI Content Calendar</div>
+        <div class="header-subtitle" data-od-id="header-subtitle">Jul 24 – 30, 2026 · Engagement &amp; Community</div>
+      </div>
+    </div>
+    <div class="header-actions" data-od-id="header-actions">
+      <div class="week-nav">
+        <button class="btn btn-sm" onclick="changeWeek(-1)" data-od-id="prev-week">← Prev</button>
+        <span class="week-label" id="weekLabel">Jul 24 – 30, 2026</span>
+        <button class="btn btn-sm" onclick="changeWeek(1)" data-od-id="next-week">Next →</button>
+      </div>
+      <div style="position:relative">
+        <button class="btn btn-sm" onclick="toggleExportMenu()" data-od-id="export-btn">Export ↓</button>
+        <div class="export-menu" id="exportMenu" data-od-id="export-menu">
+          <button class="export-option" onclick="exportCSV()">Export as CSV</button>
+          <button class="export-option" onclick="exportJSON()">Export as JSON</button>
+          <button class="export-option" onclick="copyToClipboard()">Copy to clipboard</button>
+          <button class="export-option" onclick="window.print()">Print</button>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="addNewRow()" data-od-id="add-post-btn">+ Add Post</button>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar" data-od-id="stats-bar">
+  <div class="stat-card" data-od-id="stat-total">
+    <div class="stat-label">Total Posts</div>
+    <div class="stat-value" id="statTotal">14</div>
+  </div>
+  <div class="stat-card" data-od-id="stat-scheduled">
+    <div class="stat-label">Scheduled</div>
+    <div class="stat-value accent" id="statScheduled">6</div>
+  </div>
+  <div class="stat-card" data-od-id="stat-draft">
+    <div class="stat-label">Drafts</div>
+    <div class="stat-value" id="statDraft">5</div>
+  </div>
+  <div class="stat-card" data-od-id="stat-posted">
+    <div class="stat-label">Posted</div>
+    <div class="stat-value" id="statPosted">3</div>
+  </div>
+  <div class="stat-card" data-od-id="stat-engagement">
+    <div class="stat-label">Est. Reach</div>
+    <div class="stat-value" id="statReach">8.4K</div>
+  </div>
+</div>
+
+<div class="filter-bar" data-od-id="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="filter-chip active" onclick="filterType('all', this)" data-od-id="filter-all">All</button>
+  <button class="filter-chip" onclick="filterType('hook', this)" data-od-id="filter-hook">Hooks</button>
+  <button class="filter-chip" onclick="filterType('carousel', this)" data-od-id="filter-carousel">Carousels</button>
+  <button class="filter-chip" onclick="filterType('reel', this)" data-od-id="filter-reel">Reels</button>
+  <button class="filter-chip" onclick="filterType('poll', this)" data-od-id="filter-poll">Polls</button>
+  <button class="filter-chip" onclick="filterType('live', this)" data-od-id="filter-live">Live</button>
+  <button class="filter-chip" onclick="filterType('community', this)" data-od-id="filter-community">Community</button>
+  <button class="filter-chip" onclick="filterType('story', this)" data-od-id="filter-story">Stories</button>
+  <button class="filter-chip" onclick="filterType('thread', this)" data-od-id="filter-thread">Threads</button>
+</div>
+
+<div class="calendar-wrap" data-od-id="calendar-wrap">
+  <table class="calendar-table" data-od-id="calendar-table">
+    <thead>
+      <tr>
+        <th style="width:110px" onclick="sortTable(0)" data-od-id="th-day">Day</th>
+        <th style="width:80px" onclick="sortTable(1)" data-od-id="th-time">Time</th>
+        <th onclick="sortTable(2)" data-od-id="th-type">Type</th>
+        <th onclick="sortTable(3)" data-od-id="th-content">Content</th>
+        <th style="width:110px" onclick="sortTable(4)" data-od-id="th-status">Status</th>
+        <th onclick="sortTable(5)" data-od-id="th-notes">Notes / CTA</th>
+      </tr>
+    </thead>
+    <tbody id="calendarBody"></tbody>
+  </table>
+  <button class="add-row-btn" onclick="addNewRow()" data-od-id="add-row-bottom">+ Add another post</button>
+</div>
+
+<div class="toast" id="toast" data-od-id="toast"></div>
+
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  weekOffset: 0,
+  filter: 'all',
+  sortCol: -1,
+  sortAsc: true
+}/*EDITMODE-END*/;
+
+const defaultData = [
+  { day: 'Fri', date: 'Jul 24', type: 'hook', title: 'Why 90% of AI startups will fail in 2026 (and the 10% that won\'t)', hook: 'BREAKING: The AI gold rush just hit its first real filter — and most founders don\'t see it coming.', status: 'posted', notes: 'Pin to top · Ask "What\'s your take?"' },
+  { day: 'Fri', date: 'Jul 24', type: 'story', title: 'Behind the scenes: How our AI pipeline actually works', hook: 'I don\'t understand why everybody isn\'t automating their content like this.', status: 'posted', notes: 'Use screen recordings' },
+  { day: 'Sat', date: 'Jul 25', type: 'poll', title: 'Which AI tool changed your workflow the most this month?', hook: 'No way — the results are going to surprise you.', status: 'scheduled', notes: 'Options: ChatGPT · Claude · Gemini · Midjourney · Other' },
+  { day: 'Sat', date: 'Jul 25', type: 'community', title: 'Drop your best AI prompt below — let\'s build the ultimate prompt library', hook: 'I can\'t believe this prompt library doesn\'t exist yet.', status: 'draft', notes: 'Comment pin top 3 replies' },
+  { day: 'Sun', date: 'Jul 26', type: 'carousel', title: '7 AI tools that actually save you 10+ hours a week (real screenshots)', hook: 'Oh my God this is insane — I tested every AI tool so you don\'t have to.', status: 'scheduled', notes: '7 slides · 4:5 ratio · Save-optimized' },
+  { day: 'Sun', date: 'Jul 26', type: 'story', title: 'Quick poll: AI or human for your next project?', hook: 'R.I.P. the old way of doing things.', status: 'draft', notes: 'Use interactive story sticker' },
+  { day: 'Mon', date: 'Jul 27', type: 'hook', title: 'The AI tool nobody\'s talking about (but everyone will be using by August)', hook: 'WTF — this tool just dropped and it\'s already replacing 3 paid subscriptions.', status: 'scheduled', notes: 'Tease tool name · Reveal in comments' },
+  { day: 'Mon', date: 'Jul 27', type: 'thread', title: 'Monday breakdown: What happened in AI last week (5 things you missed)', hook: 'I don\'t understand why everyone\'s using ChatGPT when Claude just did THIS.', status: 'draft', notes: '5-post thread · Link each to source' },
+  { day: 'Tue', date: 'Jul 28', type: 'reel', title: '60-second demo: Automate your entire content pipeline with AI', hook: 'No way — this 60-second setup replaced my entire content team.', status: 'scheduled', notes: 'Vertical 9:16 · Trending audio' },
+  { day: 'Tue', date: 'Jul 28', type: 'community', title: 'What\'s the one thing you wish AI could do for your business?', hook: 'I don\'t understand why everybody isn\'t building AI agents yet.', status: 'draft', notes: 'Engage every comment with follow-up' },
+  { day: 'Wed', date: 'Jul 29', type: 'live', title: 'LIVE: Building an AI content system from scratch (watch me do it)', hook: 'BREAKING: Going live in 1 hour — building something that shouldn\'t be possible.', status: 'scheduled', notes: '45 min · Screen share + Q&A' },
+  { day: 'Wed', date: 'Jul 29', type: 'carousel', title: 'AI vs Traditional: Side-by-side content creation comparison', hook: 'Oh my God this is insane — the speed difference is not even close.', status: 'draft', notes: 'Before/after format · Real metrics only' },
+  { day: 'Thu', date: 'Jul 30', type: 'hook', title: 'The AI content strategy that\'s quietly dominating Facebook in 2026', hook: 'I can\'t believe this strategy is free — it\'s outperforming $5K/mo agencies.', status: 'posted', notes: 'Link to full breakdown in comments' },
+  { day: 'Thu', date: 'Jul 30', type: 'reel', title: 'POV: You just automated your entire social media calendar', hook: 'R.I.P. to manual posting — this changed everything.', status: 'draft', notes: 'Trending POV format · Screen recording' }
+];
+
+let calendarData = JSON.parse(JSON.stringify(defaultData));
+let currentFilter = 'all';
+
+function renderCalendar() {
+  const tbody = document.getElementById('calendarBody');
+  tbody.innerHTML = '';
+  const filtered = currentFilter === 'all' ? calendarData : calendarData.filter(r => r.type === currentFilter);
+
+  filtered.forEach((row, i) => {
+    const realIndex = calendarData.indexOf(row);
+    const tr = document.createElement('tr');
+    tr.dataset.type = row.type;
+    tr.dataset.index = realIndex;
+
+    const typeClass = 'type-' + row.type;
+    const typeLabels = { hook: 'Hook Post', carousel: 'Carousel', reel: 'Reel', poll: 'Poll', live: 'Live', community: 'Community', story: 'Story', thread: 'Thread' };
+
+    const statusClasses = { draft: 'status-draft', scheduled: 'status-scheduled', posted: 'status-posted' };
+    const statusLabels = { draft: 'Draft', scheduled: 'Scheduled', posted: 'Posted' };
+
+    const tags = [];
+    if (row.type === 'carousel' || row.type === 'reel') tags.push('Visual');
+    if (row.type === 'poll' || row.type === 'community') tags.push('Engagement');
+    if (row.type === 'hook' || row.type === 'thread') tags.push('Thought Leadership');
+    if (row.type === 'live') tags.push('Real-time');
+    if (row.type === 'story') tags.push('Ephemeral');
+
+    tr.innerHTML = `
+      <td>
+        <button class="delete-btn" onclick="deleteRow(${realIndex})" title="Remove">×</button>
+        <div class="day-cell">${row.day} <span class="day-date">${row.date}</span></div>
+      </td>
+      <td><span class="time-cell">${row.time || '—'}</span></td>
+      <td><span class="content-type ${typeClass}">${typeLabels[row.type] || row.type}</span></td>
+      <td class="content-cell">
+        <div class="content-hook" contenteditable="true" data-field="hook" data-idx="${realIndex}">${row.hook}</div>
+        <div class="content-title" contenteditable="true" data-field="title" data-idx="${realIndex}">${row.title}</div>
+        <div class="category-tags">${tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      </td>
+      <td class="status-cell">
+        <span class="status-badge ${statusClasses[row.status]}" onclick="cycleStatus(${realIndex})" data-od-id="status-${realIndex}">
+          <span class="status-dot"></span>${statusLabels[row.status]}
+        </span>
+      </td>
+      <td><div class="notes-cell" contenteditable="true" data-field="notes" data-idx="${realIndex}">${row.notes || ''}</div></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  document.querySelectorAll('[contenteditable]').forEach(el => {
+    el.addEventListener('blur', handleEdit);
+    el.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); el.blur(); } });
+  });
+
+  updateStats();
+  saveData();
+}
+
+function handleEdit(e) {
+  const idx = parseInt(e.target.dataset.idx);
+  const field = e.target.dataset.field;
+  if (idx >= 0 && field) {
+    calendarData[idx][field] = e.target.textContent.trim();
+    saveData();
+  }
+}
+
+function cycleStatus(idx) {
+  const order = ['draft', 'scheduled', 'posted'];
+  const current = order.indexOf(calendarData[idx].status);
+  calendarData[idx].status = order[(current + 1) % order.length];
+  renderCalendar();
+  showToast('Status updated → ' + calendarData[idx].status.charAt(0).toUpperCase() + calendarData[idx].status.slice(1));
+}
+
+function deleteRow(idx) {
+  calendarData.splice(idx, 1);
+  renderCalendar();
+  showToast('Post removed');
+}
+
+function addNewRow() {
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  calendarData.push({
+    day: days[calendarData.length % 7],
+    date: 'Jul —',
+    type: 'hook',
+    title: 'New post idea',
+    hook: 'Your scroll-stopping hook goes here...',
+    status: 'draft',
+    notes: '',
+    time: ''
+  });
+  renderCalendar();
+  showToast('New post added');
+  const tbody = document.getElementById('calendarBody');
+  tbody.lastElementChild?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function updateStats() {
+  const total = calendarData.length;
+  const scheduled = calendarData.filter(r => r.status === 'scheduled').length;
+  const draft = calendarData.filter(r => r.status === 'draft').length;
+  const posted = calendarData.filter(r => r.status === 'posted').length;
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statScheduled').textContent = scheduled;
+  document.getElementById('statDraft').textContent = draft;
+  document.getElementById('statPosted').textContent = posted;
+  document.getElementById('statReach').textContent = (total * 600).toLocaleString();
+}
+
+function filterType(type, el) {
+  currentFilter = type;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  renderCalendar();
+}
+
+function sortTable(colIdx) {
+  const ths = document.querySelectorAll('.calendar-table thead th');
+  if (TWEAK_DEFAULTS.sortCol === colIdx) {
+    TWEAK_DEFAULTS.sortAsc = !TWEAK_DEFAULTS.sortAsc;
+  } else {
+    TWEAK_DEFAULTS.sortCol = colIdx;
+    TWEAK_DEFAULTS.sortAsc = true;
+  }
+  ths.forEach((th, i) => th.classList.toggle('sorted', i === colIdx));
+
+  const fields = ['day', 'time', 'type', 'title', 'status', 'notes'];
+  const field = fields[colIdx];
+  calendarData.sort((a, b) => {
+    const av = (a[field] || '').toLowerCase();
+    const bv = (b[field] || '').toLowerCase();
+    return TWEAK_DEFAULTS.sortAsc ? av.localeCompare(bv) : bv.localeCompare(av);
+  });
+  renderCalendar();
+}
+
+function toggleExportMenu() {
+  document.getElementById('exportMenu').classList.toggle('open');
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('[data-od-id="export-btn"]') && !e.target.closest('[data-od-id="export-menu"]')) {
+    document.getElementById('exportMenu').classList.remove('open');
+  }
+});
+
+function exportCSV() {
+  const headers = ['Day', 'Date', 'Time', 'Type', 'Hook', 'Title', 'Status', 'Notes'];
+  const rows = calendarData.map(r => [r.day, r.date, r.time || '', r.type, `"${r.hook}"`, `"${r.title}"`, r.status, `"${r.notes || ''}"`]);
+  const csv = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+  downloadFile(csv, 'content-calendar.csv', 'text/csv');
+  showToast('CSV exported');
+  document.getElementById('exportMenu').classList.remove('open');
+}
+
+function exportJSON() {
+  const json = JSON.stringify(calendarData, null, 2);
+  downloadFile(json, 'content-calendar.json', 'application/json');
+  showToast('JSON exported');
+  document.getElementById('exportMenu').classList.remove('open');
+}
+
+function copyToClipboard() {
+  const text = calendarData.map(r => `${r.day} ${r.date} | ${r.type.toUpperCase()} | ${r.title}\nHook: ${r.hook}\nStatus: ${r.status} | ${r.notes || ''}\n`).join('\n');
+  navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard'));
+  document.getElementById('exportMenu').classList.remove('open');
+}
+
+function downloadFile(content, filename, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function changeWeek(dir) {
+  TWEAK_DEFAULTS.weekOffset += dir;
+  showToast(dir > 0 ? 'Next week →' : '← Previous week');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function saveData() {
+  try { localStorage.setItem('fb-content-calendar', JSON.stringify(calendarData)); } catch(e) {}
+}
+
+function loadData() {
+  try {
+    const saved = localStorage.getItem('fb-content-calendar');
+    if (saved) calendarData = JSON.parse(saved);
+  } catch(e) {}
+}
+
+loadData();
+renderCalendar();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://open-design.ai/schemas/plugin.v1.json",
+  "specVersion": "1.0.0",
+  "name": "onehub-animated-globe-and-cube",
+  "title": "Animated globe and cube landing",
+  "version": "1.0.0",
+  "description": "Interactive Three.js landing with a spinning globe, neon Rubik cube, scroll motion, and live pointer response.",
+  "license": "MIT",
+  "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
+  "od": {
+    "kind": "skill", "taskKind": "new-generation", "mode": "prototype", "surface": "web",
+    "preview": { "type": "html", "entry": "index.html", "motion": "scroll" },
+    "useCase": { "query": { "en": "Use this interactive animated globe and cube landing as the starting point for my website." }, "exampleOutputs": [{ "path": "index.html", "title": "Animated globe and cube landing" }] },
+    "context": { "assets": ["./index.html", "./scenes.html", "./galaxy-nebula.html", "./spiral-wavelength.html"] },
+    "capabilities": ["prompt:inject", "fs:read", "fs:write"]
+  }
+}

@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OneHub · Brand & Autonomous Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* surfaces */
+      --bg:      #f5f6fa;   /* light paper (light slides) */
+      --surface: #ffffff;   /* light cards */
+      --fg:      #000000;   /* true black (dark slides) */
+      --panel:   #0c0e15;   /* dark panels on dark slides */
+      --muted:   #5b6472;   /* text on light */
+      --border:  #e3e6ef;   /* light border */
+
+      /* accent */
+      --accent:      #18d7f0;   /* bright neon cyan (dark slides) */
+      --accent-deep: #00829b;   /* deep teal (legible on light) */
+      --accent-2:    #ff2a6d;   /* magenta — brand gradient only */
+
+      /* brand gradient stops (from the OneHub asset sheet) */
+      --grad-cyan:    #00f0ff;
+      --grad-magenta: #ff2a6d;
+      --grad-violet:  #9d00ff;
+      --grad-amber:   #ff9900;
+      --grad-lime:    #00ff9d;
+      --grad-blue:    #2b7bff;
+
+      /* terminal */
+      --term-bg: #05060a;
+      --term-fg: #c7d0e0;
+      --term-ok: #38e08a;
+
+      --accent-soft: color-mix(in oklch, var(--accent) 14%, transparent);
+
+      --font-display: 'Space Grotesk', 'Poppins', system-ui, sans-serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+      --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+    body::-webkit-scrollbar { display: none; }
+    p { text-wrap: pretty; }
+    h1, h2, h3 { text-wrap: balance; }
+
+    /* ─── slide surface ─────────────────────────────────────────────── */
+    .slide {
+      flex: 0 0 100vw;
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+      padding: clamp(48px, 7vw, 96px) clamp(48px, 8vw, 112px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide.light { background: var(--bg); color: var(--fg); }
+    .slide.dark  { background: var(--fg); color: #f4f5fa; }
+    .slide.dark .muted    { color: rgba(244,245,250,0.72); }
+    .slide.dark .border   { border-color: rgba(244,245,250,0.16); }
+    .slide.hero { padding-block: clamp(64px, 9vw, 128px); }
+
+    .slide.dark::before {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background: radial-gradient(110% 70% at 85% -5%, color-mix(in oklch, var(--accent) 11%, transparent), transparent 55%);
+      z-index: 0;
+    }
+    .slide.hero.dark::before {
+      background:
+        radial-gradient(120% 80% at 78% -10%, color-mix(in oklch, var(--accent) 16%, transparent), transparent 55%),
+        radial-gradient(90% 70% at 12% 115%, color-mix(in oklch, var(--accent-2) 9%, transparent), transparent 55%);
+    }
+    .slide.dark > * { position: relative; z-index: 1; }
+
+    /* center alignment variant */
+    .slide.center { align-items: center; text-align: center; justify-content: center; }
+    .slide.center .body { margin-inline: auto; }
+
+    /* ─── eyebrow / kicker ──────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 28px;
+    }
+    .slide.light .eyebrow { color: var(--accent-deep); }
+    .slide.dark  .eyebrow {
+      color: var(--accent);
+      text-shadow: 0 0 16px color-mix(in oklch, var(--accent) 55%, transparent);
+    }
+
+    /* ─── type ──────────────────────────────────────────────────────── */
+    .h-hero {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(48px, 7vw, 104px);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin: 0 0 22px;
+      max-width: 17ch;
+    }
+    .h-xl {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(36px, 4.6vw, 60px);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin: 0 0 20px;
+      max-width: 20ch;
+    }
+    .h-md {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+      max-width: 22ch;
+    }
+    .lead {
+      font-size: clamp(20px, 1.6vw, 24px);
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 56ch;
+      margin: 0;
+    }
+    .slide.dark .lead { color: rgba(244,245,250,0.78); }
+    .meta { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+
+    /* ─── big-stat layout ───────────────────────────────────────────── */
+    .stat-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(140px, 22vw, 280px);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+      margin: 0 0 16px;
+    }
+    .slide.dark .stat-num { text-shadow: 0 0 46px color-mix(in oklch, var(--accent) 50%, transparent); }
+    .stat-num .unit { font-size: 0.28em; opacity: 0.85; margin-left: 10px; letter-spacing: 0; font-weight: 500; }
+    .stat-caption {
+      font-size: clamp(20px, 1.7vw, 26px);
+      color: var(--muted);
+      max-width: 30ch;
+      margin: 0;
+    }
+    .slide.dark .stat-caption { color: rgba(244,245,250,0.78); }
+
+    /* ─── big-quote layout ──────────────────────────────────────────── */
+    .quote-mark {
+      font-family: var(--font-display);
+      font-size: clamp(140px, 16vw, 200px);
+      line-height: 0.6;
+      color: var(--accent-deep);
+      opacity: 0.22;
+      margin: 0 0 -32px;
+    }
+    .slide.dark .quote-mark { color: var(--accent); opacity: 0.3; }
+    .quote-text {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      max-width: 28ch;
+      margin: 0 0 28px;
+    }
+    .quote-author { font-size: 14px; color: var(--muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
+
+    /* ─── 3-column point layout ─────────────────────────────────────── */
+    .pt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .pt {
+      border-top: 2px solid var(--accent);
+      padding-top: 16px;
+    }
+    .slide.light .pt { border-top-color: var(--accent-deep); }
+    .pt h3 { font-family: var(--font-display); font-size: 21px; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
+    .pt p  { color: var(--muted); margin: 0; font-size: 16px; line-height: 1.5; }
+    .slide.dark .pt p { color: rgba(244,245,250,0.7); }
+
+    /* ─── pipeline (numbered steps) ─────────────────────────────────── */
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .step .nb { font-family: var(--font-mono); font-size: 13px; color: var(--accent); letter-spacing: 0.06em; }
+    .slide.light .step .nb { color: var(--accent-deep); }
+    .step h3 { font-family: var(--font-display); font-size: 20px; font-weight: 600; margin: 6px 0 6px; line-height: 1.2; }
+    .step p  { color: var(--muted); margin: 0; font-size: 14px; line-height: 1.5; }
+
+    /* ─── before/after ──────────────────────────────────────────────── */
+    .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 32px; }
+    .ba-col .ba-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+    .ba-col h3 { font-family: var(--font-display); font-size: 30px; font-weight: 600; line-height: 1.15; margin: 0 0 16px; max-width: 16ch; }
+    .ba-col p  { color: var(--muted); font-size: 17px; line-height: 1.55; margin: 0; }
+    .slide.dark .ba-col p { color: rgba(244,245,250,0.7); }
+
+    /* ─── brand system (logo sheet) ─────────────────────────────────── */
+    .brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .brand-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 26px;
+      background: var(--surface);
+    }
+    .slide.dark .brand-card { background: var(--panel); border-color: rgba(244,245,250,0.1); }
+    .brand-logo { font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: -0.02em; margin: 0 0 14px; }
+    .brand-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0; }
+    .slide.dark .brand-tag { color: rgba(244,245,250,0.6); }
+    .slide.dark .brand-logo { filter: drop-shadow(0 0 16px rgba(244,245,250,0.14)); }
+
+    /* ─── gradient wordmark utilities ───────────────────────────────── */
+    .grad-cm { background: linear-gradient(100deg, var(--grad-cyan), var(--grad-magenta)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .grad-pa { background: linear-gradient(100deg, var(--grad-violet), var(--grad-amber)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .grad-gb { background: linear-gradient(100deg, var(--grad-lime), var(--grad-blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .slide.hero.dark .grad-cm { filter: drop-shadow(0 0 26px color-mix(in oklch, var(--accent) 45%, transparent)); }
+
+    /* ─── terminal window ───────────────────────────────────────────── */
+    .terminal {
+      background: var(--term-bg);
+      border: 1px solid rgba(244,245,250,0.12);
+      border-radius: 14px;
+      overflow: hidden;
+      max-width: 760px;
+      margin-top: 28px;
+      box-shadow: 0 24px 60px -20px rgba(0,0,0,0.6);
+      font-family: var(--font-mono);
+      text-align: left;
+    }
+    .term-bar { display: flex; gap: 8px; padding: 14px 18px; border-bottom: 1px solid rgba(244,245,250,0.08); }
+    .term-dot { width: 11px; height: 11px; border-radius: 50%; background: rgba(244,245,250,0.18); }
+    .term-body { padding: 22px 24px; font-size: 14.5px; line-height: 2; color: var(--term-fg); white-space: pre-wrap; }
+    .term-prompt { color: var(--accent); }
+    .term-cmd    { color: #ffffff; }
+    .term-arrow  { color: rgba(244,245,250,0.4); }
+    .term-ok     { color: var(--term-ok); }
+
+    /* ─── chrome (counter, hint, progress) — fixed, never scrolls ──── */
+    .deck-counter {
+      position: fixed;
+      bottom: 24px; right: 32px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--fg);
+      background: var(--surface);
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      letter-spacing: 0.04em;
+      z-index: 10;
+    }
+    .deck-hint {
+      position: fixed;
+      bottom: 24px; left: 32px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      z-index: 10;
+    }
+    .deck-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: var(--accent);
+      width: 0;
+      z-index: 10;
+      transition: width 0.18s ease;
+    }
+    .slide.dark ~ .deck-counter { color: #f4f5fa; background: var(--panel); border-color: rgba(244,245,250,0.16); }
+  </style>
+</head>
+<body>
+  <!-- 01 Cover -->
+  <section class="slide hero dark center" data-screen-label="01 Cover" data-od-id="cover-headline"
+    data-speaker-notes="Open with the brand promise. This is a marketing deck for founders and creators — set the tone: neon, confident, one command to ship. Tie the whole story to 'One Hub, every tool, one command.'">
+    <div class="eyebrow">OneHub · Brand &amp; Autonomous Builder</div>
+    <h1 class="h-hero">One hub.<br>Every tool.<br><span class="grad-cm">One command.</span></h1>
+    <p class="lead">ALL YOUR TOOLS. ONE HUB. — the brand, the builder, and the ecosystem that ships itself.</p>
+  </section>
+
+  <!-- 02 What is OneHub -->
+  <section class="slide light" data-screen-label="02 What is OneHub"
+    data-speaker-notes="Frame OneHub as a single ecosystem, not a single app. The pain it removes: stitching ten disconnected tools. The audience is non-technical founders and creators, so keep it about outcomes, not architecture.">
+    <p class="eyebrow">The brand</p>
+    <h2 class="h-xl">A single ecosystem for building.</h2>
+    <p class="lead">OneHub fuses design, creation, and connectivity into one command-driven workspace — so founders and creators ship without stitching ten tools together.</p>
+  </section>
+
+  <!-- 03 One command -->
+  <section class="slide hero dark center" data-screen-label="03 One command"
+    data-speaker-notes="The headline stat of the builder story. One command is the wedge — contrast it with the usual weeks of scaffolding. Let the number breathe; don't crowd the slide.">
+    <div class="stat-num">1<span class="unit">command</span></div>
+    <p class="stat-caption">from a one-line idea to a deployed, production-ready app. The builder handles the rest.</p>
+  </section>
+
+  <!-- 04 The ecosystem -->
+  <section class="slide light" data-screen-label="04 The ecosystem"
+    data-speaker-notes="Introduce the three products from the brand sheet: OneHub core, OneHub Design, OneHub Gateway. Use the real taglines — they are the brand's own voice. Each product is a current of the same gradient identity.">
+    <p class="eyebrow">The ecosystem</p>
+    <h2 class="h-xl">Three products, one hub.</h2>
+    <div class="pt-grid">
+      <div class="pt" data-od-id="product-design">
+        <h3><span class="grad-pa">OneHub Design</span></h3>
+        <p>DESIGN. CREATE. ELEVATE. Plan, prototype, and ship interfaces straight from prompts.</p>
+      </div>
+      <div class="pt" data-od-id="product-core">
+        <h3><span class="grad-cm">OneHub Core</span></h3>
+        <p>ALL YOUR TOOLS. ONE HUB. The autonomous builder that turns ideas into live apps.</p>
+      </div>
+      <div class="pt" data-od-id="product-gateway">
+        <h3><span class="grad-gb">OneHub Gateway</span></h3>
+        <p>CONNECT. ACCESS. EMPOWER. The layer that links your tools, data, and APIs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Autonomous build -->
+  <section class="slide dark" data-screen-label="05 Autonomous build"
+    data-speaker-notes="This is the 'how it works' slide — the eight autonomous passes. These map exactly to the checklist in the reference promo: planning through deployment. Emphasize 'zero hands' — the founder watches, the builder works.">
+    <p class="eyebrow">How it works</p>
+    <h2 class="h-md">Eight passes, zero hands.</h2>
+    <div class="pipeline">
+      <div class="step"><span class="nb">01</span><h3>AI Planning</h3><p>Scopes the app from your prompt.</p></div>
+      <div class="step"><span class="nb">02</span><h3>UI / UX Design</h3><p>Composes the interface.</p></div>
+      <div class="step"><span class="nb">03</span><h3>Frontend Code</h3><p>Builds the client.</p></div>
+      <div class="step"><span class="nb">04</span><h3>Backend API</h3><p>Wires the services.</p></div>
+      <div class="step"><span class="nb">05</span><h3>Database Setup</h3><p>Provisions storage.</p></div>
+      <div class="step"><span class="nb">06</span><h3>Auth &amp; Security</h3><p>Handles sign-in + rules.</p></div>
+      <div class="step"><span class="nb">07</span><h3>Testing</h3><p>Verifies the build.</p></div>
+      <div class="step"><span class="nb">08</span><h3>Deployment</h3><p>Ships it live.</p></div>
+    </div>
+    <p class="lead" style="margin-top:36px;">Watch it plan, build, and deploy — end to end.</p>
+  </section>
+
+  <!-- 06 Quote -->
+  <section class="slide hero light center" data-screen-label="06 Quote"
+    data-speaker-notes="A single punchy founder voice breaks up the product detail. One quote only — make it land. Representative voice of an early builder; keep it short and human.">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">I typed one sentence, grabbed a coffee, and came back to a live app.</p>
+    <p class="quote-author">— Early OneHub builder</p>
+  </section>
+
+  <!-- 07 Brand identity -->
+  <section class="slide dark" data-screen-label="07 Brand identity"
+    data-speaker-notes="Show the brand system: one hexagonal mark, three gradient currents. This mirrors the official logo sheet — cyan→magenta for core, violet→amber for Design, lime→blue for Gateway. The footer line 'ONE ECOSYSTEM. ENDLESS POSSIBILITIES.' closes the identity thought.">
+    <p class="eyebrow">Brand identity</p>
+    <h2 class="h-md">One mark. Three currents.</h2>
+    <div class="brand-grid">
+      <div class="brand-card">
+        <p class="brand-logo grad-cm">OneHub</p>
+        <p class="brand-tag">All your tools. One hub.</p>
+      </div>
+      <div class="brand-card">
+        <p class="brand-logo grad-pa">OneHub Design</p>
+        <p class="brand-tag">Design. Create. Elevate.</p>
+      </div>
+      <div class="brand-card">
+        <p class="brand-logo grad-gb">OneHub Gateway</p>
+        <p class="brand-tag">Connect. Access. Empower.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:36px; font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; font-size: 14px;">One ecosystem. Endless possibilities.</p>
+  </section>
+
+  <!-- 08 Build time -->
+  <section class="slide hero dark center" data-screen-label="08 Build time"
+    data-speaker-notes="Second big stat — the build-time promise from the reference promo (under 6.5 minutes). Frame it as the builder's promise: prompt to production. Be honest it's the marketed target, not a guarantee.">
+    <div class="stat-num">6.5<span class="unit">min</span></div>
+    <p class="stat-caption">the builder's promise — prompt to production, from planning to deploy.</p>
+  </section>
+
+  <!-- 09 Before / after -->
+  <section class="slide light" data-screen-label="09 Before / after"
+    data-speaker-notes="Contrast the old way (manual stitching, days of glue code) with the OneHub way (one command). Keep the 'after' column tinted with the accent so the eye lands on the win.">
+    <p class="eyebrow">The shift</p>
+    <h2 class="h-md">From weeks of setup to one command.</h2>
+    <div class="ba-grid">
+      <div class="ba-col">
+        <p class="ba-label">Before</p>
+        <h3>Stitch ten tools by hand.</h3>
+        <p>Figma, repo, database, auth, and hosting wired together manually. Days of glue code before a single feature ships.</p>
+      </div>
+      <div class="ba-col">
+        <p class="ba-label" style="color: var(--accent-deep);">After</p>
+        <h3>Type the idea. Ship.</h3>
+        <p>OneHub plans, builds, secures, and deploys it for you — production-ready from the first command.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 The command -->
+  <section class="slide dark" data-screen-label="10 The command" data-od-id="terminal-demo"
+    data-speaker-notes="Live demo moment. Read the terminal aloud: one command, then it just starts going. This is the proof surface — the eight passes from slide 5, rendered as a real build log ending in 'Deployed. Live. Done.'">
+    <p class="eyebrow">The experience</p>
+    <h2 class="h-md">onehub build &lt;your-app&gt;</h2>
+    <div class="terminal" aria-label="OneHub build terminal output">
+      <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+      <div class="term-body"><span class="term-prompt">$</span> <span class="term-cmd">onehub build women-health-app</span>
+<span class="term-arrow">›</span> Initializing OneHub Autonomous Builder...
+<span class="term-arrow">›</span> AI Planning <span class="term-ok">......... done</span>
+<span class="term-arrow">›</span> UI / UX Design <span class="term-ok">......... done</span>
+<span class="term-arrow">›</span> Frontend Code <span class="term-ok">......... done</span>
+<span class="term-arrow">›</span> Backend API <span class="term-ok">......... done</span>
+<span class="term-arrow">›</span> Database Setup <span class="term-ok">......... done</span>
+<span class="term-arrow">›</span> Auth &amp; Security <span class="term-ok">......... done</span>
+<span class="term-arrow">›</span> Testing <span class="term-ok">......... done</span>
+<span class="term-arrow">›</span> <span class="term-ok">Deployed. Live. Done.</span></div>
+    </div>
+    <p class="lead" style="margin-top:28px;">One command. Then it just starts going.</p>
+  </section>
+
+  <!-- 11 For creators -->
+  <section class="slide light" data-screen-label="11 For creators"
+    data-speaker-notes="Speak directly to creators. Three reasons they love it: no setup tax, always production-ready, and they own the code. The 'yours to extend' point matters to this audience — it's not a lock-in.">
+    <p class="eyebrow">Why creators love it</p>
+    <h2 class="h-xl">Built for people who ship.</h2>
+    <div class="pt-grid">
+      <div class="pt">
+        <h3>No setup tax</h3>
+        <p>Skip the boilerplate and start from the idea, not the config files.</p>
+      </div>
+      <div class="pt">
+        <h3>Always production-ready</h3>
+        <p>Auth, database, and deploy are handled by default — not bolted on later.</p>
+      </div>
+      <div class="pt">
+        <h3>Yours to extend</h3>
+        <p>Clean code you can fork, edit, and own. No black box, no lock-in.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 Get started -->
+  <section class="slide hero dark center" data-screen-label="12 Get started" data-od-id="closing-cta"
+    data-speaker-notes="Close on the brand's own line. The ask is simple: build your first hub today. End on 'ONE ECOSYSTEM. ENDLESS POSSIBILITIES.' — leave them with the brand, not a thank-you.">
+    <div class="eyebrow">Get started</div>
+    <h2 class="h-hero">Build your first hub today.</h2>
+    <p class="lead">ONE ECOSYSTEM. ENDLESS POSSIBILITIES. — one command to begin.</p>
+  </section>
+
+  <!-- chrome -->
+  <div class="deck-progress" id="deck-progress" aria-hidden></div>
+  <div class="deck-counter"  id="deck-counter">1 / 12</div>
+  <div class="deck-hint">← / → · scroll · swipe</div>
+
+  <script>
+    (function () {
+      var slides   = document.querySelectorAll('.slide');
+      var counter  = document.getElementById('deck-counter');
+      var progress = document.getElementById('deck-progress');
+      var KEY      = 'od-deck-pos';
+      var active   = 0;
+
+      function scrollContainers() {
+        return [document.scrollingElement, document.documentElement, document.body]
+          .filter(Boolean)
+          .filter(function (el, idx, arr) { return arr.indexOf(el) === idx; });
+      }
+      function overflowX(el) {
+        if (!el) return 0;
+        return Math.max(0, (el.scrollWidth || 0) - (el.clientWidth || 0));
+      }
+      function scrollLeftOf(el) {
+        if (!el) return 0;
+        try { return Number(el.scrollLeft) || 0; } catch (_) { return 0; }
+      }
+      function activeScrollLeft() {
+        var candidates = scrollContainers();
+        var best = 0;
+        for (var i = 0; i < candidates.length; i++) {
+          var left = scrollLeftOf(candidates[i]);
+          if (Math.abs(left) > Math.abs(best)) best = left;
+        }
+        return best;
+      }
+      function scroller() {
+        var candidates = scrollContainers();
+        var best = candidates[0] || document.documentElement;
+        var bestScore = -1;
+        for (var i = 0; i < candidates.length; i++) {
+          var el = candidates[i];
+          var score = overflowX(el) + Math.abs(scrollLeftOf(el)) * 2;
+          if (score > bestScore) { best = el; bestScore = score; }
+        }
+        return best;
+      }
+      function scrollToLeft(left, behavior) {
+        var candidates = scrollContainers();
+        for (var i = 0; i < candidates.length; i++) {
+          try { candidates[i].scrollLeft = left; } catch (_) {}
+          try { candidates[i].scrollTo({ left: left, behavior: behavior || 'smooth' }); } catch (_) {}
+        }
+      }
+      function setActive(i) {
+        active = i;
+        if (counter)  counter.textContent  = (i + 1) + ' / ' + slides.length;
+        if (progress) progress.style.width = (((i + 1) / slides.length) * 100) + '%';
+        try { localStorage.setItem(KEY, String(i)); } catch (_) {}
+      }
+      function go(i) {
+        var next = Math.max(0, Math.min(slides.length - 1, i));
+        setActive(next);
+        scrollToLeft(next * window.innerWidth, 'smooth');
+      }
+      function syncFromScroll() {
+        var i = Math.round(activeScrollLeft() / window.innerWidth);
+        if (i !== active && i >= 0 && i < slides.length) setActive(i);
+      }
+      function onKey(e) {
+        if (e.defaultPrevented) return;
+        var t = e.target;
+        if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA')) return;
+        if      (e.key === 'ArrowRight' || e.key === ' '       || e.key === 'PageDown') { e.preventDefault(); go(active + 1); }
+        else if (e.key === 'ArrowLeft'  || e.key === 'PageUp')                            { e.preventDefault(); go(active - 1); }
+        else if (e.key === 'Home')                                                        { e.preventDefault(); go(0); }
+        else if (e.key === 'End')                                                         { e.preventDefault(); go(slides.length - 1); }
+      }
+
+      window.addEventListener('keydown', onKey, true);
+      document.addEventListener('keydown', onKey, true);
+      document.addEventListener('scroll', syncFromScroll, { passive: true, capture: true });
+      window.addEventListener('scroll', syncFromScroll,   { passive: true });
+
+      document.body.setAttribute('tabindex', '-1');
+      document.body.style.outline = 'none';
+      function focusDeck() { try { window.focus(); document.body.focus({ preventScroll: true }); } catch (_) {} }
+      document.addEventListener('mousedown', focusDeck);
+      window.addEventListener('load', focusDeck);
+      focusDeck();
+
+      try {
+        var saved = parseInt(localStorage.getItem(KEY) || '0', 10);
+        if (!isNaN(saved) && saved >= 0 && saved < slides.length) {
+          setActive(saved);
+          scrollToLeft(saved * window.innerWidth, 'instant');
+        } else { setActive(0); }
+      } catch (_) { setActive(0); }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OneHub — Animated Hero Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=SF+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#000000;          /* true black */
+    --surface:#0b0b0e;
+    --fg:#f5f5f7;
+    --muted:#8a8a93;
+    --border:#1c1c22;
+    --accent:#4479f5;
+    --accent-soft:#5b8dff;
+    --accent-2:#3363db;
+    --radius:8px;
+    --grid:8px;
+    --display:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    --body:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+    --mono:'SF Mono','Fira Code','Cascadia Code',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:100%;overflow-x:hidden;background:var(--bg);color:var(--fg);
+    font-family:var(--body);-webkit-font-smoothing:antialiased;}
+  body{position:relative;}
+
+  /* fixed 3D stage behind everything */
+  #stage{position:fixed;inset:0;z-index:0;display:block;
+    background:radial-gradient(120% 90% at 50% 8%, #0a0e1c 0%, #000 55%);}
+
+  /* content sits above the canvas */
+  .page{position:relative;z-index:2;}
+  section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+    padding:120px clamp(24px,6vw,120px);position:relative;}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:20;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px clamp(24px,6vw,120px);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:border-color .3s, background .3s;}
+  header.scrolled{background:rgba(0,0,0,.55);border-bottom:1px solid var(--border);}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;letter-spacing:-.02em;}
+  .brand .mark{width:26px;height:26px;border-radius:7px;background:var(--accent);
+    display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;}
+  .nav{display:flex;align-items:center;gap:26px;}
+  .nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;}
+  .nav a:hover{color:var(--fg);}
+  .btn{background:var(--fg);color:#000;border:0;padding:10px 18px;border-radius:var(--radius);
+    font-family:var(--body);font-weight:600;font-size:14px;cursor:pointer;
+    transition:transform .2s, box-shadow .2s;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(245,245,247,.18);}
+  .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--border);}
+  .btn.ghost:hover{border-color:var(--accent);box-shadow:none;}
+
+  .eyebrow{font-family:var(--mono);font-size:11px;text-transform:uppercase;
+    letter-spacing:.18em;color:var(--accent);margin-bottom:18px;}
+  h1{font-family:var(--display);font-weight:800;
+    font-size:clamp(40px,7vw,88px);line-height:1.02;letter-spacing:-.03em;
+    max-width:14ch;}
+  h2{font-family:var(--display);font-weight:700;
+    font-size:clamp(30px,4.5vw,56px);line-height:1.05;letter-spacing:-.025em;max-width:18ch;}
+  .lead{color:var(--muted);font-size:clamp(16px,1.4vw,20px);line-height:1.6;
+    max-width:56ch;margin-top:22px;}
+  .hero-foot{position:absolute;bottom:42px;left:clamp(24px,6vw,120px);right:clamp(24px,6vw,120px);
+    display:flex;align-items:center;gap:14px;color:var(--muted);font-family:var(--mono);
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;}
+  .scroll-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);
+    box-shadow:0 0 14px var(--accent);animation:bob 1.8s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
+
+  /* two-column cube section */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;}
+  .col{max-width:46ch;}
+
+  /* feature cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;width:100%;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+    padding:30px;transition:transform .25s, border-color .25s, box-shadow .25s;}
+  .card:hover{transform:translateY(-4px);border-color:var(--accent);
+    box-shadow:0 18px 40px rgba(68,121,245,.16);}
+  .card .ico{width:44px;height:44px;border-radius:10px;background:rgba(68,121,245,.14);
+    color:var(--accent);display:grid;place-items:center;margin-bottom:18px;font-size:20px;}
+  .card h3{font-size:19px;font-weight:600;margin-bottom:8px;}
+  .card p{color:var(--muted);font-size:14.5px;line-height:1.6;}
+
+  .cta{text-align:center;align-items:center;}
+  .cta .lead{margin-left:auto;margin-right:auto;}
+  .cta .row{display:flex;gap:14px;margin-top:34px;justify-content:center;flex-wrap:wrap;}
+
+  footer{border-top:1px solid var(--border);padding:34px clamp(24px,6vw,120px);
+    color:var(--muted);font-size:13px;display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:12px;position:relative;z-index:2;}
+
+  /* scroll-reveal */
+  .reveal{opacity:0;transition:opacity .8s cubic-bezier(.22,1,.36,1),
+    transform .8s cubic-bezier(.22,1,.36,1);will-change:transform,opacity;}
+  .reveal-up{transform:translateY(48px);}
+  .reveal-left{transform:translateX(-60px);}
+  .reveal-right{transform:translateX(60px);}
+  .reveal.in{opacity:1;transform:none;}
+  .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+  .d4{transition-delay:.32s}.d5{transition-delay:.4s}
+
+  /* loader */
+  #loader{position:fixed;inset:0;z-index:50;background:#000;display:grid;place-items:center;
+    transition:opacity .6s;font-family:var(--mono);color:var(--muted);letter-spacing:.2em;
+    font-size:12px;text-transform:uppercase;}
+  #loader.hidden{opacity:0;pointer-events:none;}
+  #loader .spin{width:34px;height:34px;border:2px solid var(--border);border-top-color:var(--accent);
+    border-radius:50%;margin-bottom:18px;animation:spin 1s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  @media(max-width:880px){
+    .split{grid-template-columns:1fr;gap:24px;}
+    .cards{grid-template-columns:1fr;}
+    .nav a{display:none;}
+    .nav .btn{display:inline-block;}
+  }
+</style>
+</head>
+<body>
+  <canvas id="stage"></canvas>
+
+  <div id="loader"><div style="text-align:center"><div class="spin"></div>loading scene…</div></div>
+
+  <header id="hdr">
+    <div class="brand"><span class="mark">O</span>OneHub</div>
+    <nav class="nav">
+      <a href="#cube">Studio</a>
+      <a href="#features">Features</a>
+      <a href="#cta">Pricing</a>
+      <a class="btn ghost" href="scenes.html" data-od-id="back-to-library" style="margin-right:4px">← Library</a>
+      <button class="btn">Get started</button>
+    </nav>
+  </header>
+
+  <div class="page">
+    <!-- HERO: globe rises + spins -->
+    <section id="hero">
+      <div class="eyebrow reveal reveal-up">AI Design Studio</div>
+      <h1 class="reveal reveal-up d1">Brief to artifact. One window.</h1>
+      <p class="lead reveal reveal-up d2">The all-in-one AI design studio. Real-time 3D, scroll-native motion,
+        local-first. Your data stays yours.</p>
+      <div class="hero-foot reveal reveal-up d3"><span class="scroll-dot"></span>Scroll to enter the studio</div>
+    </section>
+
+    <!-- CUBE: neon Rubik appears, content slides in from sides -->
+    <section id="cube">
+      <div class="split">
+        <div class="col">
+          <div class="eyebrow reveal reveal-left">Real-time 3D</div>
+          <h2 class="reveal reveal-left d1">Engage on scroll.</h2>
+          <p class="lead reveal reveal-left d2">Interactive heroes that respond to motion — not a video loop.
+            GPU-rendered, pointer-aware, and cheap to run.</p>
+        </div>
+        <div class="col" style="justify-self:end;text-align:right">
+          <p class="lead reveal reveal-right" style="margin-left:auto">A neon cube that tumbles both ways.
+            Wire it to scroll progress and it becomes part of the narrative.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES: cards slide up from the bottom -->
+    <section id="features">
+      <div class="eyebrow reveal reveal-up">What's inside</div>
+      <h2 class="reveal reveal-up d1">Build anything.</h2>
+      <div class="cards">
+        <div class="card reveal reveal-up d1"><div class="ico">◆</div>
+          <h3>Artifacts</h3><p>From a one-line brief to a shipped product surface. Compose, preview, critique.</p></div>
+        <div class="card reveal reveal-up d2"><div class="ico">⧉</div>
+          <h3>Local-first</h3><p>Your data stays yours. No lock-in, no telemetry you didn't ask for.</p></div>
+        <div class="card reveal reveal-up d3"><div class="ico">⚡</div>
+          <h3>BYOK</h3><p>Bring your own keys. Plug any model, any provider, any agent into one window.</p></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="cta">
+      <div class="eyebrow reveal reveal-up">One price. Everything included.</div>
+      <h2 class="reveal reveal-up d1">Start with a template.</h2>
+      <p class="lead reveal reveal-up d2">Drop in a prompt. Watch it render. The studio does the rest.</p>
+      <div class="row reveal reveal-up d3">
+        <button class="btn">Open the studio</button>
+        <button class="btn ghost">Read the docs</button>
+      </div>
+    </section>
+
+    <footer>
+      <span>© OneHub — AI Design Studio</span>
+      <span>Local-first · BYOK · No lock-in</span>
+    </footer>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+    import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+    const canvas = document.getElementById('stage');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:false });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 1);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 200);
+    camera.position.set(0, 0, 6.4);
+
+    // lights (for the cube's subtle shading)
+    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    const key = new THREE.DirectionalLight(0xffffff, 1.2);
+    key.position.set(4, 6, 8); scene.add(key);
+    const rim = new THREE.DirectionalLight(0x5b8dff, 0.7);
+    rim.position.set(-6, -2, -4); scene.add(rim);
+
+    // ---------- GLOBE ----------
+    const globe = new THREE.Group();
+    const R = 2.5, N = 1700;
+    const pos = new Float32Array(N*3);
+    for (let i=0;i<N;i++){
+      const y = 1 - (i/(N-1))*2;
+      const rad = Math.sqrt(Math.max(0,1-y*y));
+      const t = Math.PI*(3-Math.sqrt(5))*i;
+      pos[i*3]   = Math.cos(t)*rad*R;
+      pos[i*3+1] = y*R;
+      pos[i*3+2] = Math.sin(t)*rad*R;
+    }
+    const gGeo = new THREE.BufferGeometry();
+    gGeo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    const gMat = new THREE.PointsMaterial({
+      color:0x6ea8ff, size:0.05, sizeAttenuation:true,
+      transparent:true, opacity:1, depthWrite:false, blending:THREE.AdditiveBlending });
+    const globeDots = new THREE.Points(gGeo, gMat);
+    globe.add(globeDots);
+
+    // wireframe shell (geodesic look)
+    const shellGeo = new THREE.WireframeGeometry(new THREE.IcosahedronGeometry(R*1.04, 2));
+    const shellMat = new THREE.LineBasicMaterial({ color:0x4479f5, transparent:true, opacity:0.35 });
+    const globeShell = new THREE.LineSegments(shellGeo, shellMat);
+    globe.add(globeShell);
+
+    // faint orbit ring
+    const ringGeo = new THREE.RingGeometry(R*1.35, R*1.36, 96);
+    const ringMat = new THREE.MeshBasicMaterial({ color:0x3363db, transparent:true, opacity:0.25, side:THREE.DoubleSide });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.rotation.x = Math.PI/2.3;
+    globe.add(ring);
+    scene.add(globe);
+
+    // ---------- RUBIK CUBE ----------
+    const cube = new THREE.Group();
+    const COLORS = {
+      px:0xff3b50, nx:0xff9a1f, py:0xf5f5f7,
+      ny:0xffd400, pz:0x4479f5, nz:0x2ee06a, inner:0x0c0c10
+    };
+    const u = 0.96, gap = 0.04, s = u+gap;
+    for (let x=-1;x<=1;x++) for (let y=-1;y<=1;y++) for (let z=-1;z<=1;z++){
+      if (x===0&&y===0&&z===0) continue;
+      const mats = [
+        new THREE.MeshStandardMaterial({ color:(x=== 1?COLORS.px:COLORS.inner), emissive:(x=== 1?COLORS.px:COLORS.inner), emissiveIntensity:0.4, roughness:0.45, metalness:0.0, transparent:true, opacity:0 }),
+        new THREE.MeshStandardMaterial({ color:(x===-1?COLORS.nx:COLORS.inner), emissive:(x===-1?COLORS.nx:COLORS.inner), emissiveIntensity:0.4, roughness:0.45, metalness:0.0, transparent:true, opacity:0 }),
+        new THREE.MeshStandardMaterial({ color:(y=== 1?COLORS.py:COLORS.inner), emissive:(y=== 1?COLORS.py:COLORS.inner), emissiveIntensity:0.4, roughness:0.45, metalness:0.0, transparent:true, opacity:0 }),
+        new THREE.MeshStandardMaterial({ color:(y===-1?COLORS.ny:COLORS.inner), emissive:(y===-1?COLORS.ny:COLORS.inner), emissiveIntensity:0.4, roughness:0.45, metalness:0.0, transparent:true, opacity:0 }),
+        new THREE.MeshStandardMaterial({ color:(z=== 1?COLORS.pz:COLORS.inner), emissive:(z=== 1?COLORS.pz:COLORS.inner), emissiveIntensity:0.4, roughness:0.45, metalness:0.0, transparent:true, opacity:0 }),
+        new THREE.MeshStandardMaterial({ color:(z===-1?COLORS.nz:COLORS.inner), emissive:(z===-1?COLORS.nz:COLORS.inner), emissiveIntensity:0.4, roughness:0.45, metalness:0.0, transparent:true, opacity:0 }),
+      ];
+      const m = new THREE.Mesh(new THREE.BoxGeometry(u,u,u), mats);
+      m.position.set(x*s, y*s, z*s);
+      cube.add(m);
+    }
+    cube.scale.setScalar(0.001);
+    scene.add(cube);
+
+    // ---------- postprocessing (neon bloom) ----------
+    const composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+    const bloom = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), 0.95, 0.55, 0.08);
+    composer.addPass(bloom);
+
+    // ---------- resize ----------
+    function resize(){
+      const w = innerWidth, h = innerHeight;
+      camera.aspect = w/h; camera.updateProjectionMatrix();
+      renderer.setSize(w, h); composer.setSize(w, h);
+      bloom.resolution.set(w, h);
+    }
+    addEventListener('resize', resize); resize();
+
+    // ---------- helpers ----------
+    const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
+    const lerp  = (a,b,t)=>a+(b-a)*t;
+    const easeOut = t=>1-Math.pow(1-t,3);
+    const damp  = (c,t,f)=>c+(t-c)*f;
+
+    // pointer parallax
+    let px=0, py=0;
+    addEventListener('pointermove', e=>{
+      px = (e.clientX/innerWidth - 0.5);
+      py = (e.clientY/innerHeight - 0.5);
+    });
+
+    const hero = document.getElementById('hero');
+    const cubeSec = document.getElementById('cube');
+
+    // state
+    let globeY=0, gOp=1, cubeScale=0.001, cOp=0;
+    const clock = new THREE.Clock();
+
+    function frame(){
+      const dt = Math.min(clock.getDelta(), 0.05);
+      const t = clock.elapsedTime;
+      const vh = innerHeight;
+
+      // ---- globe: rise in, then exit upward + fade as hero scrolls away
+      const heroTop = hero.getBoundingClientRect().top;
+      const hp = clamp(-heroTop / vh, 0, 1.3);
+      let tgtY, tgtOp;
+      if (hp < 0.32){ tgtY = lerp(-5.5, 0.1, easeOut(hp/0.32)); tgtOp = 1; }
+      else { const e = clamp((hp-0.32)/0.68,0,1); tgtY = lerp(0.1, 7, e*e); tgtOp = 1-e; }
+      globeY = damp(globeY, tgtY, 0.12);
+      gOp = damp(gOp, tgtOp, 0.12);
+      globe.position.y = globeY;
+      gMat.opacity = gOp; shellMat.opacity = 0.35*gOp; ringMat.opacity = 0.25*gOp;
+      globe.visible = gOp > 0.02;
+      globe.rotation.y += dt*0.35;
+      globe.rotation.x = damp(globe.rotation.x, py*0.3, 0.05);
+      globe.rotation.z = damp(globe.rotation.z, -px*0.2, 0.05);
+
+      // ---- cube: appear centered when its section is in view; tumble both ways
+      const cRect = cubeSec.getBoundingClientRect();
+      const cCenter = cRect.top + cRect.height/2;
+      const cDist = Math.abs(cCenter - vh/2);
+      const cp = clamp(1 - cDist/(vh*0.85), 0, 1);
+      cubeScale = damp(cubeScale, cp, 0.10);
+      cOp = damp(cOp, cp, 0.10);
+      cube.scale.setScalar(Math.max(0.001, cubeScale));
+      cube.visible = cOp > 0.02;
+      const ci = (m)=>{ m.opacity = cOp; };
+      cube.children.forEach(m=>m.material.forEach(ci));
+      // spin one way then the other
+      cube.rotation.x += dt * Math.sin(t*0.3) * 0.5;
+      cube.rotation.y += dt * Math.cos(t*0.22) * 0.6;
+      cube.rotation.z += dt * 0.12;
+      cube.position.y = damp(cube.position.y, py*0.4, 0.05);
+      cube.position.x = damp(cube.position.x, px*0.4, 0.05);
+
+      composer.render();
+      requestAnimationFrame(frame);
+    }
+    frame();
+
+    // hide loader after first paint
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      document.getElementById('loader').classList.add('hidden');
+    }));
+
+    // ---------- scroll reveals ----------
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting) en.target.classList.add('in'); });
+    }, { threshold:0.18 });
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // header border on scroll
+    const hdr = document.getElementById('hdr');
+    addEventListener('scroll', ()=>{
+      hdr.classList.toggle('scrolled', scrollY > 24);
+    }, { passive:true });
+  </script>
+</body>
+</html>

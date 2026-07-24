@@ -1,0 +1,158 @@
+{
+  "$schema": "https://open-design.ai/schemas/plugin.v1.json",
+  "specVersion": "1.0.0",
+  "name": "multi-agent-neon-bento",
+  "title": "Multi-Agent Neon Bento",
+  "title_i18n": {
+    "en": "Multi-Agent Neon Bento",
+    "zh-CN": "多 Agent 霓虹 Bento",
+    "ko": "멀티 에이전트 네온 벤토"
+  },
+  "version": "0.1.0",
+  "publishedAt": "2026-07-15T01:18:04Z",
+  "description": "Generate an embeddable multi-agent chat feature section as a neon-framed bento grid: animated conic-gradient borders, agent chip switching, OpenRouter / provider multi-select, model picker, and a Share-to-community CTA that copies a JSON payload. True-black + violet/cyan craft tokens, self-contained single-file HTML.",
+  "description_i18n": {
+    "en": "Generate an embeddable multi-agent chat feature section as a neon-framed bento grid: animated conic-gradient borders, agent chip switching, OpenRouter / provider multi-select, model picker, and a Share-to-community CTA that copies a JSON payload. True-black + violet/cyan craft tokens, self-contained single-file HTML.",
+    "zh-CN": "生成可嵌入的多 Agent 聊天功能区块——霓虹描边 Bento 网格：动画 conic-gradient 边框、Agent 芯片切换、OpenRouter / 提供商多选、模型选择器，以及复制 JSON 载荷的社区分享 CTA。真黑 + 紫/青 craft token，单文件自包含 HTML。",
+    "ko": "임베드 가능한 멀티 에이전트 채팅 기능 섹션을 네온 프레임 벤토 그리드로 생성합니다: 애니메이션 conic-gradient 테두리, 에이전트 칩 전환, OpenRouter/프로바이더 다중 선택, 모델 피커, JSON 페이로드를 복사하는 커뮤니티 공유 CTA. 트루블랙 + 바이올렛/시안 크래프트 토큰, 단일 파일 자족 HTML."
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ryanjordan11",
+    "url": "https://github.com/ryanjordan11"
+  },
+  "homepage": "https://github.com/ryanjordan11/multi-agent-neon-bento",
+  "tags": [
+    "bento",
+    "multi-agent",
+    "neon",
+    "openrouter",
+    "composer",
+    "feature-section",
+    "prototype",
+    "dark-theme",
+    "html"
+  ],
+  "compat": {
+    "agentSkills": [
+      {
+        "path": "./SKILL.md"
+      }
+    ]
+  },
+  "plugin": {
+    "repo": "https://github.com/ryanjordan11/multi-agent-neon-bento"
+  },
+  "od": {
+    "kind": "skill",
+    "taskKind": "new-generation",
+    "mode": "prototype",
+    "scenario": "feature-section",
+    "surface": "web",
+    "platform": "responsive-web",
+    "engineRequirements": {
+      "od": ">=0.4.0"
+    },
+    "preview": {
+      "type": "html",
+      "entry": "./examples/1-bento-grid-template.html",
+      "motion": "static"
+    },
+    "useCase": {
+      "query": {
+        "en": "Build a multi-agent neon bento feature section: true-black canvas, animated neon borders, AI workspace composer with {{agents}} agent chips, OpenRouter + provider multi-select, model picker ({{defaultModel}}), and a Share to community CTA. Audience: {{audience}}. Tone: dark tech / neon craft.",
+        "zh-CN": "做一个多 Agent 霓虹 Bento 功能区块：真黑画布、动画霓虹描边、带 {{agents}} Agent 芯片的 AI 工作区 composer、OpenRouter + 提供商多选、模型选择器（{{defaultModel}}），以及 Share to community CTA。受众：{{audience}}。调性：深色 tech / 霓虹 craft。"
+      },
+      "exampleOutputs": [
+        {
+          "path": "./examples/1-bento-grid-template.html",
+          "title": "1 Bento Grid Template — Multi-Agent Neon Composer",
+          "title_i18n": {
+            "en": "1 Bento Grid Template — Multi-Agent Neon Composer",
+            "zh-CN": "1 Bento 网格模板 — 多 Agent 霓虹 Composer"
+          }
+        }
+      ]
+    },
+    "context": {
+      "skills": [
+        {
+          "path": "./SKILL.md"
+        }
+      ],
+      "assets": [
+        "./examples/1-bento-grid-template.html"
+      ]
+    },
+    "pipeline": {
+      "stages": [
+        {
+          "id": "discovery",
+          "atoms": [
+            "discovery-question-form"
+          ]
+        },
+        {
+          "id": "plan",
+          "atoms": [
+            "todo-write"
+          ]
+        },
+        {
+          "id": "generate",
+          "atoms": [
+            "file-write",
+            "live-artifact"
+          ]
+        },
+        {
+          "id": "critique",
+          "atoms": [
+            "critique-theater"
+          ],
+          "repeat": true,
+          "until": "critique.score>=4 || iterations>=3"
+        }
+      ]
+    },
+    "inputs": [
+      {
+        "name": "agents",
+        "label": "Default agents",
+        "type": "string",
+        "required": true,
+        "placeholder": "Design, Research, Code",
+        "default": "Design, Research, Code"
+      },
+      {
+        "name": "defaultModel",
+        "label": "Default model",
+        "type": "string",
+        "required": true,
+        "placeholder": "claude-sonnet-4",
+        "default": "claude-sonnet-4"
+      },
+      {
+        "name": "audience",
+        "label": "Audience",
+        "type": "string",
+        "required": true,
+        "placeholder": "AI product teams shipping multi-agent UX",
+        "default": "AI product teams shipping multi-agent UX"
+      },
+      {
+        "name": "productName",
+        "label": "Product / section name",
+        "type": "string",
+        "required": false,
+        "placeholder": "AI workspace composer",
+        "default": "AI workspace composer"
+      }
+    ],
+    "capabilities": [
+      "prompt:inject",
+      "fs:read",
+      "fs:write"
+    ]
+  }
+}

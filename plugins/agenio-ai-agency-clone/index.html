@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>agenio — AI Agency Template</title>
+<meta name="description" content="We build AI systems and automation workflows that help businesses scale smarter and faster." />
+
+<!-- Real fonts (same families Framer self-hosts): Inter (body), Space Grotesk (display), Urbanist (alt bold). UA fallback chain for offline use. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#030712;
+  --bg-2:#0b0e14;
+  --surface:#f3f4f6;
+  --surface-2:#fafafa;
+  --card-dark:#292c2e;
+  --card-dark-2:#40454a;
+  --card-dark-3:#1a1a1a;
+  --accent:#98ff03;
+  --accent-2:#b2ff43;
+  --white:#ffffff;
+  --ink:#030712;
+  --muted:#6b7280;
+  --muted-light:#9ca3af;
+  --border:#e5e7eb;
+  --border-dark:#1f2937;
+  --blue:#0099ff;
+  --font-display:'Space Grotesk','Urbanist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-body:'Inter','Urbanist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.02;letter-spacing:-0.02em}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 30px;border-radius:100px;font-weight:600;font-size:15px;
+  font-family:var(--font-body);cursor:pointer;border:1px solid transparent;
+  transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease;
+}
+.btn-lime{background:var(--accent);color:#0a0a0a;font-weight:700}
+.btn-lime:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(152,255,3,.3)}
+.btn-outline{border-color:rgba(255,255,255,.25);color:#fff;background:transparent}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn-dark{background:#0a0a0a;color:#fff;border-color:#1f1f1f}
+.btn-dark:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.12)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* ===== NAV ===== */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s,border-color .3s,backdrop-filter .3s}
+header.nav.scrolled{background:rgba(3,7,18,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--font-display);font-weight:700;font-size:22px}
+.logo img{height:26px;width:auto}
+.logo .tm{font-size:10px;vertical-align:super;color:var(--muted-light);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,.82);letter-spacing:.02em;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:var(--accent)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.menu-btn{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px}
+.mobile-menu{display:none;position:fixed;inset:74px 0 0;background:var(--bg);z-index:99;padding:24px;flex-direction:column;gap:6px}
+.mobile-menu a{padding:16px 0;border-bottom:1px solid var(--border-dark);font-size:18px;font-weight:500}
+.mobile-menu.open{display:flex}
+
+/* ===== HERO ===== */
+.hero{position:relative;padding:160px 0 80px;overflow:hidden}
+.hero .deco{position:absolute;width:120px;height:120px;background:var(--accent);opacity:.9;z-index:0}
+.hero .deco.tl{top:90px;left:-30px}
+.hero .deco.br{bottom:40px;right:-30px;background:var(--accent-2);opacity:.5}
+.hero-grid{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
+.avail{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border:1px solid rgba(255,255,255,.18);border-radius:100px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:34px}
+.avail .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.hero h1{font-size:clamp(44px,9vw,128px);font-weight:700;text-transform:uppercase}
+.hero h1 .small{display:block;font-size:.26em;letter-spacing:.18em;color:rgba(255,255,255,.78);font-weight:600;margin-bottom:.4em}
+.hero-graphic{width:clamp(220px,30vw,360px);margin:-10px 0 10px}
+.hero p.lead{max-width:560px;font-size:18px;color:rgba(255,255,255,.78);margin:18px 0 32px}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+
+/* ===== CLIENTS ===== */
+.clients{padding:54px 0;border-top:1px solid var(--border-dark);border-bottom:1px solid var(--border-dark)}
+.clients .label{text-align:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-light);margin-bottom:28px}
+.client-row{display:flex;align-items:center;justify-content:center;gap:54px;flex-wrap:wrap;opacity:.7}
+.client-row img{height:30px;width:auto;filter:brightness(0) invert(1);opacity:.85}
+
+/* ===== SECTION SHELL ===== */
+section.block{padding:110px 0}
+.section-head{max-width:720px;margin-bottom:56px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head h2{font-size:clamp(30px,4.5vw,56px);margin-top:14px}
+.section-head p{color:rgba(255,255,255,.66);font-size:18px;margin-top:16px}
+
+/* ===== ABOUT ===== */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.about-copy h2{font-size:clamp(28px,3.6vw,46px);max-width:14ch}
+.about-stats{display:flex;gap:42px;margin-top:40px}
+.about-stats .num{font-family:var(--font-display);font-size:46px;font-weight:700;color:var(--accent)}
+.about-stats .lbl{font-size:13px;color:var(--muted-light);max-width:14ch;margin-top:4px}
+.about-img{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.about-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2)}
+
+/* ===== SERVICES ===== */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.svc-card{background:var(--card-dark);border:1px solid var(--border-dark);border-radius:18px;padding:36px;transition:transform .25s,border-color .25s}
+.svc-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.svc-top{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.svc-ico{width:54px;height:54px;border-radius:12px;background:rgba(152,255,3,.12);display:grid;place-items:center;color:var(--accent)}
+.svc-ico img{width:26px;height:26px;filter:brightness(0) invert(1);}
+.svc-num{margin-left:auto;font-family:var(--font-display);font-size:40px;font-weight:700;color:rgba(255,255,255,.16)}
+.svc-card h3{font-size:26px;margin-bottom:10px}
+.svc-card>p{color:rgba(255,255,255,.62);margin-bottom:22px}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.svc-list li{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,.85);font-size:15px}
+.svc-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+
+/* ===== VISION (light) ===== */
+section.vision{background:var(--surface);color:var(--ink)}
+.vision .section-head h2{color:var(--ink)}
+.vision .eyebrow{color:#3a7d00}
+.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.vision-mask{font-family:var(--font-display);font-weight:800;text-transform:uppercase;font-size:clamp(60px,11vw,170px);line-height:.86;letter-spacing:-.04em}
+.vision-mask .o{color:var(--accent-2);-webkit-text-stroke:2px var(--ink);color:transparent}
+.vision-copy p{font-size:18px;color:#374151;margin-bottom:26px}
+.vision-stats{display:flex;gap:34px;margin-top:30px}
+.vision-stats .num{font-family:var(--font-display);font-size:42px;font-weight:800;color:var(--ink)}
+.vision-stats .lbl{font-size:13px;color:var(--muted)}
+
+/* ===== PROJECT FEATURE ===== */
+.proj-feat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:var(--card-dark);border:1px solid var(--border-dark);border-radius:22px;padding:14px;overflow:hidden}
+.proj-feat .media{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+.proj-feat .media img{width:100%;height:100%;object-fit:cover}
+.proj-feat .badge{position:absolute;left:18px;top:18px;background:var(--accent);color:#0a0a0a;font-weight:700;font-size:12px;padding:6px 12px;border-radius:100px}
+.proj-feat .info{padding:30px}
+.proj-feat h3{font-size:30px;margin-bottom:12px}
+.proj-feat p{color:rgba(255,255,255,.66);margin-bottom:28px}
+.proj-metrics{display:flex;gap:36px;border-top:1px solid var(--border-dark);padding-top:22px}
+.proj-metrics .num{font-family:var(--font-display);font-size:34px;font-weight:700;color:var(--accent)}
+.proj-metrics .lbl{font-size:12px;color:var(--muted-light);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+
+/* ===== PROCESS ===== */
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.process-intro h2{font-size:clamp(30px,4vw,52px)}
+.process-intro p{color:rgba(255,255,255,.66);margin-top:18px;font-size:18px}
+.process-steps{display:flex;flex-direction:column;gap:6px}
+.pstep{display:flex;gap:22px;padding:26px 0;border-top:1px solid var(--border-dark)}
+.pstep:last-child{border-bottom:1px solid var(--border-dark)}
+.pstep .idx{font-family:var(--font-display);font-size:14px;color:var(--accent);font-weight:600;padding-top:6px}
+.pstep h4{font-size:21px;margin-bottom:8px}
+.pstep p{color:rgba(255,255,255,.6);font-size:15px;max-width:46ch}
+
+/* ===== DIFFERENCE ===== */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+.diff-card{background:var(--card-dark);border:1px solid var(--border-dark);border-radius:18px;padding:40px}
+.diff-card.ours{background:var(--accent);color:#0a0a0a}
+.diff-card h3{font-size:24px;margin-bottom:24px}
+.diff-card ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.diff-card li{display:flex;gap:12px;font-size:15px;align-items:flex-start}
+.diff-card.theirs li::before{content:"✕";color:#ff6b6b;font-weight:700}
+.diff-card.ours li::before{content:"✓";color:#0a0a0a;font-weight:800}
+.diff-card.theirs li{color:rgba(255,255,255,.7)}
+
+/* ===== TEAM ===== */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.team-card{background:var(--surface);border-radius:16px;overflow:hidden;color:var(--ink);transition:transform .25s}
+.team-card:hover{transform:translateY(-5px)}
+.team-card .ph{aspect-ratio:1/1;overflow:hidden}
+.team-card .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
+.team-card .meta{padding:18px 20px}
+.team-card .meta h4{font-size:18px;font-family:var(--font-display)}
+.team-card .meta span{font-size:13px;color:var(--muted)}
+.team-card.hire{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:var(--card-dark);color:#fff;padding:30px}
+.team-card.hire h4{font-size:22px;margin-bottom:8px}
+.team-card.hire p{color:rgba(255,255,255,.6);font-size:14px;margin-bottom:20px}
+
+/* ===== AWARDS ===== */
+.awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.award-card{background:var(--card-dark);border:1px solid var(--border-dark);border-radius:16px;padding:28px;min-height:170px;display:flex;flex-direction:column;justify-content:space-between}
+.award-card .date{font-family:var(--font-display);font-size:13px;color:var(--accent);letter-spacing:.08em}
+.award-card h4{font-size:20px;font-weight:600;line-height:1.2}
+.award-card .sub{font-size:13px;color:var(--muted-light)}
+
+/* ===== TESTIMONIAL ===== */
+.tst-wrap{background:var(--card-dark);border:1px solid var(--border-dark);border-radius:22px;padding:56px;position:relative}
+.tst-quote{font-family:var(--font-display);font-size:clamp(24px,3vw,38px);font-weight:600;line-height:1.25;max-width:20ch}
+.tst-quote .mark{color:var(--accent)}
+.tst-foot{display:flex;align-items:center;gap:16px;margin-top:36px}
+.tst-av{width:52px;height:52px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-weight:800;color:#0a0a0a;font-family:var(--font-display)}
+.tst-foot .who b{display:block;font-size:16px}
+.tst-foot .who span{font-size:13px;color:var(--muted-light)}
+.tst-nav{position:absolute;right:56px;bottom:56px;display:flex;gap:10px}
+.tst-nav button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:transparent;color:#fff;cursor:pointer;font-size:18px;transition:.2s}
+.tst-nav button:hover{background:var(--accent);color:#0a0a0a;border-color:var(--accent)}
+
+/* ===== WHY CHOOSE ===== */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:20px}
+.why-card{background:var(--card-dark);border:1px solid var(--border-dark);border-radius:16px;padding:32px}
+.why-card .ico{width:48px;height:48px;border-radius:12px;background:rgba(152,255,3,.12);display:grid;place-items:center;margin-bottom:20px;color:var(--accent)}
+.why-card h4{font-size:19px;margin-bottom:10px}
+.why-card p{font-size:14px;color:rgba(255,255,255,.6)}
+
+/* ===== PRICING ===== */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px}
+.price-card{background:var(--card-dark);border:1px solid var(--border-dark);border-radius:20px;padding:38px;display:flex;flex-direction:column}
+.price-card.featured{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.price-card .avail-pill{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.06em}
+.price-card .avail-pill.gray{color:var(--muted-light)}
+.price-card h3{font-size:24px;margin:12px 0 6px}
+.price-card .desc{font-size:14px;color:var(--muted-light);min-height:40px}
+.price-card .price{font-family:var(--font-display);font-size:52px;font-weight:700;margin:22px 0 4px}
+.price-card .price small{font-size:16px;color:var(--muted-light);font-weight:500}
+.price-card ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin:24px 0 30px;flex:1}
+.price-card li{display:flex;gap:10px;font-size:14px;color:rgba(255,255,255,.82)}
+.price-card li::before{content:"✓";color:var(--accent);font-weight:700}
+
+/* ===== FAQ ===== */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
+.faq-intro h2{font-size:clamp(30px,4vw,48px)}
+.faq-intro p{color:rgba(255,255,255,.6);margin-top:16px}
+.faq-item{border-top:1px solid var(--border-dark)}
+.faq-item:last-child{border-bottom:1px solid var(--border-dark)}
+.faq-q{width:100%;text-align:left;background:none;border:0;color:#fff;font-family:var(--font-display);font-size:19px;font-weight:600;padding:26px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq-q .pm{font-size:26px;color:var(--accent);transition:transform .25s}
+.faq-item.open .faq-q .pm{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{color:rgba(255,255,255,.66);font-size:15px;padding-bottom:26px;max-width:62ch}
+
+/* ===== CTA / CONTACT ===== */
+.cta-band{background:var(--accent);color:#0a0a0a;border-radius:26px;padding:70px 60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cta-band h2{font-size:clamp(30px,4vw,52px);text-transform:uppercase}
+.cta-band p{font-size:18px;margin-top:12px;font-weight:500}
+.cta-band .btn-dark{background:#0a0a0a;color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-info h2{font-size:clamp(30px,4vw,50px)}
+.contact-info .offices{margin-top:34px;display:flex;flex-direction:column;gap:22px}
+.office .t{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.office p{color:rgba(255,255,255,.72);font-size:15px;margin-top:6px;white-space:pre-line}
+.form-field{margin-bottom:18px}
+.form-field label{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:8px}
+.form-field input,.form-field textarea{width:100%;background:var(--card-dark);border:1px solid var(--border-dark);border-radius:12px;padding:16px;color:#fff;font-family:var(--font-body);font-size:15px}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#5b6168}
+.form-field textarea{resize:vertical;min-height:120px}
+.attach{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border:1px dashed rgba(255,255,255,.25);border-radius:10px;font-size:13px;color:var(--muted-light);cursor:pointer}
+.attach:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ===== FOOTER ===== */
+footer{background:var(--card-dark-3);padding:80px 0 40px;border-top:1px solid var(--border-dark)}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot-brand .logo{margin-bottom:20px}
+.foot-brand p{color:var(--muted-light);font-size:14px;max-width:30ch}
+.foot-col h5{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:18px;font-family:var(--font-body);font-weight:600}
+.foot-col a{display:block;color:rgba(255,255,255,.78);font-size:15px;margin-bottom:12px;transition:color .2s}
+.foot-col a:hover{color:var(--accent)}
+.foot-social{display:flex;gap:12px;margin-top:8px}
+.foot-social a{width:40px;height:40px;border:1px solid var(--border-dark);border-radius:50%;display:grid;place-items:center}
+.foot-social a:hover{border-color:var(--accent);background:var(--accent);color:#0a0a0a}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:60px;padding-top:28px;border-top:1px solid var(--border-dark);color:var(--muted-light);font-size:13px}
+.back-top{display:inline-flex;align-items:center;gap:8px;color:var(--muted-light);font-size:13px}
+.back-top:hover{color:#fff}
+
+@media (max-width:980px){
+  .nav-links,.nav-cta .btn{display:none}
+  .menu-btn{display:block}
+  .about-grid,.vision-grid,.proj-feat,.process-grid,.diff-grid,.team-grid,.awards-grid,.why-grid,.price-grid,.faq-grid,.cta-band,.contact-grid,.foot-top,.client-row{flex-direction:column;grid-template-columns:1fr}
+  .team-grid,.awards-grid,.why-grid,.price-grid{grid-template-columns:repeat(2,1fr)}
+  .section-head h2{font-size:34px}
+  .tst-nav{position:static;margin-top:24px}
+  .cta-band{padding:48px 32px}
+}
+@media (max-width:560px){
+  .team-grid,.awards-grid,.why-grid,.price-grid{grid-template-columns:1fr}
+  .about-stats,.vision-stats,.proj-metrics{flex-wrap:wrap;gap:22px}
+  .hero{padding:130px 0 50px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#hero" data-od-id="logo">
+      <img src="assets/images/syDJXcszgUd7ftsKZYq0l8eYn4.svg" alt="agenio logo" />
+      agenio<span class="tm">TM</span>
+    </a>
+    <nav class="nav-links" data-od-id="nav-links">
+      <a href="#hero" class="active">Home</a>
+      <a href="#about">About us</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-lime" href="#contact" data-od-id="nav-cta">Start a Project</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero">Home</a>
+  <a href="#about">About us</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <span class="deco tl"></span>
+  <span class="deco br"></span>
+  <div class="container hero-grid">
+    <span class="avail"><span class="dot"></span> WE ARE AVAILABLE FOR DECEMBER PROJECTS</span>
+    <h1 data-od-id="hero-headline">
+      <span class="small">we are</span>
+      <img class="hero-graphic" src="assets/images/D9ZlEb2yNCAsimkySwPR2G82H0.svg" alt="AI driven graphic" />
+      AI DRIVEN
+    </h1>
+    <p class="lead">We build AI systems and automation workflows that help businesses scale smarter and faster.</p>
+    <div class="hero-cta">
+      <a class="btn btn-outline" href="#pricing">View Pricing Plans</a>
+      <a class="btn btn-lime" href="#services">Explore Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLIENTS ===================== -->
+<section class="clients" data-od-id="clients">
+  <div class="container">
+    <div class="label">// WE'VE TRUSTED BY</div>
+    <div class="client-row">
+      <img src="assets/images/moBhFmQTpAWt87qN7TbOj4dCaNg.png" alt="Client 1" />
+      <img src="assets/images/tSQjwdemoplf4MN22echZk1FM8.png" alt="Client 2" />
+      <img src="assets/images/o8qsEZX1xviB0PACEDLL7rmBa0.png" alt="Client 3" />
+      <img src="assets/images/uXmE9865lH20bxuRc50FSoAE.png" alt="Client 4" />
+      <img src="assets/images/rTc984UnuC2dtG5bcVJh8lyW4ik.png" alt="Client 5" />
+      <img src="assets/images/1uYEHQc2n3dIuZ15A25S8ryJE.png" alt="Client 6" />
+      <img src="assets/images/GM9hGGw7o0aEnyuWeia3SADVo.png" alt="Client 7" />
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="block" id="about">
+  <div class="container about-grid">
+    <div class="about-copy" data-od-id="about-copy">
+      <span class="eyebrow">about us</span>
+      <h2>At our core, we believe great AI is more than automation, it's impact</h2>
+      <div class="about-stats">
+        <div><div class="num" data-count="320" data-suffix="%">320%</div><div class="lbl">Average ROI from AI Automations</div></div>
+        <div><div class="num" data-count="150" data-suffix="+">150+</div><div class="lbl">Projects delivered for global clients</div></div>
+        <div><div class="num" data-count="5" data-suffix="/5">5/5</div><div class="lbl">Client rating based on 100+ reviews</div></div>
+      </div>
+    </div>
+    <div class="about-img" data-od-id="about-img">
+      <img src="assets/images/92Er3JtmOpjtlnUlFL9FKzAg.png" alt="Silhouettes of people overlooking a cityscape" />
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="block" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>We Build AI Solutions</h2>
+    </div>
+    <div class="svc-grid" data-od-id="services-grid">
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-ico"><img src="assets/images/1vC4YgVCbo9msa3sHtB1BsTeu0.svg" alt=""/></div>
+          <span class="svc-num">01</span>
+        </div>
+        <h3>AI Automation</h3>
+        <p>We automate workflows with AI systems built to improve efficiency and simplify operations.</p>
+        <ul class="svc-list">
+          <li>Workflow Automation</li><li>AI Process Integration</li><li>Custom AI Agents</li><li>Business Optimization</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-ico"><img src="assets/images/JH3WmneZqvZUEw98Qm7rXVFxEJQ.svg" alt=""/></div>
+          <span class="svc-num">02</span>
+        </div>
+        <h3>AI Chatbots</h3>
+        <p>We build AI assistants that improve customer support and automate conversations at scale.</p>
+        <ul class="svc-list">
+          <li>Custom AI Chatbots</li><li>Knowledge Base Training</li><li>Lead Qualification</li><li>24/7 AI Support</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-ico"><img src="assets/images/23S4GQlMnQBCADv4dVCvE6RtY6s.svg" alt=""/></div>
+          <span class="svc-num">03</span>
+        </div>
+        <h3>AI Web Solutions</h3>
+        <p>We create AI-powered websites and platforms focused on automation, speed.</p>
+        <ul class="svc-list">
+          <li>AI Website Development</li><li>Smart Integrations</li><li>CMS Integration</li><li>SEO Optimization</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top">
+          <div class="svc-ico"><img src="assets/images/iCV4LZficAE9Kt5IO1oMGK6TJWU.svg" alt=""/></div>
+          <span class="svc-num">04</span>
+        </div>
+        <h3>AI Strategy</h3>
+        <p>We help businesses plan and implement AI solutions that support long-term growth.</p>
+        <ul class="svc-list">
+          <li>AI Consulting</li><li>Automation Planning</li><li>Workflow Analysis</li><li>AI Implementation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VISION (light) ===================== -->
+<section class="block vision" data-od-id="vision">
+  <div class="container vision-grid">
+    <div class="vision-mask" aria-hidden="true">
+      <span class="o">V</span>E<br/><span class="o">V</span>ISIO
+    </div>
+    <div class="vision-copy">
+      <span class="eyebrow">our vision</span>
+      <h2 style="font-size:clamp(28px,3.6vw,46px);margin:14px 0 20px;">Every solution we build starts with deep understanding of agents</h2>
+      <p>We're an AI agency focused on automation, intelligent systems, and scalable digital solutions. Our AI workflows don't just look advanced, they deliver real business impact.</p>
+      <div class="vision-stats">
+        <div><div class="num">98%</div><div class="lbl">Client satisfaction</div></div>
+        <div><div class="num">40+</div><div class="lbl">AI systems shipped</div></div>
+      </div>
+      <div style="margin-top:30px"><a class="btn btn-dark" href="#contact">Get started</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECT FEATURE ===================== -->
+<section class="block" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Projects</span>
+      <h2>Featured Work</h2>
+    </div>
+    <div class="proj-feat" data-od-id="project-feature">
+      <div class="media">
+        <span class="badge">Nova AI</span>
+        <img src="assets/images/OWVdG7nO7rtog4qGyoyrsa1xCgg.png" alt="AI Chatbot Website project" />
+      </div>
+      <div class="info">
+        <h3>AI Chatbot Website</h3>
+        <p>We developed an AI-powered website with integrated chatbot features focused on automation and seamless user support.</p>
+        <div class="proj-metrics">
+          <div><div class="num">+70%</div><div class="lbl">Response Time</div></div>
+          <div><div class="num">1 unified</div><div class="lbl">Chatbot system</div></div>
+          <div><div class="num">4 weeks</div><div class="lbl">Delivery time</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="block" data-od-id="process">
+  <div class="container process-grid">
+    <div class="process-intro">
+      <span class="eyebrow">Process</span>
+      <h2>Combine AI With Automation</h2>
+      <p>Every step designed to improve workflows, efficiency.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep"><div class="idx">//01</div><div><h4>Analyze &amp; Discover</h4><p>We begin by understanding your workflows, business goals, and operational challenges to identify automation opportunities.</p></div></div>
+      <div class="pstep"><div class="idx">//02</div><div><h4>Plan &amp; Strategy</h4><p>We define the right AI solutions, automation systems, and workflows tailored to your business needs.</p></div></div>
+      <div class="pstep"><div class="idx">//03</div><div><h4>Build &amp; Integrate</h4><p>We develop AI-powered systems and integrate intelligent workflows designed for scalability and performance.</p></div></div>
+      <div class="pstep"><div class="idx">//04</div><div><h4>Launch &amp; Evolve</h4><p>We monitor performance, refine automations, and continuously improve AI systems for long-term efficiency.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE DIFFERENCE ===================== -->
+<section class="block" data-od-id="difference">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">The Difference</span>
+      <h2>Why Should You Choose Us</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card theirs">
+        <h3>Other Agencies</h3>
+        <ul>
+          <li>Uses generic automation tools</li>
+          <li>Focuses only on basic AI setup</li>
+          <li>Limited workflow customization</li>
+          <li>Lack of long-term optimization</li>
+          <li>Delivers disconnected systems</li>
+          <li>Focuses on short-term solutions</li>
+        </ul>
+      </div>
+      <div class="diff-card ours">
+        <h3>agenio</h3>
+        <ul>
+          <li>Works as a strategic AI partner</li>
+          <li>Builds intelligent automation systems</li>
+          <li>Transparent, collaborative workflow</li>
+          <li>Dedicated AI specialists on every project</li>
+          <li>Creates scalable AI workflows</li>
+          <li>Focuses on measurable business impact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEAM ===================== -->
+<section class="block" data-od-id="team">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Team members</span>
+      <h2>The Minds Behind the Work</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card"><div class="ph"><img src="assets/images/zVAVupLZMqFVM7tilgvm6aLQ5I.png" alt="Ethan Brooks"/></div><div class="meta"><h4>Ethan Brooks</h4><span>Agenio Founder</span></div></div>
+      <div class="team-card"><div class="ph"><img src="assets/images/uRkSDN3qxjbBbPA6kGTDnHIOxIQ.png" alt="Noah Reed"/></div><div class="meta"><h4>Noah Reed</h4><span>AI Solutions Architect</span></div></div>
+      <div class="team-card"><div class="ph"><img src="assets/images/mF44sxmIKV5Nwa7Iez5anrYdImQ.png" alt="Liam Anderson"/></div><div class="meta"><h4>Liam Anderson</h4><span>AI Automation Specialist</span></div></div>
+      <div class="team-card"><div class="ph"><img src="assets/images/BvZG0umuRZkLdJggkl83owGCM.png" alt="Oliver Hayes"/></div><div class="meta"><h4>Oliver Hayes</h4><span>Workflow Automation Expert</span></div></div>
+      <div class="team-card"><div class="ph"><img src="assets/images/3IDWsrMWisDAfe56fs2JSh9oNyQ.png" alt="Ethan Walker"/></div><div class="meta"><h4>Ethan Walker</h4><span>AI Strategy Director</span></div></div>
+      <div class="team-card"><div class="ph"><img src="assets/images/bcXJ0NJgL9Usn0fnBzV5upXHg.png" alt="James Carter"/></div><div class="meta"><h4>James Carter</h4><span>AI Creative Director</span></div></div>
+      <div class="team-card"><div class="ph"><img src="assets/images/e879Ld2pFsMzUdfNV7XvZGTXA.png" alt="Mason Cole"/></div><div class="meta"><h4>Mason Cole</h4><span>Lead AI Product Designer</span></div></div>
+      <div class="team-card hire">
+        <h4>We're Searching For Talents</h4>
+        <p>Join our team of creatives pushing boundaries, experimenting with ideas</p>
+        <a class="btn btn-lime" href="#contact">Apply to Join Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AWARDS ===================== -->
+<section class="block" data-od-id="awards">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">award</span>
+      <h2>That Stand Out</h2>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card"><div class="date">MARCH 2026</div><div><h4>Awwwards – Site of the AI Innovation</h4><div class="sub">Nova Website</div></div></div>
+      <div class="award-card"><div class="date">JANUARY 2026</div><div><h4>Innovation – Featured Product</h4><div class="sub">Muse AI Platform</div></div></div>
+      <div class="award-card"><div class="date">SEPTEMBER 2025</div><div><h4>System Awards – Best AI Workflow</h4><div class="sub">Lunaris AI Solutions</div></div></div>
+      <div class="award-card"><div class="date">OCTOBER 2025</div><div><h4>Digital Innovation – Honoree</h4><div class="sub">Axis AI Platform</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIAL ===================== -->
+<section class="block" data-od-id="testimonial">
+  <div class="container">
+    <div class="tst-wrap" id="tstWrap">
+      <div class="tst-quote" id="tstQuote"><span class="mark">“</span>Working with this team completely transformed how we present our product. Their attention to detail and understanding of user experience helped us increase engagement beyond.<span class="mark">”</span></div>
+      <div class="tst-foot">
+        <div class="tst-av" id="tstAv">DL</div>
+        <div class="who"><b id="tstName">Daniel Lewis</b><span id="tstRole">Founder, Lunaris Coffee Co.</span></div>
+      </div>
+      <div class="tst-nav">
+        <button id="tstPrev" aria-label="Previous">‹</button>
+        <button id="tstNext" aria-label="Next">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE ===================== -->
+<section class="block" data-od-id="why">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">Why choose us</span>
+      <h2>Help Businesses Scale With Strategy Driven</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="ico"><img src="assets/images/1vC4YgVCbo9msa3sHtB1BsTeu0.svg" alt="" style="width:22px;filter:brightness(0) invert(1)"/></div><h4>Strategy Driven</h4><p>We combine automation, AI systems, and smart workflows to build solutions aligned with your business goals.</p></div>
+      <div class="why-card"><div class="ico"><img src="assets/images/23S4GQlMnQBCADv4dVCvE6RtY6s.svg" alt="" style="width:22px;filter:brightness(0) invert(1)"/></div><h4>Built for Results</h4><p>From workflow automation to AI integration, every system is built to improve efficiency and performance.</p></div>
+      <div class="why-card"><div class="ico"><img src="assets/images/JH3WmneZqvZUEw98Qm7rXVFxEJQ.svg" alt="" style="width:22px;filter:brightness(0) invert(1)"/></div><h4>Collaborative Process</h4><p>We work closely with clients at every step, ensuring transparency, feedback, and shared success.</p></div>
+      <div class="why-card"><div class="ico"><img src="assets/images/iCV4LZficAE9Kt5IO1oMGK6TJWU.svg" alt="" style="width:22px;filter:brightness(0) invert(1)"/></div><h4>Consistent Excellence</h4><p>Our team delivers reliable AI solutions across every touchpoint from automation to systems.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="block" id="pricing">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">pricing plans</span>
+      <h2>Plans</h2>
+    </div>
+    <div class="price-grid" data-od-id="pricing-grid">
+      <div class="price-card">
+        <div class="avail-pill gray">Available from Dec</div>
+        <h3>Starter Plan</h3>
+        <p>Small businesses, startups, or single-brand projects.</p>
+        <div class="price">$2,500 <small>/ project</small></div>
+        <ul>
+          <li>Full service creative</li><li>Monthly consulting call</li><li>Simple subscription</li>
+          <li>Scales with your needs</li><li>Intergration sync</li><li>Updates every 2 days</li>
+          <li>3 times update</li><li>Cancel anytime</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">Choose Starter</a>
+      </div>
+      <div class="price-card featured">
+        <div class="avail-pill">Available Now</div>
+        <h3>Growth Plan</h3>
+        <p>Established brands seeking full-scale design support.</p>
+        <div class="price">$5,500 <small>/ project</small></div>
+        <ul>
+          <li>Full managed project</li><li>Weekly consulting call</li><li>Access our entire team</li>
+          <li>Creative strategy</li><li>Scales with your needs</li><li>Intergration sync</li>
+          <li>Updates every 2 days</li><li>Cancel anytime</li>
+        </ul>
+        <a class="btn btn-lime" href="#contact">Choose Growth</a>
+      </div>
+      <div class="price-card">
+        <div class="avail-pill gray">Available from Dec</div>
+        <h3>Enterprise</h3>
+        <p>Global teams needing dedicated AI automation at scale.</p>
+        <div class="price">$9,800 <small>/ project</small></div>
+        <ul>
+          <li>Full managed project</li><li>Daily consulting call</li><li>Dedicated AI specialists</li>
+          <li>Custom integrations</li><li>Priority delivery</li><li>Cancel anytime</li>
+        </ul>
+        <a class="btn btn-ghost" href="#contact">Choose Enterprise</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="block" data-od-id="faq">
+  <div class="container faq-grid">
+    <div class="faq-intro">
+      <span class="eyebrow">FAQS</span>
+      <h2>Before You Get Started</h2>
+      <p>Everything you need to know about working with our AI team.</p>
+    </div>
+    <div class="faq-list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q">What if I only need one specific AI service? <span class="pm">+</span></button>
+        <div class="faq-a"><p>We offer modular engagements — you can scope a single service like a chatbot, an automation workflow, or a strategy session without committing to a full retainer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does a typical AI project take? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Project timelines depend on the complexity — most AI integrations take 2–4 weeks, while advanced automation systems typically range from 6–8 weeks. We'll confirm the timeline during discovery.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you work with clients internationally? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Yes. We work with clients across North America, Europe, and Asia, and coordinate across time zones through async updates and scheduled calls.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can you handle both AI systems and development? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Absolutely. Our team covers strategy, model integration, and full-stack development so your AI solution is designed and shipped end to end.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do we start a project with your team? <span class="pm">+</span></button>
+        <div class="faq-a"><p>Reach out through the contact form below. We'll book a discovery call, map your workflows, and send a tailored proposal within a few days.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BAND ===================== -->
+<section class="block" data-od-id="cta-band">
+  <div class="container cta-band">
+    <div>
+      <h2>Let's Start Your AI System</h2>
+      <p>Intelligent automation, built around your business.</p>
+    </div>
+    <div style="display:flex;justify-content:flex-end">
+      <a class="btn btn-dark" href="#contact">Start a Project →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="block" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info" data-od-id="contact-info">
+      <span class="eyebrow">contact</span>
+      <h2>Intelligent Automation</h2>
+      <div class="offices">
+        <div class="office"><div class="t">Offices</div><p>4200 Saint Laurent Blvd, Suite 305
+Montreal, QC H2W 2R2
+Canada</p></div>
+        <div class="office"><div class="t">Offices</div><p>1920 McKinney Avenue, 7th Floor
+Dallas, TX 75201
+United States</p></div>
+        <div class="office"><div class="t">Global support</div><p>Available 24/7 for all active clients worldwide.</p></div>
+      </div>
+    </div>
+    <form class="contact-form" id="contactForm" data-od-id="contact-form" onsubmit="return false">
+      <div class="form-field"><label>Your Name</label><input type="text" placeholder="/YOUR NAME" /></div>
+      <div class="form-field"><label>Your E-mail</label><input type="email" placeholder="/YOUR E-MAIL" /></div>
+      <div class="form-field"><label>More About The Project</label><textarea placeholder="/MORE ABOUT THE PROJECT"></textarea></div>
+      <label class="attach">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
+        Add an attachment
+        <input type="file" hidden />
+      </label>
+      <div style="margin-top:22px"><button class="btn btn-lime" type="submit">Submit Message →</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer data-od-id="footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#hero"><img src="assets/images/syDJXcszgUd7ftsKZYq0l8eYn4.svg" alt="agenio"/><span style="color:#fff">agenio</span><span class="tm">TM</span></a>
+        <p>We build AI systems and automation workflows that help businesses scale smarter and faster.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Sitemap</h5>
+        <a href="#about">About us</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Project</h5>
+        <a href="#projects">Nova AI Assistant</a><a href="#projects">Muse AI Platform</a><a href="#projects">Lunaris AI</a><a href="#projects">Axis AI</a>
+      </div>
+      <div class="foot-col">
+        <h5>Social</h5>
+        <div class="foot-social">
+          <a href="https://instagram.com" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://linkedin.com" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H10z"/></svg></a>
+          <a href="https://dribbble.com" aria-label="Dribbble"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 3c4 4 5 11 4 18M3 9c8-1 14 1 18 6M21 11c-7-2-13 0-17 6"/></svg></a>
+          <a href="https://behance.net" aria-label="Behance"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 7h5c2 0 3 1 3 3s-1 3-3 3H8zM8 13h5c2 0 3 1 3 3s-1 3-3 3H8zM17 8h4v2h-4z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Agenio. All Rights Reserved</span>
+      <a class="back-top" href="#hero">Back to Home ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll state
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn'),mm=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>mm.classList.toggle('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+// Active nav link via IntersectionObserver
+const secs=[...document.querySelectorAll('section[id]')];
+const navMap={};document.querySelectorAll('.nav-links a').forEach(a=>navMap[a.getAttribute('href').slice(1)]=a);
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id;Object.values(navMap).forEach(a=>a.classList.remove('active'));if(navMap[id])navMap[id].classList.add('active');}})},{rootMargin:'-40% 0px -55% 0px'});
+secs.forEach(s=>io.observe(s));
+
+// Counter animation: default HTML shows final value; on first scroll-into-view, reset to 0 and count up
+const counters=[...document.querySelectorAll('[data-count]')];
+function animCount(el){const target=+el.dataset.count,suf=el.dataset.suffix||'';let cur=0;const step=Math.max(1,target/60);el.textContent='0'+suf;const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=Math.floor(cur)+suf;},20);el.dataset.done='1';}
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting && !e.target.dataset.done){animCount(e.target);cio.unobserve(e.target);}}),{threshold:.4});
+counters.forEach(el=>cio.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(it=>{it.querySelector('.faq-q').addEventListener('click',()=>{const open=it.classList.contains('open');document.querySelectorAll('.faq-item').forEach(x=>{x.classList.remove('open');x.querySelector('.faq-a').style.maxHeight=null;});if(!open){it.classList.add('open');const a=it.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px';}});});
+
+// Testimonial slider
+const tst=[{q:'Working with this team completely transformed how we present our product. Their attention to detail and understanding of user experience helped us increase engagement beyond.',n:'Daniel Lewis',r:'Founder, Lunaris Coffee Co.',av:'DL'},
+{q:'The automation they built paid for itself in weeks. Our team finally focuses on strategy instead of repetitive busywork.',n:'Sarah Kim',r:'COO, Northwind Labs',av:'SK'},
+{q:'Genuinely the most professional AI partner we have worked with. Clear communication, real results, zero fluff.',n:'Marcus Hale',r:'VP Product, Vertex Systems',av:'MH'}];
+let ti=0;const q=document.getElementById('tstQuote'),nm=document.getElementById('tstName'),rl=document.getElementById('tstRole'),av=document.getElementById('tstAv');
+function setT(i){ti=(i+tst.length)%tst.length;const d=tst[ti];q.innerHTML='<span class="mark">“</span>'+d.q+'<span class="mark">”</span>';nm.textContent=d.n;rl.textContent=d.r;av.textContent=d.av;}
+document.getElementById('tstPrev').onclick=()=>setT(ti-1);
+document.getElementById('tstNext').onclick=()=>setT(ti+1);
+</script>
+</body>
+</html>

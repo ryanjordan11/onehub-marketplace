@@ -3,7 +3,7 @@
   "specVersion": "1.0.0",
   "name": "onehub-fusion-ai-studio-clone",
   "title": "Fusion AI Studio Clone",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A working AI-generation studio website clone with upload, presets, simulated generation, and output preview.",
   "license": "MIT",
   "author": { "name": "OneHub", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
@@ -11,7 +11,7 @@
   "tags": ["website", "clone", "ai-studio", "prototype", "onehub"],
   "od": {
     "kind": "scenario", "taskKind": "new-generation", "mode": "prototype", "scenario": "prototype", "surface": "prototype",
-    "preview": { "type": "image", "poster": "https://raw.githubusercontent.com/ryanjordan11/onehub-marketplace/main/plugins/fusion-ai-studio-clone/preview.png" },
+    "preview": { "type": "html", "entry": "studio.html", "motion": "static" },
     "useCase": { "query": { "en": "Use the Fusion AI Studio Clone source as the starting point. Keep its upload, preset, generation, and output-preview workflow, then customize the product language, colors, and assets for my brand." } },
     "context": { "assets": ["./studio.html", "./index.ts", "./FineTuneSection.tsx", "./GenerationIndicator.tsx", "./OutputPreview.tsx", "./PresetsGrid.tsx", "./StudioHeader.tsx", "./UploadSection.tsx"] },
     "capabilities": ["prompt:inject"],

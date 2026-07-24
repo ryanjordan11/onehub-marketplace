@@ -15,7 +15,7 @@
     {
       "name": "onehub/if-i-lost-everything",
       "title": "If I Lost Everything…",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/if-i-lost-everything",
       "publisher": {
         "id": "onehub",
@@ -39,7 +39,7 @@
     {
       "name": "onehub/creator-prompts",
       "title": "10 OneHub Prompts Every Creator Should Save",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/onehub-creator-prompts",
       "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
@@ -51,7 +51,7 @@
     {
       "name": "onehub/fusion-ai-studio-clone",
       "title": "Fusion AI Studio Clone",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/fusion-ai-studio-clone",
       "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
@@ -59,6 +59,66 @@
       "capabilitiesSummary": ["prompt:inject"],
       "tags": ["website", "clone", "ai-studio", "prototype", "onehub"],
       "description": "A working AI-generation studio website clone with upload, presets, simulated generation, and output preview."
+    },
+    {
+      "name": "onehub/animated-globe-and-cube",
+      "title": "Animated globe and cube landing",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/animated-globe-and-cube",
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["webgl", "threejs", "globe", "cube", "interactive"],
+      "description": "Interactive Three.js globe and neon cube landing."
+    },
+    {
+      "name": "onehub/agenio-ai-agency-clone",
+      "title": "Agenio AI-Agency Clone",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/agenio-ai-agency-clone",
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["website", "agency", "clone", "interactive"],
+      "description": "Interactive AI-agency marketing site with its original local assets."
+    },
+    {
+      "name": "onehub/multi-agent-neon-bento",
+      "title": "Multi-Agent Neon Bento",
+      "version": "0.1.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/multi-agent-neon-bento-files",
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["bento", "multi-agent", "neon", "interactive"],
+      "description": "Interactive multi-agent neon bento composer."
+    },
+    {
+      "name": "onehub/vertical-framer-portfolio-clone",
+      "title": "Vertical — Framer portfolio clone",
+      "version": "0.1.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/vertical-framer-portfolio-clone",
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["website", "framer", "portfolio", "interactive"],
+      "description": "Interactive 14-section Framer portfolio clone with local assets and video."
+    },
+    {
+      "name": "onehub/onehub-brand-deck",
+      "title": "OneHub Brand Deck",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/onehub-brand-deck",
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "brand", "onehub", "interactive"],
+      "description": "Interactive OneHub brand deck."
+    },
+    {
+      "name": "onehub/content-calendar-social-media-content",
+      "title": "Content Calendar Social Media Content",
+      "version": "1.0.0",
+      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/content-calendar-social-media-content",
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["social", "content", "calendar", "interactive"],
+      "description": "Interactive social-media content calendar."
     }
   ]
 }

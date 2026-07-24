@@ -34,920 +34,160 @@
         "strategy",
         "content-system"
       ],
-      "description": "A 10-slide OneHub creator-system deck for rebuilding from zero.",
-      "mode": "deck",
-      "taskKind": "new-generation"
+      "description": "A 10-slide OneHub creator-system deck for rebuilding from zero."
     },
     {
       "name": "onehub/creator-prompts",
       "title": "10 OneHub Prompts Every Creator Should Save",
       "version": "1.0.2",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/onehub-creator-prompts",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11",
-        "url": "https://github.com/ryanjordan11/onehub-marketplace"
-      },
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
       "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject"
-      ],
-      "tags": [
-        "slides",
-        "onehub",
-        "prompts",
-        "creator",
-        "content"
-      ],
-      "description": "A ready-made OneHub prompt playbook for research, content, conversion, automation, and review.",
-      "mode": "deck",
-      "taskKind": "new-generation"
+      "capabilitiesSummary": ["prompt:inject"],
+      "tags": ["slides", "onehub", "prompts", "creator", "content"],
+      "description": "A ready-made OneHub prompt playbook for research, content, conversion, automation, and review."
     },
     {
       "name": "onehub/fusion-ai-studio-clone",
       "title": "Fusion AI Studio Clone",
       "version": "1.0.2",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/fusion-ai-studio-clone",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11",
-        "url": "https://github.com/ryanjordan11/onehub-marketplace"
-      },
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
       "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject"
-      ],
-      "tags": [
-        "website",
-        "clone",
-        "ai-studio",
-        "prototype",
-        "onehub"
-      ],
-      "description": "A working AI-generation studio website clone with upload, presets, simulated generation, and output preview.",
-      "mode": "prototype",
-      "taskKind": "new-generation"
+      "capabilitiesSummary": ["prompt:inject"],
+      "tags": ["website", "clone", "ai-studio", "prototype", "onehub"],
+      "description": "A working AI-generation studio website clone with upload, presets, simulated generation, and output preview."
     },
     {
       "name": "onehub/animated-globe-and-cube",
       "title": "Animated globe and cube landing",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/animated-globe-and-cube",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "threejs",
-        "globe",
-        "cube",
-        "interactive"
-      ],
-      "description": "Interactive Three.js globe and neon cube landing.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/animated-globe-and-cube"
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["webgl", "threejs", "globe", "cube", "interactive"],
+      "description": "Interactive Three.js globe and neon cube landing."
     },
     {
       "name": "onehub/agenio-ai-agency-clone",
       "title": "Agenio AI-Agency Clone",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/agenio-ai-agency-clone",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "website",
-        "agency",
-        "clone",
-        "interactive"
-      ],
-      "description": "Interactive AI-agency marketing site with its original local assets.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/agenio-ai-agency-clone"
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["website", "agency", "clone", "interactive"],
+      "description": "Interactive AI-agency marketing site with its original local assets."
     },
     {
       "name": "onehub/multi-agent-neon-bento",
       "title": "Multi-Agent Neon Bento",
       "version": "0.1.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/multi-agent-neon-bento-files",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "bento",
-        "multi-agent",
-        "neon",
-        "interactive"
-      ],
-      "description": "Interactive multi-agent neon bento composer.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/multi-agent-neon-bento-files"
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["bento", "multi-agent", "neon", "interactive"],
+      "description": "Interactive multi-agent neon bento composer."
     },
     {
       "name": "onehub/vertical-framer-portfolio-clone",
       "title": "Vertical — Framer portfolio clone",
       "version": "0.1.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/vertical-framer-portfolio-clone",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "website",
-        "framer",
-        "portfolio",
-        "interactive"
-      ],
-      "description": "Interactive 14-section Framer portfolio clone with local assets and video.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/vertical-framer-portfolio-clone"
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["website", "framer", "portfolio", "interactive"],
+      "description": "Interactive 14-section Framer portfolio clone with local assets and video."
     },
     {
       "name": "onehub/onehub-brand-deck",
       "title": "OneHub Brand Deck",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/onehub-brand-deck",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "slides",
-        "brand",
-        "onehub",
-        "interactive"
-      ],
-      "description": "Interactive OneHub brand deck.",
-      "mode": "deck",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/onehub-brand-deck"
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "brand", "onehub", "interactive"],
+      "description": "Interactive OneHub brand deck."
     },
     {
       "name": "onehub/content-calendar-social-media-content",
       "title": "Content Calendar Social Media Content",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/content-calendar-social-media-content",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "social",
-        "content",
-        "calendar",
-        "interactive"
-      ],
-      "description": "Interactive social-media content calendar.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/content-calendar-social-media-content"
+      "publisher": { "id": "onehub", "github": "ryanjordan11" },
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["social", "content", "calendar", "interactive"],
+      "description": "Interactive social-media content calendar."
     },
     {
       "name": "onehub/ten-reasons-switch-to-onehub",
       "title": "10 Reasons People Switch to OneHub",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ten-reasons-switch-to-onehub",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11",
-        "url": "https://github.com/ryanjordan11/onehub-marketplace"
-      },
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "slides",
-        "onehub",
-        "creator",
-        "interactive"
-      ],
-      "description": "Interactive OneHub slide deck explaining why people switch to OneHub.",
-      "mode": "deck",
-      "taskKind": "new-generation"
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "creator", "interactive"],
+      "description": "Interactive OneHub slide deck explaining why people switch to OneHub."
     },
     {
       "name": "onehub/ten-thousand-youtube-channel",
       "title": "Build a $10,000/Month YouTube Channel with OneHub",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ten-thousand-youtube-channel",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11",
-        "url": "https://github.com/ryanjordan11/onehub-marketplace"
-      },
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "slides",
-        "onehub",
-        "youtube",
-        "creator",
-        "interactive"
-      ],
-      "description": "Interactive OneHub slide deck for building a $10,000/month YouTube channel.",
-      "mode": "deck",
-      "taskKind": "new-generation"
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "youtube", "creator", "interactive"],
+      "description": "Interactive OneHub slide deck for building a $10,000/month YouTube channel."
     },
     {
       "name": "onehub/ai-isnt-better-prompts",
       "title": "Everyone thinks AI is about writing better prompts.",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ai-isnt-better-prompts",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11",
-        "url": "https://github.com/ryanjordan11/onehub-marketplace"
-      },
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "slides",
-        "onehub",
-        "ai",
-        "prompts",
-        "interactive"
-      ],
-      "description": "Interactive OneHub slide deck about moving beyond better prompts.",
-      "mode": "deck",
-      "taskKind": "new-generation"
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "ai", "prompts", "interactive"],
+      "description": "Interactive OneHub slide deck about moving beyond better prompts."
     },
     {
       "name": "onehub/ten-things-while-you-sleep",
       "title": "10 Things OneHub Does While You Sleep",
       "version": "1.0.0",
       "source": "github:ryanjordan11/onehub-marketplace@main/plugins/ten-things-onehub-does-while-you-sleep",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11",
-        "url": "https://github.com/ryanjordan11/onehub-marketplace"
-      },
+      "publisher": { "id": "onehub", "github": "ryanjordan11", "url": "https://github.com/ryanjordan11/onehub-marketplace" },
       "homepage": "https://github.com/ryanjordan11/onehub-marketplace",
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "slides",
-        "onehub",
-        "automation",
-        "interactive"
-      ],
-      "description": "Interactive OneHub slide deck about the work OneHub can keep moving while you sleep.",
-      "mode": "deck",
-      "taskKind": "new-generation"
+      "license": "MIT", "capabilitiesSummary": ["prompt:inject", "fs:read", "fs:write"],
+      "tags": ["slides", "onehub", "automation", "interactive"],
+      "description": "Interactive OneHub slide deck about the work OneHub can keep moving while you sleep."
     },
-    {
-      "name": "onehub/codex-interactive-capability-map",
-      "title": "Codex Interactive Capability Map",
-      "version": "1.0.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/codex-interactive-capability-map",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "codex",
-        "interactive",
-        "map"
-      ],
-      "description": "Interactive Codex capability map.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/codex-interactive-capability-map"
-    },
-    {
-      "name": "onehub/spotify-now-playing-card",
-      "title": "Spotify Now-Playing Card",
-      "version": "1.0.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/spotify-now-playing-card",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "spotify",
-        "music",
-        "interactive"
-      ],
-      "description": "Interactive Spotify now-playing card.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/spotify-now-playing-card"
-    },
-    {
-      "name": "onehub/social-carousel",
-      "title": "Social Carousel",
-      "version": "1.0.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/social-carousel",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "social",
-        "carousel",
-        "interactive"
-      ],
-      "description": "Interactive social-media carousel.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/social-carousel"
-    },
-    {
-      "name": "onehub/webgl-aurora-veil",
-      "title": "Aurora Veil",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-aurora-veil",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Aurora Veil.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-aurora-veil"
-    },
-    {
-      "name": "onehub/webgl-caustic-pool",
-      "title": "Caustic Pool",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-caustic-pool",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Caustic Pool.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-caustic-pool"
-    },
-    {
-      "name": "onehub/webgl-depth-gallery",
-      "title": "Depth Gallery",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-depth-gallery",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Depth Gallery.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-depth-gallery"
-    },
-    {
-      "name": "onehub/webgl-distortion-grain",
-      "title": "Distortion & Grain",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-distortion-grain",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Distortion & Grain.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-distortion-grain"
-    },
-    {
-      "name": "onehub/webgl-experience",
-      "title": "WebGL Experience",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-experience",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Experience.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-experience"
-    },
-    {
-      "name": "onehub/webgl-halftone-drift",
-      "title": "Halftone Drift",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-halftone-drift",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Halftone Drift.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-halftone-drift"
-    },
-    {
-      "name": "onehub/webgl-holographic-foil",
-      "title": "Holographic Foil",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-holographic-foil",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Holographic Foil.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-holographic-foil"
-    },
-    {
-      "name": "onehub/webgl-horizontal-parallax",
-      "title": "Horizontal Parallax Gallery",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-horizontal-parallax",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Horizontal Parallax Gallery.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-horizontal-parallax"
-    },
-    {
-      "name": "onehub/webgl-liquid-iridescence",
-      "title": "Liquid Iridescence",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-liquid-iridescence",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Liquid Iridescence.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-liquid-iridescence"
-    },
-    {
-      "name": "onehub/webgl-liquid-metal",
-      "title": "Liquid Metal",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-liquid-metal",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Liquid Metal.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-liquid-metal"
-    },
-    {
-      "name": "onehub/webgl-neon-grid",
-      "title": "Neon Grid",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-neon-grid",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Neon Grid.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-neon-grid"
-    },
-    {
-      "name": "onehub/webgl-particle-galaxy",
-      "title": "Particle Galaxy",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-particle-galaxy",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Particle Galaxy.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-particle-galaxy"
-    },
-    {
-      "name": "onehub/webgl-pixel-reveal-gallery",
-      "title": "Pixel Reveal Gallery",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-pixel-reveal-gallery",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Pixel Reveal Gallery.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-pixel-reveal-gallery"
-    },
-    {
-      "name": "onehub/webgl-raymarched-hero",
-      "title": "Raymarched Hero",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-raymarched-hero",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Raymarched Hero.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-raymarched-hero"
-    },
-    {
-      "name": "onehub/webgl-voronoi-cells",
-      "title": "Voronoi Cells",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/webgl-voronoi-cells",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "webgl",
-        "interactive"
-      ],
-      "description": "Interactive WebGL Voronoi Cells.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/webgl-voronoi-cells"
-    },
-    {
-      "name": "onehub/image-poster",
-      "title": "Image Poster",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/image-poster",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "image",
-        "poster"
-      ],
-      "description": "Image generation skill for posters and editorial illustrations.",
-      "mode": "image",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/image-poster"
-    },
-    {
-      "name": "onehub/hyperframes",
-      "title": "Hyperframes",
-      "version": "0.1.1",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/hyperframes",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "video",
-        "hyperframes",
-        "animation"
-      ],
-      "description": "HTML-based video compositions, animation, captions, and motion graphics.",
-      "mode": "video",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/hyperframes"
-    },
-    {
-      "name": "onehub/motion-frames",
-      "title": "Motion Frames",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/motion-frames",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "video",
-        "hyperframes",
-        "motion"
-      ],
-      "description": "Interactive motion-design compositions and looping video posters.",
-      "mode": "video",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/motion-frames"
-    },
-    {
-      "name": "onehub/logo-outro-frame",
-      "title": "Logo Outro Frame",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/frame-logo-outro",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "video",
-        "hyperframes",
-        "brand"
-      ],
-      "description": "Animated logo assembly and brand-closing frame.",
-      "mode": "video",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/frame-logo-outro"
-    },
-    {
-      "name": "onehub/audio-jingle",
-      "title": "Audio Jingle",
-      "version": "0.1.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/audio-jingle",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:write"
-      ],
-      "tags": [
-        "audio",
-        "jingle",
-        "music"
-      ],
-      "description": "Audio generation for jingles, beds, voiceovers, and sound effects.",
-      "mode": "audio",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/audio-jingle"
-    },
-    {
-      "name": "onehub/fusion-studio-1",
-      "title": "Fusion Studio 1",
-      "version": "1.0.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/fusion-studio-1",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "website",
-        "ai-studio",
-        "interactive",
-        "onehub"
-      ],
-      "description": "The original interactive Fusion Studio project with upload, presets, generation, and output preview.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/fusion-studio-1"
-    },
-    {
-      "name": "onehub/kan-ban-board",
-      "title": "Kan Ban Board",
-      "version": "1.0.0",
-      "source": "github:ryanjordan11/onehub-marketplace@main/plugins/kan-ban-board",
-      "publisher": {
-        "id": "onehub",
-        "github": "ryanjordan11"
-      },
-      "license": "MIT",
-      "capabilitiesSummary": [
-        "prompt:inject",
-        "fs:read",
-        "fs:write"
-      ],
-      "tags": [
-        "kanban",
-        "planning",
-        "workflow",
-        "interactive"
-      ],
-      "description": "Interactive Kan Ban board for organizing work.",
-      "mode": "prototype",
-      "taskKind": "new-generation",
-      "homepage": "https://github.com/ryanjordan11/onehub-marketplace/tree/main/plugins/kan-ban-board"
-    }
-  ],
-  "trust": "official"
+    {"name":"onehub/codex-interactive-capability-map","title":"Codex Interactive Capability Map","version":"1.0.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/codex-interactive-capability-map","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:read","fs:write"],"tags":["codex","interactive","map"],"description":"Interactive Codex capability map."},
+    {"name":"onehub/spotify-now-playing-card","title":"Spotify Now-Playing Card","version":"1.0.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/spotify-now-playing-card","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:read","fs:write"],"tags":["spotify","music","interactive"],"description":"Interactive Spotify now-playing card."},
+    {"name":"onehub/social-carousel","title":"Social Carousel","version":"1.0.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/social-carousel","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:read","fs:write"],"tags":["social","carousel","interactive"],"description":"Interactive social-media carousel."},
+    {"name":"onehub/webgl-aurora-veil","title":"Aurora Veil","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-aurora-veil","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Aurora Veil."},
+    {"name":"onehub/webgl-caustic-pool","title":"Caustic Pool","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-caustic-pool","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Caustic Pool."},
+    {"name":"onehub/webgl-depth-gallery","title":"Depth Gallery","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-depth-gallery","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Depth Gallery."},
+    {"name":"onehub/webgl-distortion-grain","title":"Distortion & Grain","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-distortion-grain","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Distortion & Grain."},
+    {"name":"onehub/webgl-experience","title":"WebGL Experience","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-experience","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Experience."},
+    {"name":"onehub/webgl-halftone-drift","title":"Halftone Drift","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-halftone-drift","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Halftone Drift."},
+    {"name":"onehub/webgl-holographic-foil","title":"Holographic Foil","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-holographic-foil","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Holographic Foil."},
+    {"name":"onehub/webgl-horizontal-parallax","title":"Horizontal Parallax Gallery","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-horizontal-parallax","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Horizontal Parallax Gallery."},
+    {"name":"onehub/webgl-liquid-iridescence","title":"Liquid Iridescence","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-liquid-iridescence","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Liquid Iridescence."},
+    {"name":"onehub/webgl-liquid-metal","title":"Liquid Metal","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-liquid-metal","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Liquid Metal."},
+    {"name":"onehub/webgl-neon-grid","title":"Neon Grid","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-neon-grid","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Neon Grid."},
+    {"name":"onehub/webgl-particle-galaxy","title":"Particle Galaxy","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-particle-galaxy","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Particle Galaxy."},
+    {"name":"onehub/webgl-pixel-reveal-gallery","title":"Pixel Reveal Gallery","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-pixel-reveal-gallery","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Pixel Reveal Gallery."},
+    {"name":"onehub/webgl-raymarched-hero","title":"Raymarched Hero","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-raymarched-hero","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Raymarched Hero."},
+    {"name":"onehub/webgl-voronoi-cells","title":"Voronoi Cells","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/webgl-voronoi-cells","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["webgl","interactive"],"description":"Interactive WebGL Voronoi Cells."},
+    {"name":"onehub/image-poster","title":"Image Poster","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/image-poster","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["image","poster"],"description":"Image generation skill for posters and editorial illustrations."},
+    {"name":"onehub/hyperframes","title":"Hyperframes","version":"0.1.1","source":"github:ryanjordan11/onehub-marketplace@main/plugins/hyperframes","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["video","hyperframes","animation"],"description":"HTML-based video compositions, animation, captions, and motion graphics."},
+    {"name":"onehub/motion-frames","title":"Motion Frames","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/motion-frames","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["video","hyperframes","motion"],"description":"Interactive motion-design compositions and looping video posters."},
+    {"name":"onehub/logo-outro-frame","title":"Logo Outro Frame","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/frame-logo-outro","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["video","hyperframes","brand"],"description":"Animated logo assembly and brand-closing frame."},
+    {"name":"onehub/audio-jingle","title":"Audio Jingle","version":"0.1.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/audio-jingle","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:write"],"tags":["audio","jingle","music"],"description":"Audio generation for jingles, beds, voiceovers, and sound effects."},
+    {"name":"onehub/fusion-studio-1","title":"Fusion Studio 1","version":"1.0.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/fusion-studio-1","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:read","fs:write"],"tags":["website","ai-studio","interactive","onehub"],"description":"The original interactive Fusion Studio project with upload, presets, generation, and output preview."},
+    {"name":"onehub/kan-ban-board","title":"Kan Ban Board","version":"1.0.0","source":"github:ryanjordan11/onehub-marketplace@main/plugins/kan-ban-board","publisher":{"id":"onehub","github":"ryanjordan11"},"license":"MIT","capabilitiesSummary":["prompt:inject","fs:read","fs:write"],"tags":["kanban","planning","workflow","interactive"],"description":"Interactive Kan Ban board for organizing work."}
+  ]
 }

@@ -1,0 +1,244 @@
+{
+  "label": "original",
+  "url": "https://fusion2.lovable.app/",
+  "capturedAt": "2026-07-22T19:36:47.236Z",
+  "requestCount": 10,
+  "responseCount": 10,
+  "fixtureCount": 0,
+  "requests": [
+    {
+      "url": "https://fusion2.lovable.app/",
+      "method": "GET",
+      "resourceType": "document",
+      "headers": {
+        "upgrade-insecure-requests": "1",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\""
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://fusion2.lovable.app/assets/index-kld3g1cl.js",
+      "method": "GET",
+      "resourceType": "script",
+      "headers": {
+        "origin": "https://fusion2.lovable.app",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://fusion2.lovable.app/assets/index-1ni_mYkF.css",
+      "method": "GET",
+      "resourceType": "stylesheet",
+      "headers": {
+        "origin": "https://fusion2.lovable.app",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://fusion2.lovable.app/~flock.js",
+      "method": "GET",
+      "resourceType": "script",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      "method": "GET",
+      "resourceType": "image",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+      "method": "GET",
+      "resourceType": "image",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+      "method": "GET",
+      "resourceType": "image",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+      "method": "GET",
+      "resourceType": "image",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+      "method": "GET",
+      "resourceType": "image",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+      "method": "GET",
+      "resourceType": "image",
+      "headers": {
+        "sec-ch-ua-platform": "\"macOS\"",
+        "referer": "https://fusion2.lovable.app/",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Chromium\";v=\"148\", \"HeadlessChrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+        "sec-ch-ua-mobile": "?0"
+      },
+      "postData": ""
+    }
+  ],
+  "responses": [
+    {
+      "url": "https://fusion2.lovable.app/",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "document",
+      "contentType": "text/html; charset=utf-8",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://fusion2.lovable.app/assets/index-1ni_mYkF.css",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "stylesheet",
+      "contentType": "text/css; charset=utf-8",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://fusion2.lovable.app/~flock.js",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "script",
+      "contentType": "text/javascript; charset=utf-8",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://fusion2.lovable.app/assets/index-kld3g1cl.js",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "script",
+      "contentType": "text/javascript; charset=utf-8",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "image",
+      "contentType": "image/jpeg",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "image",
+      "contentType": "image/jpeg",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "image",
+      "contentType": "image/jpeg",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "image",
+      "contentType": "image/jpeg",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "image",
+      "contentType": "image/jpeg",
+      "fixture": "",
+      "error": ""
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+      "status": 200,
+      "ok": true,
+      "method": "GET",
+      "resourceType": "image",
+      "contentType": "image/jpeg",
+      "fixture": "",
+      "error": ""
+    }
+  ]
+}

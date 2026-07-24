@@ -1,0 +1,4131 @@
+{
+  "label": "original",
+  "url": "https://fusion2.lovable.app/",
+  "capturedAt": "2026-07-22T19:36:14.762Z",
+  "console": {
+    "errors": [],
+    "warnings": [],
+    "pageErrors": []
+  },
+  "captures": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "screenshots/original-1440.png",
+      "signals": {
+        "href": "https://fusion2.lovable.app/",
+        "title": "AI Image Transformation Studio",
+        "lang": "en",
+        "bodyTextChars": 637,
+        "scrollHeight": 1574,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "h1": [
+          "Transform YourPhotos with AI"
+        ],
+        "headings": [
+          {
+            "tag": "h1",
+            "text": "Transform YourPhotos with AI"
+          },
+          {
+            "tag": "h2",
+            "text": "See the Transformation"
+          },
+          {
+            "tag": "h3",
+            "text": "Look Packs"
+          },
+          {
+            "tag": "h3",
+            "text": "AI Modifiers"
+          },
+          {
+            "tag": "h3",
+            "text": "Instant Results"
+          }
+        ],
+        "metaDescription": "Transform your photos with AI-powered aesthetic packs and curated presets. Create stunning visual transformations instantly.",
+        "counts": {
+          "links": 0,
+          "images": 6,
+          "video": 0,
+          "canvas": 0,
+          "sections": 3,
+          "forms": 0,
+          "buttons": 2,
+          "inputs": 0,
+          "interactive": 5,
+          "scripts": 2,
+          "stylesheets": 1
+        },
+        "frameworks": {
+          "react": false,
+          "next": false,
+          "vue": false,
+          "nuxt": false,
+          "svelte": false,
+          "astro": false,
+          "three": false,
+          "gsap": false,
+          "lenis": false
+        },
+        "scripts": [
+          "https://fusion2.lovable.app/assets/index-kld3g1cl.js",
+          "https://fusion2.lovable.app/~flock.js"
+        ],
+        "stylesheets": [
+          "https://fusion2.lovable.app/assets/index-1ni_mYkF.css"
+        ],
+        "sections": [
+          {
+            "tag": "section",
+            "id": "",
+            "className": "",
+            "text": "",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 0
+            },
+            "style": {
+              "display": "block",
+              "position": "static",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(26, 26, 26)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          },
+          {
+            "tag": "nav",
+            "id": "",
+            "className": "h-16 border-b border-white/10 flex items-center justify-between px-6 backdrop-blur-xl bg-black/50 sticky top-0 z-50",
+            "text": "FusionLogin",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 64
+            },
+            "style": {
+              "display": "flex",
+              "position": "sticky",
+              "backgroundColor": "rgba(0, 0, 0, 0.5)",
+              "color": "rgb(255, 255, 255)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          },
+          {
+            "tag": "main",
+            "id": "",
+            "className": "max-w-7xl mx-auto px-6 py-20",
+            "text": "AI-Powered Photo StudioTransform YourPhotos with AIUpload any photo. Choose a style. Watch the magic happen.Create stunning AI-powered transformations in seconds.🎁 3 Free Generations Daily🚀 Get Started FreeSee the TransformationBeforeAfte",
+            "rect": {
+              "x": 80,
+              "y": 64,
+              "width": 1280,
+              "height": 1510
+            },
+            "style": {
+              "display": "block",
+              "position": "static",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          }
+        ],
+        "cssVariables": [
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-pan-x",
+            ""
+          ],
+          [
+            "--tw-pan-y",
+            ""
+          ],
+          [
+            "--tw-pinch-zoom",
+            ""
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-gradient-from-position",
+            ""
+          ],
+          [
+            "--tw-gradient-via-position",
+            ""
+          ],
+          [
+            "--tw-gradient-to-position",
+            ""
+          ],
+          [
+            "--tw-ordinal",
+            ""
+          ],
+          [
+            "--tw-slashed-zero",
+            ""
+          ],
+          [
+            "--tw-numeric-figure",
+            ""
+          ],
+          [
+            "--tw-numeric-spacing",
+            ""
+          ],
+          [
+            "--tw-numeric-fraction",
+            ""
+          ],
+          [
+            "--tw-ring-inset",
+            ""
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-blur",
+            ""
+          ],
+          [
+            "--tw-brightness",
+            ""
+          ],
+          [
+            "--tw-contrast",
+            ""
+          ],
+          [
+            "--tw-grayscale",
+            ""
+          ],
+          [
+            "--tw-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-invert",
+            ""
+          ],
+          [
+            "--tw-saturate",
+            ""
+          ],
+          [
+            "--tw-sepia",
+            ""
+          ],
+          [
+            "--tw-drop-shadow",
+            ""
+          ],
+          [
+            "--tw-backdrop-blur",
+            ""
+          ],
+          [
+            "--tw-backdrop-brightness",
+            ""
+          ],
+          [
+            "--tw-backdrop-contrast",
+            ""
+          ],
+          [
+            "--tw-backdrop-grayscale",
+            ""
+          ],
+          [
+            "--tw-backdrop-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-backdrop-invert",
+            ""
+          ],
+          [
+            "--tw-backdrop-opacity",
+            ""
+          ],
+          [
+            "--tw-backdrop-saturate",
+            ""
+          ],
+          [
+            "--tw-backdrop-sepia",
+            ""
+          ],
+          [
+            "--tw-contain-size",
+            ""
+          ],
+          [
+            "--tw-contain-layout",
+            ""
+          ],
+          [
+            "--tw-contain-paint",
+            ""
+          ],
+          [
+            "--tw-contain-style",
+            ""
+          ],
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-pan-x",
+            ""
+          ],
+          [
+            "--tw-pan-y",
+            ""
+          ],
+          [
+            "--tw-pinch-zoom",
+            ""
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-gradient-from-position",
+            ""
+          ],
+          [
+            "--tw-gradient-via-position",
+            ""
+          ],
+          [
+            "--tw-gradient-to-position",
+            ""
+          ],
+          [
+            "--tw-ordinal",
+            ""
+          ],
+          [
+            "--tw-slashed-zero",
+            ""
+          ],
+          [
+            "--tw-numeric-figure",
+            ""
+          ],
+          [
+            "--tw-numeric-spacing",
+            ""
+          ],
+          [
+            "--tw-numeric-fraction",
+            ""
+          ],
+          [
+            "--tw-ring-inset",
+            ""
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-blur",
+            ""
+          ],
+          [
+            "--tw-brightness",
+            ""
+          ],
+          [
+            "--tw-contrast",
+            ""
+          ],
+          [
+            "--tw-grayscale",
+            ""
+          ],
+          [
+            "--tw-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-invert",
+            ""
+          ],
+          [
+            "--tw-saturate",
+            ""
+          ],
+          [
+            "--tw-sepia",
+            ""
+          ],
+          [
+            "--tw-drop-shadow",
+            ""
+          ],
+          [
+            "--tw-backdrop-blur",
+            ""
+          ],
+          [
+            "--tw-backdrop-brightness",
+            ""
+          ],
+          [
+            "--tw-backdrop-contrast",
+            ""
+          ],
+          [
+            "--tw-backdrop-grayscale",
+            ""
+          ],
+          [
+            "--tw-backdrop-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-backdrop-invert",
+            ""
+          ],
+          [
+            "--tw-backdrop-opacity",
+            ""
+          ],
+          [
+            "--tw-backdrop-saturate",
+            ""
+          ],
+          [
+            "--tw-backdrop-sepia",
+            ""
+          ],
+          [
+            "--tw-contain-size",
+            ""
+          ],
+          [
+            "--tw-contain-layout",
+            ""
+          ],
+          [
+            "--tw-contain-paint",
+            ""
+          ],
+          [
+            "--tw-contain-style",
+            ""
+          ],
+          [
+            "--tw-content",
+            "\"\""
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--radius",
+            ".5rem"
+          ],
+          [
+            "--background",
+            "0 0% 2%"
+          ],
+          [
+            "--foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--card",
+            "0 0% 4%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--popover",
+            "0 0% 4%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--primary",
+            "0 0% 98%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--secondary",
+            "0 0% 10%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--muted",
+            "0 0% 10%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 50%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 63% 31%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 20%"
+          ],
+          [
+            "--input",
+            "0 0% 20%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-1px"
+          ],
+          [
+            "--tw-translate-y",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "1px"
+          ],
+          [
+            "--tw-translate-y",
+            "-50%"
+          ],
+          [
+            "--tw-rotate",
+            "45deg"
+          ],
+          [
+            "--tw-rotate",
+            "90deg"
+          ],
+          [
+            "--tw-space-x-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-x-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-border-opacity",
+            "1"
+          ],
+          [
+            "--tw-border-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-gradient-from",
+            "#CCFF00 var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(204 255 0 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(204 255 0 / .2) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(204 255 0 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .1) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .2) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .05) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(30 58 138 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(30 58 138 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(22 78 99 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(22 78 99 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "#e5e7eb var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(229 231 235 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(49 46 129 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(49 46 129 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(131 24 67 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(131 24 67 / 0) var(--tw-gradient-to-position)"
+          ]
+        ],
+        "rootVariables": [
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--radius",
+            ".5rem"
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ]
+        ],
+        "palette": {
+          "body": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "color": "rgb(26, 26, 26)",
+            "borderColor": "rgb(230, 230, 230)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "header": null,
+          "nav": {
+            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+            "color": "rgb(255, 255, 255)",
+            "borderColor": "rgba(255, 255, 255, 0.1)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "main": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "borderColor": "rgb(230, 230, 230)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "footer": null,
+          "buttons": [
+            {
+              "text": "Login",
+              "backgroundColor": "rgb(250, 250, 250)",
+              "color": "rgb(204, 255, 0)",
+              "borderColor": "rgb(204, 255, 0)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "backgroundImage": ""
+            },
+            {
+              "text": "🚀 Get Started Free",
+              "backgroundColor": "rgb(204, 255, 0)",
+              "color": "rgb(0, 0, 0)",
+              "borderColor": "rgb(230, 230, 230)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "backgroundImage": ""
+            }
+          ]
+        },
+        "motion": {
+          "htmlScrollBehavior": "auto",
+          "scrollSnapRules": 2,
+          "smoothScrollRules": 0,
+          "stickyOrFixedCount": 1
+        },
+        "fonts": [],
+        "fontFaces": [],
+        "resources": {
+          "images": [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+            "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+            "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+            "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80"
+          ],
+          "fonts": [],
+          "media": []
+        },
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 500
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 500
+          }
+        ],
+        "canvases": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 900
+      },
+      "screenshot": "screenshots/original-768.png",
+      "signals": {
+        "href": "https://fusion2.lovable.app/",
+        "title": "AI Image Transformation Studio",
+        "lang": "en",
+        "bodyTextChars": 637,
+        "scrollHeight": 1508,
+        "viewport": {
+          "width": 768,
+          "height": 900
+        },
+        "h1": [
+          "Transform YourPhotos with AI"
+        ],
+        "headings": [
+          {
+            "tag": "h1",
+            "text": "Transform YourPhotos with AI"
+          },
+          {
+            "tag": "h2",
+            "text": "See the Transformation"
+          },
+          {
+            "tag": "h3",
+            "text": "Look Packs"
+          },
+          {
+            "tag": "h3",
+            "text": "AI Modifiers"
+          },
+          {
+            "tag": "h3",
+            "text": "Instant Results"
+          }
+        ],
+        "metaDescription": "Transform your photos with AI-powered aesthetic packs and curated presets. Create stunning visual transformations instantly.",
+        "counts": {
+          "links": 0,
+          "images": 6,
+          "video": 0,
+          "canvas": 0,
+          "sections": 3,
+          "forms": 0,
+          "buttons": 2,
+          "inputs": 0,
+          "interactive": 5,
+          "scripts": 2,
+          "stylesheets": 1
+        },
+        "frameworks": {
+          "react": false,
+          "next": false,
+          "vue": false,
+          "nuxt": false,
+          "svelte": false,
+          "astro": false,
+          "three": false,
+          "gsap": false,
+          "lenis": false
+        },
+        "scripts": [
+          "https://fusion2.lovable.app/assets/index-kld3g1cl.js",
+          "https://fusion2.lovable.app/~flock.js"
+        ],
+        "stylesheets": [
+          "https://fusion2.lovable.app/assets/index-1ni_mYkF.css"
+        ],
+        "sections": [
+          {
+            "tag": "section",
+            "id": "",
+            "className": "",
+            "text": "",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 0
+            },
+            "style": {
+              "display": "block",
+              "position": "static",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(26, 26, 26)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          },
+          {
+            "tag": "nav",
+            "id": "",
+            "className": "h-16 border-b border-white/10 flex items-center justify-between px-6 backdrop-blur-xl bg-black/50 sticky top-0 z-50",
+            "text": "FusionLogin",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 64
+            },
+            "style": {
+              "display": "flex",
+              "position": "sticky",
+              "backgroundColor": "rgba(0, 0, 0, 0.5)",
+              "color": "rgb(255, 255, 255)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          },
+          {
+            "tag": "main",
+            "id": "",
+            "className": "max-w-7xl mx-auto px-6 py-20",
+            "text": "AI-Powered Photo StudioTransform YourPhotos with AIUpload any photo. Choose a style. Watch the magic happen.Create stunning AI-powered transformations in seconds.🎁 3 Free Generations Daily🚀 Get Started FreeSee the TransformationBeforeAfte",
+            "rect": {
+              "x": 0,
+              "y": 64,
+              "width": 768,
+              "height": 1444
+            },
+            "style": {
+              "display": "block",
+              "position": "static",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          }
+        ],
+        "cssVariables": [
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-pan-x",
+            ""
+          ],
+          [
+            "--tw-pan-y",
+            ""
+          ],
+          [
+            "--tw-pinch-zoom",
+            ""
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-gradient-from-position",
+            ""
+          ],
+          [
+            "--tw-gradient-via-position",
+            ""
+          ],
+          [
+            "--tw-gradient-to-position",
+            ""
+          ],
+          [
+            "--tw-ordinal",
+            ""
+          ],
+          [
+            "--tw-slashed-zero",
+            ""
+          ],
+          [
+            "--tw-numeric-figure",
+            ""
+          ],
+          [
+            "--tw-numeric-spacing",
+            ""
+          ],
+          [
+            "--tw-numeric-fraction",
+            ""
+          ],
+          [
+            "--tw-ring-inset",
+            ""
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-blur",
+            ""
+          ],
+          [
+            "--tw-brightness",
+            ""
+          ],
+          [
+            "--tw-contrast",
+            ""
+          ],
+          [
+            "--tw-grayscale",
+            ""
+          ],
+          [
+            "--tw-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-invert",
+            ""
+          ],
+          [
+            "--tw-saturate",
+            ""
+          ],
+          [
+            "--tw-sepia",
+            ""
+          ],
+          [
+            "--tw-drop-shadow",
+            ""
+          ],
+          [
+            "--tw-backdrop-blur",
+            ""
+          ],
+          [
+            "--tw-backdrop-brightness",
+            ""
+          ],
+          [
+            "--tw-backdrop-contrast",
+            ""
+          ],
+          [
+            "--tw-backdrop-grayscale",
+            ""
+          ],
+          [
+            "--tw-backdrop-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-backdrop-invert",
+            ""
+          ],
+          [
+            "--tw-backdrop-opacity",
+            ""
+          ],
+          [
+            "--tw-backdrop-saturate",
+            ""
+          ],
+          [
+            "--tw-backdrop-sepia",
+            ""
+          ],
+          [
+            "--tw-contain-size",
+            ""
+          ],
+          [
+            "--tw-contain-layout",
+            ""
+          ],
+          [
+            "--tw-contain-paint",
+            ""
+          ],
+          [
+            "--tw-contain-style",
+            ""
+          ],
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-pan-x",
+            ""
+          ],
+          [
+            "--tw-pan-y",
+            ""
+          ],
+          [
+            "--tw-pinch-zoom",
+            ""
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-gradient-from-position",
+            ""
+          ],
+          [
+            "--tw-gradient-via-position",
+            ""
+          ],
+          [
+            "--tw-gradient-to-position",
+            ""
+          ],
+          [
+            "--tw-ordinal",
+            ""
+          ],
+          [
+            "--tw-slashed-zero",
+            ""
+          ],
+          [
+            "--tw-numeric-figure",
+            ""
+          ],
+          [
+            "--tw-numeric-spacing",
+            ""
+          ],
+          [
+            "--tw-numeric-fraction",
+            ""
+          ],
+          [
+            "--tw-ring-inset",
+            ""
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-blur",
+            ""
+          ],
+          [
+            "--tw-brightness",
+            ""
+          ],
+          [
+            "--tw-contrast",
+            ""
+          ],
+          [
+            "--tw-grayscale",
+            ""
+          ],
+          [
+            "--tw-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-invert",
+            ""
+          ],
+          [
+            "--tw-saturate",
+            ""
+          ],
+          [
+            "--tw-sepia",
+            ""
+          ],
+          [
+            "--tw-drop-shadow",
+            ""
+          ],
+          [
+            "--tw-backdrop-blur",
+            ""
+          ],
+          [
+            "--tw-backdrop-brightness",
+            ""
+          ],
+          [
+            "--tw-backdrop-contrast",
+            ""
+          ],
+          [
+            "--tw-backdrop-grayscale",
+            ""
+          ],
+          [
+            "--tw-backdrop-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-backdrop-invert",
+            ""
+          ],
+          [
+            "--tw-backdrop-opacity",
+            ""
+          ],
+          [
+            "--tw-backdrop-saturate",
+            ""
+          ],
+          [
+            "--tw-backdrop-sepia",
+            ""
+          ],
+          [
+            "--tw-contain-size",
+            ""
+          ],
+          [
+            "--tw-contain-layout",
+            ""
+          ],
+          [
+            "--tw-contain-paint",
+            ""
+          ],
+          [
+            "--tw-contain-style",
+            ""
+          ],
+          [
+            "--tw-content",
+            "\"\""
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--radius",
+            ".5rem"
+          ],
+          [
+            "--background",
+            "0 0% 2%"
+          ],
+          [
+            "--foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--card",
+            "0 0% 4%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--popover",
+            "0 0% 4%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--primary",
+            "0 0% 98%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--secondary",
+            "0 0% 10%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--muted",
+            "0 0% 10%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 50%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 63% 31%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 20%"
+          ],
+          [
+            "--input",
+            "0 0% 20%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-1px"
+          ],
+          [
+            "--tw-translate-y",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "1px"
+          ],
+          [
+            "--tw-translate-y",
+            "-50%"
+          ],
+          [
+            "--tw-rotate",
+            "45deg"
+          ],
+          [
+            "--tw-rotate",
+            "90deg"
+          ],
+          [
+            "--tw-space-x-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-x-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-border-opacity",
+            "1"
+          ],
+          [
+            "--tw-border-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-gradient-from",
+            "#CCFF00 var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(204 255 0 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(204 255 0 / .2) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(204 255 0 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .1) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .2) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .05) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(30 58 138 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(30 58 138 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(22 78 99 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(22 78 99 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "#e5e7eb var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(229 231 235 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(49 46 129 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(49 46 129 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(131 24 67 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(131 24 67 / 0) var(--tw-gradient-to-position)"
+          ]
+        ],
+        "rootVariables": [
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--radius",
+            ".5rem"
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ]
+        ],
+        "palette": {
+          "body": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "color": "rgb(26, 26, 26)",
+            "borderColor": "rgb(230, 230, 230)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "header": null,
+          "nav": {
+            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+            "color": "rgb(255, 255, 255)",
+            "borderColor": "rgba(255, 255, 255, 0.1)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "main": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "borderColor": "rgb(230, 230, 230)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "footer": null,
+          "buttons": [
+            {
+              "text": "Login",
+              "backgroundColor": "rgb(250, 250, 250)",
+              "color": "rgb(204, 255, 0)",
+              "borderColor": "rgb(204, 255, 0)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "backgroundImage": ""
+            },
+            {
+              "text": "🚀 Get Started Free",
+              "backgroundColor": "rgb(204, 255, 0)",
+              "color": "rgb(0, 0, 0)",
+              "borderColor": "rgb(230, 230, 230)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "backgroundImage": ""
+            }
+          ]
+        },
+        "motion": {
+          "htmlScrollBehavior": "auto",
+          "scrollSnapRules": 2,
+          "smoothScrollRules": 0,
+          "stickyOrFixedCount": 1
+        },
+        "fonts": [],
+        "fontFaces": [],
+        "resources": {
+          "images": [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+            "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+            "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+            "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80"
+          ],
+          "fonts": [],
+          "media": []
+        },
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 500
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 500
+          }
+        ],
+        "canvases": []
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "screenshot": "screenshots/original-390.png",
+      "signals": {
+        "href": "https://fusion2.lovable.app/",
+        "title": "AI Image Transformation Studio",
+        "lang": "en",
+        "bodyTextChars": 637,
+        "scrollHeight": 2764,
+        "viewport": {
+          "width": 390,
+          "height": 900
+        },
+        "h1": [
+          "Transform YourPhotos with AI"
+        ],
+        "headings": [
+          {
+            "tag": "h1",
+            "text": "Transform YourPhotos with AI"
+          },
+          {
+            "tag": "h2",
+            "text": "See the Transformation"
+          },
+          {
+            "tag": "h3",
+            "text": "Look Packs"
+          },
+          {
+            "tag": "h3",
+            "text": "AI Modifiers"
+          },
+          {
+            "tag": "h3",
+            "text": "Instant Results"
+          }
+        ],
+        "metaDescription": "Transform your photos with AI-powered aesthetic packs and curated presets. Create stunning visual transformations instantly.",
+        "counts": {
+          "links": 0,
+          "images": 6,
+          "video": 0,
+          "canvas": 0,
+          "sections": 3,
+          "forms": 0,
+          "buttons": 2,
+          "inputs": 0,
+          "interactive": 5,
+          "scripts": 2,
+          "stylesheets": 1
+        },
+        "frameworks": {
+          "react": false,
+          "next": false,
+          "vue": false,
+          "nuxt": false,
+          "svelte": false,
+          "astro": false,
+          "three": false,
+          "gsap": false,
+          "lenis": false
+        },
+        "scripts": [
+          "https://fusion2.lovable.app/assets/index-kld3g1cl.js",
+          "https://fusion2.lovable.app/~flock.js"
+        ],
+        "stylesheets": [
+          "https://fusion2.lovable.app/assets/index-1ni_mYkF.css"
+        ],
+        "sections": [
+          {
+            "tag": "section",
+            "id": "",
+            "className": "",
+            "text": "",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 0
+            },
+            "style": {
+              "display": "block",
+              "position": "static",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(26, 26, 26)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          },
+          {
+            "tag": "nav",
+            "id": "",
+            "className": "h-16 border-b border-white/10 flex items-center justify-between px-6 backdrop-blur-xl bg-black/50 sticky top-0 z-50",
+            "text": "FusionLogin",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 64
+            },
+            "style": {
+              "display": "flex",
+              "position": "sticky",
+              "backgroundColor": "rgba(0, 0, 0, 0.5)",
+              "color": "rgb(255, 255, 255)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          },
+          {
+            "tag": "main",
+            "id": "",
+            "className": "max-w-7xl mx-auto px-6 py-20",
+            "text": "AI-Powered Photo StudioTransform YourPhotos with AIUpload any photo. Choose a style. Watch the magic happen.Create stunning AI-powered transformations in seconds.🎁 3 Free Generations Daily🚀 Get Started FreeSee the TransformationBeforeAfte",
+            "rect": {
+              "x": 0,
+              "y": 64,
+              "width": 390,
+              "height": 2700
+            },
+            "style": {
+              "display": "block",
+              "position": "static",
+              "backgroundColor": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "fontSize": "16px"
+            }
+          }
+        ],
+        "cssVariables": [
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-pan-x",
+            ""
+          ],
+          [
+            "--tw-pan-y",
+            ""
+          ],
+          [
+            "--tw-pinch-zoom",
+            ""
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-gradient-from-position",
+            ""
+          ],
+          [
+            "--tw-gradient-via-position",
+            ""
+          ],
+          [
+            "--tw-gradient-to-position",
+            ""
+          ],
+          [
+            "--tw-ordinal",
+            ""
+          ],
+          [
+            "--tw-slashed-zero",
+            ""
+          ],
+          [
+            "--tw-numeric-figure",
+            ""
+          ],
+          [
+            "--tw-numeric-spacing",
+            ""
+          ],
+          [
+            "--tw-numeric-fraction",
+            ""
+          ],
+          [
+            "--tw-ring-inset",
+            ""
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-blur",
+            ""
+          ],
+          [
+            "--tw-brightness",
+            ""
+          ],
+          [
+            "--tw-contrast",
+            ""
+          ],
+          [
+            "--tw-grayscale",
+            ""
+          ],
+          [
+            "--tw-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-invert",
+            ""
+          ],
+          [
+            "--tw-saturate",
+            ""
+          ],
+          [
+            "--tw-sepia",
+            ""
+          ],
+          [
+            "--tw-drop-shadow",
+            ""
+          ],
+          [
+            "--tw-backdrop-blur",
+            ""
+          ],
+          [
+            "--tw-backdrop-brightness",
+            ""
+          ],
+          [
+            "--tw-backdrop-contrast",
+            ""
+          ],
+          [
+            "--tw-backdrop-grayscale",
+            ""
+          ],
+          [
+            "--tw-backdrop-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-backdrop-invert",
+            ""
+          ],
+          [
+            "--tw-backdrop-opacity",
+            ""
+          ],
+          [
+            "--tw-backdrop-saturate",
+            ""
+          ],
+          [
+            "--tw-backdrop-sepia",
+            ""
+          ],
+          [
+            "--tw-contain-size",
+            ""
+          ],
+          [
+            "--tw-contain-layout",
+            ""
+          ],
+          [
+            "--tw-contain-paint",
+            ""
+          ],
+          [
+            "--tw-contain-style",
+            ""
+          ],
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-pan-x",
+            ""
+          ],
+          [
+            "--tw-pan-y",
+            ""
+          ],
+          [
+            "--tw-pinch-zoom",
+            ""
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-gradient-from-position",
+            ""
+          ],
+          [
+            "--tw-gradient-via-position",
+            ""
+          ],
+          [
+            "--tw-gradient-to-position",
+            ""
+          ],
+          [
+            "--tw-ordinal",
+            ""
+          ],
+          [
+            "--tw-slashed-zero",
+            ""
+          ],
+          [
+            "--tw-numeric-figure",
+            ""
+          ],
+          [
+            "--tw-numeric-spacing",
+            ""
+          ],
+          [
+            "--tw-numeric-fraction",
+            ""
+          ],
+          [
+            "--tw-ring-inset",
+            ""
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-blur",
+            ""
+          ],
+          [
+            "--tw-brightness",
+            ""
+          ],
+          [
+            "--tw-contrast",
+            ""
+          ],
+          [
+            "--tw-grayscale",
+            ""
+          ],
+          [
+            "--tw-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-invert",
+            ""
+          ],
+          [
+            "--tw-saturate",
+            ""
+          ],
+          [
+            "--tw-sepia",
+            ""
+          ],
+          [
+            "--tw-drop-shadow",
+            ""
+          ],
+          [
+            "--tw-backdrop-blur",
+            ""
+          ],
+          [
+            "--tw-backdrop-brightness",
+            ""
+          ],
+          [
+            "--tw-backdrop-contrast",
+            ""
+          ],
+          [
+            "--tw-backdrop-grayscale",
+            ""
+          ],
+          [
+            "--tw-backdrop-hue-rotate",
+            ""
+          ],
+          [
+            "--tw-backdrop-invert",
+            ""
+          ],
+          [
+            "--tw-backdrop-opacity",
+            ""
+          ],
+          [
+            "--tw-backdrop-saturate",
+            ""
+          ],
+          [
+            "--tw-backdrop-sepia",
+            ""
+          ],
+          [
+            "--tw-contain-size",
+            ""
+          ],
+          [
+            "--tw-contain-layout",
+            ""
+          ],
+          [
+            "--tw-contain-paint",
+            ""
+          ],
+          [
+            "--tw-contain-style",
+            ""
+          ],
+          [
+            "--tw-content",
+            "\"\""
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--radius",
+            ".5rem"
+          ],
+          [
+            "--background",
+            "0 0% 2%"
+          ],
+          [
+            "--foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--card",
+            "0 0% 4%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--popover",
+            "0 0% 4%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 85%"
+          ],
+          [
+            "--primary",
+            "0 0% 98%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--secondary",
+            "0 0% 10%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--muted",
+            "0 0% 10%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 50%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 63% 31%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 20%"
+          ],
+          [
+            "--input",
+            "0 0% 20%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-1px"
+          ],
+          [
+            "--tw-translate-y",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "-50%"
+          ],
+          [
+            "--tw-translate-x",
+            "1px"
+          ],
+          [
+            "--tw-translate-y",
+            "-50%"
+          ],
+          [
+            "--tw-rotate",
+            "45deg"
+          ],
+          [
+            "--tw-rotate",
+            "90deg"
+          ],
+          [
+            "--tw-space-x-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-x-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-space-y-reverse",
+            "0"
+          ],
+          [
+            "--tw-border-opacity",
+            "1"
+          ],
+          [
+            "--tw-border-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-bg-opacity",
+            "1"
+          ],
+          [
+            "--tw-gradient-from",
+            "#CCFF00 var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(204 255 0 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(204 255 0 / .2) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(204 255 0 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .1) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .2) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(245 158 11 / .05) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(245 158 11 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(30 58 138 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(30 58 138 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(22 78 99 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(22 78 99 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "#e5e7eb var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(229 231 235 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(49 46 129 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(49 46 129 / 0) var(--tw-gradient-to-position)"
+          ],
+          [
+            "--tw-gradient-stops",
+            "var(--tw-gradient-from), var(--tw-gradient-to)"
+          ],
+          [
+            "--tw-gradient-from",
+            "rgb(131 24 67 / .8) var(--tw-gradient-from-position)"
+          ],
+          [
+            "--tw-gradient-to",
+            "rgb(131 24 67 / 0) var(--tw-gradient-to-position)"
+          ]
+        ],
+        "rootVariables": [
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-border-spacing-x",
+            "0"
+          ],
+          [
+            "--tw-border-spacing-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-skew-x",
+            "0"
+          ],
+          [
+            "--tw-skew-y",
+            "0"
+          ],
+          [
+            "--tw-scale-x",
+            "1"
+          ],
+          [
+            "--tw-scale-y",
+            "1"
+          ],
+          [
+            "--tw-scroll-snap-strictness",
+            "proximity"
+          ],
+          [
+            "--tw-ring-offset-width",
+            "0px"
+          ],
+          [
+            "--tw-ring-offset-color",
+            "#fff"
+          ],
+          [
+            "--tw-ring-color",
+            "rgb(59 130 246 / .5)"
+          ],
+          [
+            "--tw-ring-offset-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-ring-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow",
+            "0 0 #0000"
+          ],
+          [
+            "--tw-shadow-colored",
+            "0 0 #0000"
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--radius",
+            ".5rem"
+          ],
+          [
+            "--background",
+            "0 0% 98%"
+          ],
+          [
+            "--foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--card",
+            "0 0% 100%"
+          ],
+          [
+            "--card-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--popover",
+            "0 0% 100%"
+          ],
+          [
+            "--popover-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--primary",
+            "0 0% 10%"
+          ],
+          [
+            "--primary-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--secondary",
+            "0 0% 96%"
+          ],
+          [
+            "--secondary-foreground",
+            "0 0% 10%"
+          ],
+          [
+            "--muted",
+            "0 0% 96%"
+          ],
+          [
+            "--muted-foreground",
+            "0 0% 45%"
+          ],
+          [
+            "--accent",
+            "74 100% 80%"
+          ],
+          [
+            "--accent-foreground",
+            "0 0% 0%"
+          ],
+          [
+            "--destructive",
+            "0 84% 60%"
+          ],
+          [
+            "--destructive-foreground",
+            "0 0% 98%"
+          ],
+          [
+            "--border",
+            "0 0% 90%"
+          ],
+          [
+            "--input",
+            "0 0% 90%"
+          ],
+          [
+            "--ring",
+            "74 100% 50%"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-x",
+            "0"
+          ],
+          [
+            "--tw-translate-y",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ],
+          [
+            "--tw-rotate",
+            "0"
+          ]
+        ],
+        "palette": {
+          "body": {
+            "backgroundColor": "rgb(250, 250, 250)",
+            "color": "rgb(26, 26, 26)",
+            "borderColor": "rgb(230, 230, 230)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "header": null,
+          "nav": {
+            "backgroundColor": "rgba(0, 0, 0, 0.5)",
+            "color": "rgb(255, 255, 255)",
+            "borderColor": "rgba(255, 255, 255, 0.1)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "main": {
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "borderColor": "rgb(230, 230, 230)",
+            "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+            "backgroundImage": ""
+          },
+          "footer": null,
+          "buttons": [
+            {
+              "text": "Login",
+              "backgroundColor": "rgb(250, 250, 250)",
+              "color": "rgb(204, 255, 0)",
+              "borderColor": "rgb(204, 255, 0)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "backgroundImage": ""
+            },
+            {
+              "text": "🚀 Get Started Free",
+              "backgroundColor": "rgb(204, 255, 0)",
+              "color": "rgb(0, 0, 0)",
+              "borderColor": "rgb(230, 230, 230)",
+              "fontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+              "backgroundImage": ""
+            }
+          ]
+        },
+        "motion": {
+          "htmlScrollBehavior": "auto",
+          "scrollSnapRules": 2,
+          "smoothScrollRules": 0,
+          "stickyOrFixedCount": 1
+        },
+        "fonts": [],
+        "fontFaces": [],
+        "resources": {
+          "images": [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+            "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+            "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+            "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+            "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80"
+          ],
+          "fonts": [],
+          "media": []
+        },
+        "images": [
+          {
+            "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 500
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&q=80",
+            "srcset": "",
+            "alt": "Before",
+            "width": 400,
+            "height": 600
+          },
+          {
+            "src": "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=400&q=80",
+            "srcset": "",
+            "alt": "After",
+            "width": 400,
+            "height": 500
+          }
+        ],
+        "canvases": []
+      }
+    }
+  ]
+}

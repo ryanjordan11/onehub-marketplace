@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fusion Studio</title>
+  <link rel="stylesheet" href="assets/css/fusion2.lovable.app/index-1ni_mYkF-2bc57035ea.css" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: rgb(10,10,10);
+      --surface: rgb(18,18,18);
+      --fg: rgb(255,255,255);
+      --muted: rgb(153,153,153);
+      --border: rgba(255,255,255,0.12);
+      --accent: rgb(204,255,0);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(204,255,0,0.08), transparent),
+        radial-gradient(1000px 500px at 90% 0%, rgba(255,255,255,0.06), transparent),
+        var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    .app-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    .panel {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)),
+        var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      overflow: hidden;
+    }
+    .panel + .panel { margin-top: 12px; }
+    .btn {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--fg);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: black;
+      border-color: transparent;
+    }
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+    .chip {
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .chip.active {
+      background: rgba(204,255,0,0.12);
+      color: var(--accent);
+      border-color: rgba(204,255,0,0.45);
+    }
+    .upload-zone {
+      border: 2px dashed rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.25);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+    .upload-zone:hover {
+      border-color: var(--accent);
+      background: rgba(204,255,0,0.04);
+    }
+    .preset {
+      height: 64px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.25);
+      padding: 10px;
+      cursor: pointer;
+      transition: background .2s, border-color .2s;
+    }
+    .preset.selected {
+      background: rgba(204,255,0,0.1);
+      border-color: rgba(204,255,0,0.6);
+    }
+    output img {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    #vault .results { max-height: 320px; overflow: auto; }
+    @media (max-width: 768px) {
+      .grid-presets { grid-template-columns: repeat(3,1fr) !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
+  <script type="text/babel">
+    const { useState, useRef, useEffect } = React;
+
+    const UI_ICONS = {
+      sun: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>,
+      moon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>,
+      upload: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>,
+      box: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>,
+      loader: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>,
+      check: <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>,
+      sparkles: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg>,
+      menu: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>,
+      user: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>,
+      logout: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>,
+      image: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>,
+      wand: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 4l4 4"/><path d="M19 8l-4-4"/><path d="M9 16l-4 4"/><path d="M5 12l4-4"/><path d="M21 3l-4 4"/><path d="M17 7l-4-4"/></svg>,
+      star: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>,
+    };
+
+    const PRESETS = [
+      { id:'p1', category:'Aesthetics', type:'Solo', label:'Vintage Film' },
+      { id:'p2', category:'Aesthetics', type:'Solo', label:'Neon Noir' },
+      { id:'p3', category:'Aesthetics', type:'Solo', label:'Soft Pastel' },
+      { id:'p4', category:'Humans', type:'Subject', label:'Studio Light' },
+      { id:'p5', category:'Humans', type:'Subject', label:'Street Candid' },
+      { id:'p6', category:'Humans', type:'Subject', label:'Golden Hour' },
+      { id:'p7', category:'Composition', type:'Lens', label:'Wide Angle' },
+      { id:'p8', category:'Composition', type:'Lens', label:'Macro Detail' },
+      { id:'p9', category:'Composition', type:'Lens', label:'Minimal Frame' },
+      { id:'p10', category:'Color', type:'Grade', label:'Teal Orange' },
+      { id:'p11', category:'Color', type:'Grade', label:'Monochrome' },
+      { id:'p12', category:'Color', type:'Grade', label:'Faded Print' },
+      { id:'p13', category:'Effects', type:'FX', label:'Light Leak' },
+      { id:'p14', category:'Effects', type:'FX', label:'Film Grain' },
+      { id:'p15', category:'Effects', type:'FX', label:'Soft Glow' },
+      { id:'p16', category:'Aesthetics', type:'Solo', label:'Cyber Glow' },
+      { id:'p17', category:'Composition', type:'Lens', label:'Symmetry' },
+      { id:'p18', category:'Humans', type:'Subject', label:'Runway' },
+    ];
+    const CATEGORIES = [...new Set(PRESETS.map(p => `${p.category}:${p.type}`))];
+    const EMOTIONS = [
+      { id: 'none', label: 'None' },
+      { id: 'joy', label: 'Joy' },
+      { id: 'calm', label: 'Calm' },
+      { id: 'mysterious', label: 'Mysterious' },
+      { id: 'bold', label: 'Bold' },
+      { id: 'nostalgic', label: 'Nostalgic' },
+      { id: 'dreamy', label: 'Dreamy' },
+      { id: 'edgy', label: 'Edgy' },
+      { id: 'warm', label: 'Warm' },
+      { id: 'cool', label: 'Cool' },
+    ];
+    const SHOT_TYPES = [
+      { id: 'portrait', label: 'Portrait' },
+      { id: 'full', label: 'Full Body' },
+      { id: 'closeup', label: 'Close-Up' },
+      { id: 'environment', label: 'Environment' },
+    ];
+    const ASSETS = [
+      'assets/images/images.unsplash.com/photo-1534528741775-53994a69daeb-d4a559d593.bin',
+      'assets/images/images.unsplash.com/photo-1507003211169-0a1dd7228f2d-375d0835aa.bin',
+      'assets/images/images.unsplash.com/photo-1539571696357-5a69c17a67c6-279ce60f1c.bin',
+      'assets/images/images.unsplash.com/photo-1506794778202-cad84cf45f1d-b5670d0509.bin',
+      'assets/images/images.unsplash.com/photo-1488161628813-04466f872be2-f9e5d399e2.bin',
+      'assets/images/images.unsplash.com/photo-1524504388940-b1c1722653e1-71f163aedb.bin',
+    ];
+
+    function pickRandomAsset() {
+      return ASSETS[Math.floor(Math.random()*ASSETS.length)];
+    }
+
+    function StudioHeader({ currentView, setCurrentView, isDarkMode, setIsDarkMode, isMobile, menuOpen, setMenuOpen, tier, setShowUpgradeModal, onLogout }) {
+      if (isMobile) {
+        return (
+          <nav className="border-b border-white/10 sticky top-0 z-40 flex items-center justify-between px-4 py-3" style={{ background:'rgba(0,0,0,0.55)', backdropFilter:'blur(16px)' }}>
+            <div className="font-bold tracking-tight">Fusion</div>
+            <button className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white" onClick={()=>setMenuOpen(true)}>{UI_ICONS.menu}</button>
+            {menuOpen && (
+              <div className="fixed inset-0 z-50">
+                <div className="absolute inset-0 bg-black/60" onClick={()=>setMenuOpen(false)} />
+                <div className="absolute right-0 top-0 h-full w-72 border-l border-white/10 bg-black p-4">
+                  <div className="flex justify-between items-center mb-6">
+                    <div className="font-bold">Menu</div>
+                    <button className="text-sm text-gray-400" onClick={()=>setMenuOpen(false)}>Close</button>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className="p-4 rounded-xl border border-white/10 bg-white/5">
+                      <div className="text-sm font-bold">{tier === 'creator' ? 'Creator Plan' : 'Free Plan'}</div>
+                    </div>
+                    <button onClick={()=>{ setIsDarkMode(!isDarkMode); }} className="flex items-center justify-between p-4 rounded-xl border border-white/10 bg-white/5 hover:border-lime-400/50 transition-all text-sm">
+                      <span className="flex items-center gap-2">{isDarkMode ? UI_ICONS.moon : UI_ICONS.sun}<span>{isDarkMode?'Dark Mode':'Light Mode'}</span></span>
+                      <span className={`w-10 h-6 rounded-full relative transition-colors ${isDarkMode?'bg-lime-400':'bg-gray-600'}`}>
+                        <span className={`absolute top-1 w-4 h-4 rounded-full bg-black transition-all ${isDarkMode?'right-1':'left-1'}`} />
+                      </span>
+                    </button>
+                    <button onClick={()=>{setShowUpgradeModal(true); setMenuOpen(false);}} className="btn btn-accent w-full text-center">Upgrade</button>
+                    <button onClick={onLogout} className="flex items-center gap-2 p-4 rounded-xl border border-red-500/40 bg-red-500/10 text-red-400 hover:text-red-300 transition-all text-sm">
+                      <span className="flex items-center gap-2">{UI_ICONS.logout}<span>Sign Out</span></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </nav>
+        );
+      }
+      return (
+        <nav className="border-b border-white/10 sticky top-0 z-40 flex items-center justify-between px-6 py-3" style={{ background:'rgba(0,0,0,0.55)', backdropFilter:'blur(16px)' }}>
+          <div className="flex items-center gap-3">
+            <span className="font-bold tracking-tight">Fusion</span>
+          </div>
+          <div className="pill flex p-1">
+            {['studio','packs','vault'].map(view => (
+              <button key={view} onClick={()=>setCurrentView(view)} className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase transition-all ${currentView===view?'bg-white/90 text-black':'text-gray-500 hover:text-white'}`}>{view}</button>
+            ))}
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-bold text-lime-400 bg-lime-400/10 border border-lime-400/30 px-3 py-1.5 rounded-full">3 Free Generations Daily</span>
+            <button onClick={()=>setIsDarkMode(!isDarkMode)} className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white">{isDarkMode?UI_ICONS.sun:UI_ICONS.moon}</button>
+            <button onClick={onLogout} className="px-3 py-1.5 rounded-full hover:bg-white/10 text-gray-400 hover:text-white flex items-center gap-2 text-sm">
+              <span className="flex items-center gap-2">{UI_ICONS.logout}<span className="hidden sm:inline">Logout</span></span>
+            </button>
+          </div>
+        </nav>
+      );
+    }
+
+    function UploadSection({ selectedImage, fileInputRef, onFileChange, generationCount, setGenerationCount }) {
+      return (
+        <div className="panel p-4 flex flex-col">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-6 h-6 rounded-full bg-lime-400 text-black flex items-center justify-center text-xs font-bold">1</div>
+            <span className="text-sm font-bold uppercase tracking-wide">Upload</span>
+          </div>
+          <div onClick={()=>fileInputRef.current?.click()} className="upload-zone h-48 relative overflow-hidden">
+            {selectedImage ? (
+              <img src={selectedImage} className="w-full h-full object-cover" alt="Selected" />
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-500">
+                <span className="flex flex-col items-center gap-2 text-gray-500">{UI_ICONS.upload}<span className="text-xs font-bold uppercase">Choose Image</span></span>
+              </div>
+            )}
+            <input ref={fileInputRef} onChange={onFileChange} className="hidden" type="file" accept="image/*" />
+          </div>
+          <div className="mt-4 pt-4 border-t border-white/10">
+            <div className="flex justify-between text-xs font-bold text-gray-500 mb-2">
+              <span>VARIATIONS</span>
+              <span className="text-lime-400">{generationCount}</span>
+            </div>
+            <input type="range" min="1" max="20" value={generationCount} onChange={e=>setGenerationCount(parseInt(e.target.value))} className="w-full h-1 bg-gray-800 rounded-full appearance-none cursor-pointer accent-lime-400" />
+          </div>
+        </div>
+      );
+    }
+
+    function PresetsGrid({ activeCategory, setActiveCategory, selectedPresetId, setSelectedPresetId }) {
+      return (
+        <div className="panel flex flex-col overflow-hidden flex-1">
+          <div className="p-4 border-b border-white/10 bg-white/5 shrink-0">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-6 h-6 rounded-full bg-lime-400 text-black flex items-center justify-center text-xs font-bold">2</div>
+              <span className="text-sm font-bold uppercase tracking-wide">Select Style</span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              <button onClick={()=>setActiveCategory('All')} className={`px-2.5 py-1 rounded text-[10px] font-bold border transition-all ${activeCategory==='All'?'border-lime-400 bg-lime-400/15 text-lime-400':'border-transparent bg-white/5 text-gray-500 hover:text-white'}`}>ALL</button>
+              {CATEGORIES.map(cat => (
+                <button key={cat} onClick={()=>setActiveCategory(cat)} className={`px-2.5 py-1 rounded text-[10px] font-bold border transition-all ${activeCategory===cat?'border-lime-400 bg-lime-400/15 text-lime-400':'border-transparent bg-white/5 text-gray-500 hover:text-white'}`}>{cat.split(':')[1]||cat}</button>
+              ))}
+            </div>
+          </div>
+          <div className="flex-1 overflow-y-auto p-3">
+            <div className="grid grid-cols-4 gap-2 grid-presets">
+              {PRESETS.filter(p => activeCategory==='All' || `${p.category}:${p.type}`===activeCategory).map(preset => (
+                <button key={preset.id} onClick={()=>setSelectedPresetId(preset.id)} className={`preset text-left flex flex-col justify-between group ${selectedPresetId===preset.id?'selected':''}`}>
+                  <div className="flex justify-between w-full items-start">
+                    <span className={`text-[8px] uppercase font-bold px-1 py-0.5 rounded ${selectedPresetId===preset.id?'bg-lime-400 text-black':'bg-white/10 text-gray-500'}`}>{preset.type||'Solo'}</span>
+                    {selectedPresetId===preset.id && <span className="text-lime-400">{UI_ICONS.check}</span>}
+                  </div>
+                  <span className={`text-[9px] font-bold leading-snug ${selectedPresetId===preset.id?'text-lime-400':'text-gray-400 group-hover:text-white'}`}>{preset.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function FineTuneSection({ selectedEmotions, toggleEmotion, selectedShotType, setSelectedShotType }) {
+      return (
+        <div className="panel p-4 border-t border-white/10 bg-white/5 shrink-0">
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-6 h-6 rounded-full bg-gray-800 text-gray-400 flex items-center justify-center text-xs font-bold">3</div>
+            <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">Fine Tune (Optional)</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <select value={selectedShotType} onChange={e=>setSelectedShotType(e.target.value)} className="bg-black border border-white/10 text-xs rounded-lg px-3 py-1.5 text-gray-300 outline-none focus:border-lime-400">
+              {SHOT_TYPES.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
+            </select>
+            {EMOTIONS.slice(1,10).map(e => (
+              <button key={e.id} onClick={()=>toggleEmotion(e.id)} className={`px-3 py-1.5 rounded-lg text-xs border transition-all ${selectedEmotions.includes(e.id)?'border-lime-400 bg-lime-400/15 text-lime-400':'border-transparent bg-white/5 text-gray-500 hover:text-white'}`}>{e.label}</button>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    function GenerationIndicator({ isLoading, generatedResults, error, onViewResults }) {
+      if (!isLoading && generatedResults.length === 0 && !error) return null;
+      return (
+        <div className="fixed bottom-24 right-6 z-30">
+          {isLoading && (
+            <div className="bg-black border border-lime-400/40 rounded-2xl px-4 py-3 flex items-center gap-3 shadow-lg" style={{boxShadow:'0 10px 40px rgba(204,255,0,0.12)'}}>
+              <div className="animate-spin text-lime-400">{UI_ICONS.loader}</div>
+              <div>
+                <p className="text-sm font-bold text-white">Generating...</p>
+                <p className="text-xs text-gray-400">Your image is being created</p>
+              </div>
+            </div>
+          )}
+          {!isLoading && generatedResults.length > 0 && (
+            <button onClick={onViewResults} className="bg-lime-400 text-black rounded-2xl px-4 py-3 flex items-center gap-3 shadow-lg hover:scale-105 transition-transform" style={{boxShadow:'0 10px 40px rgba(204,255,0,0.25)'}}>
+              <span className="relative text-black">{UI_ICONS.sparkles}<span className="absolute -top-1 -right-1 w-4 h-4 bg-black text-lime-400 text-[10px] font-bold rounded-full flex items-center justify-center">{generatedResults.length}</span></span>
+              <div className="text-left">
+                <p className="text-sm font-bold text-black">Images Ready!</p>
+                <p className="text-xs text-black/70">Click to view in vault</p>
+              </div>
+            </button>
+          )}
+          {error && !isLoading && (
+            <div className="bg-red-900/90 border border-red-500/50 rounded-2xl px-4 py-3 shadow-lg">
+              <div><p className="text-sm font-bold text-white">Generation Failed</p><p className="text-xs text-red-200 max-w-[200px] truncate">{error}</p></div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    function OutputPreview({ generatedResults, onOpenVault, isLoading }) {
+      return (
+        <div className="panel flex flex-col relative overflow-hidden h-full">
+          <div className="p-4 border-b border-white/10 flex justify-between items-center">
+            <span className="text-xs font-bold text-gray-500 uppercase">Latest Output</span>
+            <button onClick={onOpenVault} className="text-xs text-lime-400 hover:underline">Open Vault</button>
+          </div>
+          <div className="flex-1 p-4 flex items-center justify-center">
+            {isLoading ? (
+              <div className="text-center">
+                <div className="mx-auto mb-4 text-lime-400 animate-pulse">{UI_ICONS.sparkles}</div>
+                <p className="text-sm font-bold text-gray-400">Creating your image...</p>
+                <p className="text-xs text-gray-600 mt-1">This may take a moment</p>
+              </div>
+            ) : generatedResults.length > 0 ? (
+              <div className="relative w-full">
+                <img src={generatedResults[0].url} className="w-full h-auto rounded-lg shadow-lg border border-white/10" alt="Latest generation" />
+                <div className="absolute top-2 right-2 bg-lime-400 text-black text-xs font-bold px-2 py-1 rounded">NEW</div>
+              </div>
+            ) : (
+              <div className="text-center text-gray-600">
+                <div className="mx-auto mb-2 opacity-50">{UI_ICONS.box}</div>
+                <p className="text-xs font-mono">WAITING FOR SIGNAL</p>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    function VaultModal({ results, onClose }) {
+      return (
+        <div className="fixed inset-0 z-50">
+          <div className="absolute inset-0 bg-black/70" onClick={onClose} />
+          <div className="absolute inset-0 flex items-center justify-center p-6">
+            <div className="panel w-full max-w-4xl max-h-[80vh] flex flex-col">
+              <div className="p-4 border-b border-white/10 flex justify-between items-center">
+                <span className="text-sm font-bold uppercase tracking-wide">Vault</span>
+                <button onClick={onClose} className="text-gray-400 hover:text-white">Close</button>
+              </div>
+              <div className="results p-4 grid grid-cols-2 gap-3">
+                {results.map(item => (
+                  <div key={item.id} className="rounded-xl border border-white/10 bg-white/5 overflow-hidden">
+                    <img src={item.url} className="w-full h-40 object-cover" alt={item.prompt} />
+                    <div className="p-3">
+                      <p className="text-xs text-gray-400">{item.prompt}</p>
+                      <p className="text-[10px] text-gray-500 mt-1">{item.timestamp}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function UpgradeModal({ open, onClose }) {
+      if (!open) return null;
+      return (
+        <div className="fixed inset-0 z-50">
+          <div className="absolute inset-0 bg-black/70" onClick={onClose} />
+          <div className="absolute inset-0 flex items-center justify-center p-6">
+            <div className="panel w-full max-w-md p-6 text-center">
+              <h3 className="text-lg font-bold mb-1">Upgrade Plan</h3>
+              <p className="text-xs text-gray-400 mb-4">Unlock more generations, HD export, and commercial license.</p>
+              <div className="flex gap-2 justify-center mb-4">
+                <div className="p-4 rounded-xl border border-white/10 bg-white/5 w-40">
+                  <div className="text-xs font-bold uppercase text-gray-500 mb-1">Creator</div>
+                  <div className="text-2xl font-bold">$12<span className="text-xs text-gray-500">/mo</span></div>
+                  <div className="mt-2 text-[10px] text-gray-400">50 gens/day</div>
+                </div>
+                <div className="p-4 rounded-xl border border-lime-400/40 bg-lime-400/10 w-40">
+                  <div className="text-xs font-bold uppercase text-lime-400 mb-1">Pro</div>
+                  <div className="text-2xl font-bold">$25<span className="text-xs text-gray-500">/mo</span></div>
+                  <div className="mt-2 text-[10px] text-gray-400">Unlimited</div>
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <button onClick={onClose} className="btn flex-1">Close</button>
+                <button onClick={()=>alert('Checkout placeholder')} className="btn btn-accent flex-1">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function App() {
+      const [currentView, setCurrentView] = useState('studio');
+      const [isDarkMode, setIsDarkMode] = useState(true);
+      const [isMobile, setIsMobile] = useState(false);
+      const [menuOpen, setMenuOpen] = useState(false);
+      const [tier, setTier] = useState('creator');
+      const [selectedImage, setSelectedImage] = useState(null);
+      const [generationCount, setGenerationCount] = useState(4);
+      const [activeCategory, setActiveCategory] = useState('All');
+      const [selectedPresetId, setSelectedPresetId] = useState(null);
+      const [selectedEmotions, setSelectedEmotions] = useState([]);
+      const [selectedShotType, setSelectedShotType] = useState('portrait');
+      const [generatedResults, setGeneratedResults] = useState([]);
+      const [isLoading, setIsLoading] = useState(false);
+      const [error, setError] = useState(null);
+      const [showVault, setShowVault] = useState(false);
+      const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+      const fileInputRef = useRef(null);
+
+      useEffect(() => {
+        const onResize = () => setIsMobile(window.innerWidth < 768);
+        onResize();
+        window.addEventListener('resize', onResize);
+        return () => window.removeEventListener('resize', onResize);
+      }, []);
+
+      const onFileChange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        setSelectedImage(url);
+      };
+
+      const toggleEmotion = (id) => setSelectedEmotions(prev => prev.includes(id) ? prev.filter(x=>x!==id) : [...prev, id]);
+
+      const generate = () => {
+        setError(null);
+        setIsLoading(true);
+        setTimeout(() => {
+          const item = {
+            id: Date.now(),
+            url: pickRandomAsset(),
+            prompt: [selectedPresetId, selectedShotType, selectedEmotions.join(',')].filter(Boolean).join(' · ') || 'Untitled style',
+            timestamp: new Date().toLocaleString(),
+          };
+          setGeneratedResults(prev => [item, ...prev]);
+          setIsLoading(false);
+        }, 2000);
+      };
+
+      const onViewResults = () => setShowVault(true);
+
+      return (
+        <div className={`min-h-screen`+ (isDarkMode?'':' light')}>
+          <StudioHeader currentView={currentView} setCurrentView={setCurrentView} isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} isMobile={isMobile} menuOpen={menuOpen} setMenuOpen={setMenuOpen} tier={tier} setShowUpgradeModal={setShowUpgradeModal} onLogout={()=>{ setGeneratedResults([]); alert('Signed out placeholder'); }} />
+          <div className="app-shell py-4">
+            {currentView === 'studio' && (
+              <div className="grid grid-cols-1 lg:grid-cols-6 gap-3">
+                <div className="lg:col-span-2 space-y-3">
+                  <UploadSection selectedImage={selectedImage} fileInputRef={fileInputRef} onFileChange={onFileChange} generationCount={generationCount} setGenerationCount={setGenerationCount} />
+                  <FineTuneSection selectedEmotions={selectedEmotions} toggleEmotion={toggleEmotion} selectedShotType={selectedShotType} setSelectedShotType={setSelectedShotType} />
+                  <div className="panel p-4">
+                    <button onClick={generate} disabled={isLoading} className="btn btn-accent w-full text-center py-3 text-sm">Generate</button>
+                  </div>
+                </div>
+                <div className="lg:col-span-3 h-full">
+                  <PresetsGrid activeCategory={activeCategory} setActiveCategory={setActiveCategory} selectedPresetId={selectedPresetId} setSelectedPresetId={setSelectedPresetId} />
+                </div>
+                <div className="lg:col-span-1">
+                  <OutputPreview generatedResults={generatedResults} isLoading={isLoading} onOpenVault={()=>setShowVault(true)} />
+                </div>
+              </div>
+            )}
+            {currentView === 'packs' && (
+              <div className="panel p-6">
+                <h2 className="text-lg font-bold mb-2">Packs</h2>
+                <p className="text-sm text-gray-400">Curated bundles coming soon.</p>
+              </div>
+            )}
+            {currentView === 'vault' && (
+              <div className="panel p-6">
+                <h2 className="text-lg font-bold mb-2">Vault</h2>
+                <div className="grid grid-cols-2 gap-3">
+                  {generatedResults.map(item => (
+                    <div key={item.id} className="rounded-xl border border-white/10 bg-white/5 overflow-hidden">
+                      <img src={item.url} className="w-full h-40 object-cover" alt={item.prompt} />
+                      <div className="p-3">
+                        <p className="text-xs text-gray-400">{item.prompt}</p>
+                        <p className="text-[10px] text-gray-500 mt-1">{item.timestamp}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          <GenerationIndicator isLoading={isLoading} generatedResults={generatedResults} error={error} onViewResults={onViewResults} />
+          {showVault && <VaultModal results={generatedResults} onClose={()=>setShowVault(false)} />}
+          <UpgradeModal open={showUpgradeModal} onClose={()=>setShowUpgradeModal(false)} />
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
